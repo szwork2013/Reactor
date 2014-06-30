@@ -1,0 +1,1201 @@
+﻿@charset "utf-8";
+/* CSS Document */
+* {
+	margin: 0;
+	padding: 0;
+}
+body{color:#221814;}
+h1, h2, h3, h4 {
+	font-weight: normal;
+}
+ul {
+	list-style: none;
+}
+/*------------页框-------------------*/
+.page{
+	width:210mm;
+	height:271.5mm;/*height:296.5mm; 297mm*/
+	position:relative;
+	padding-bottom:25mm;
+	page-break-after: always;
+	
+	/*outline:1px solid blue;*/
+}
+
+/*--------------页码----------------*/
+.page_number{
+	color:#9F9FA0;
+	font-size:9pt;
+	font-family:Arial;
+	position:absolute;
+	right:20mm;
+	bottom:15mm;
+}
+/*--------------封面--------------------------------*/
+.cover{}
+.cover0{
+    position:absolute;
+    left:0;
+    top:63mm;
+    width:100%;
+}
+.cover0 p{
+    font-size:60pt;
+    font-family:"Segoe WP Light";
+    color:#9F9FA0;
+    margin-left:20mm;
+}
+.cover0 p span{
+	font-size:11pt;
+	font-family: "FZLanTingHei-R-GBK";/*方正兰亭黑_GBK*/
+}
+.cover0 h1{
+	font-size:40pt;
+	font-family:"FZLanTingHei-B-GBK";/*方正兰亭粗黑_GBK*/
+	margin-bottom:2mm;
+        margin-left:20mm;
+}
+    .cover0 h1:nth-child(1) {
+        width:-webkit-calc(100% - (20mm + 20mm) );
+        padding:0 20mm;
+        margin-bottom:1mm !important;
+       	margin-left:0 !important;
+    }
+.coverlogo{
+	position:absolute;
+	left:20mm;
+	bottom:25mm;
+	width:25mm;
+	height:25mm;
+    outline:1px solid #4296A6;
+}
+.coverlogo > svg {
+    margin:15mm 4mm 0 3.5mm;
+    width:18mm;
+    height:8mm
+}
+.covertext{
+	font-size:10pt;
+	font-family: "FZLanTingHei-R-GBK";/*方正兰亭黑_GBK*/
+    letter-spacing:1px;
+	position:absolute;
+	left:48mm;
+	bottom:27mm;
+}
+    .covertext span {
+        font-size:11pt;
+        font-family:'Segoe UI';
+        letter-spacing:normal;
+        line-height:0;
+        margin-left:10px;
+    }
+
+/*--------------内容---------------------------------------*/
+.content{}
+/*--------------协议书内容条款-------------*/
+.agreement_title {
+    position:absolute;
+    left:20mm;
+    top:44mm;
+}
+.agreement_title p {
+    line-height:15pt;
+    font-size:10pt;
+    font-family:"FZLanTingHei-B-GBK";
+}
+.agreement_title p span {
+    font-size:10pt;
+    font-family:"FZLanTingHei-L-GBK";
+}
+.agreement_zhu {
+    font-size:11pt;
+    font-family:FZFangSong-Z02S;/*方正仿宋简体*/
+    float:right;
+    margin:77mm 20mm 0 0;
+    line-height:15pt;
+    width:105mm;
+}
+
+
+h3 {
+    font-size:10pt;
+    font-family:"FZLanTingHei-B-GBK";
+    float:right;
+    position:relative;
+    width:118mm;
+    margin:8mm 20mm 3mm 0;
+}
+h3 span {
+    margin-left:3mm;
+}
+
+h3 .tab_p_1,
+h3 .tab_p_2,
+h3 .tab_p_3,
+.agreement_clause .tab_p_3,
+.agreement_file .tab_p_3,
+.agreement_seal:first-child .tab_p_3,
+.agreement_xuzhi .tab_p_4,
+.agreement_tixing .tab_p_4{
+    border-top:3px solid;
+    font-size:16pt;
+    font-family:"FZLanTingHei-B-GBK";
+    padding-top:1.5mm;
+}
+
+    h3 .tab_p_1,
+    h3 .tab_p_2,
+    h3 .tab_p_3{
+    position:absolute;
+    left:-52mm;
+    top:0mm;
+    }
+    .agreement_clause .tab_p_3,
+    .agreement_file .tab_p_3 {
+    position:absolute;
+    left:-60mm;
+    top:0mm;
+    }
+.agreement_seal:first-child .tab_p_3{
+    position:absolute;
+    left:0;
+    top:-20mm;
+}
+.agreement_xuzhi .tab_p_4 {
+    position:absolute;
+    left:-60mm;
+    top:39mm;
+}
+
+.agreement_tixing .tab_p_4 {
+    position:absolute;
+    left:-50mm;
+    top:2mm;
+}
+
+div:nth-of-type(3) h3:nth-of-type(1){
+    margin-top:30mm;
+}
+
+.fujian {
+    color:rgba(0,0,0,0.4);
+    font-size:12pt;
+    font-family:"FZLanTingHei-L-GBK";
+    position:absolute;
+    left:20mm;
+    top:20mm;
+}
+
+.agreement_text {
+    font-size:11pt;
+    float:right;
+    line-height:18pt;
+    margin:0 20mm 0 0;
+    width:115mm;
+}
+.agreement_text >dt {
+    font-family:Segoe UI;
+    float:right;
+    width:10mm;
+    text-align:center;
+}
+.agreement_text >dd{
+    font-family:FZFangSong-Z02S;
+    float:right;
+    text-align:justify;
+    text-justify:inter-ideograph;
+    width:105mm;
+}
+.agreement_text >dd >span {
+    border-bottom:1px solid;
+}
+.agreement_text >.space span:nth-of-type(3) {
+    display:inline-block;
+    text-align:right;
+    padding-left:53mm;
+    margin-bottom:2mm;
+}
+.agreement_text >.space span:nth-of-type(4) {
+    text-align:right;
+    padding-left:11.5mm;
+}
+.agreement_text >.space span:nth-of-type(5) {
+    display:inline-block;
+    width:65mm;
+    margin-bottom:2mm;
+    height:6mm;
+} 
+.agreement_price {
+    font-size:10pt;
+    font-family:"FZLanTingHei-L-GBK";/*方正兰亭细黑_GBK*/
+    float:right;
+    margin:0 20mm 0 0;
+    width:105mm;
+}
+
+.agreement_price span{
+    display:block;
+    font-size:11pt;
+    font-family:FZFangSong-Z02S;/*方正仿宋简体*/
+    letter-spacing:0;
+    margin-bottom:2mm;
+    width:105mm;
+}
+.agreement_price >dt{
+    border-top:1px solid #999;
+    border-bottom:1px solid #999;
+    line-height:7mm;
+    width:105mm;
+    height:7mm;
+}
+.agreement_price > dt:nth-of-type(2) {
+    border-top:1px solid #999;
+    border-bottom:0 !important;
+}
+.agreement_price >dt >p{
+    float:left;
+}
+.agreement_price > dt > p:first-of-type {
+    width:48mm;
+}
+.agreement_price > dt > p:nth-last-of-type(n+2) {
+    float:right !important;
+    text-align:right;
+    width:30mm;
+}
+.agreement_price >dd{
+    line-height:6.5mm;
+    width:105mm;
+    height:6.5mm;
+}
+.agreement_price >dd >p{
+    float:left;
+}
+.agreement_price >dd >p:first-of-type {
+    width:48mm;
+}
+.agreement_price >dd >p:nth-last-of-type(n+2) {
+    float:right !important;
+    text-align:right;
+    width:30mm;
+}
+
+.agreement_bank {
+    font-size:10pt;
+    font-family:"FZLanTingHei-L-GBK";/*方正兰亭细黑_GBK*/
+    float:right;
+    margin:0 20mm 0 0;
+    width:105mm;
+}
+.agreement_bank span{
+    display:block;
+    font-size:11pt;
+    font-family:FZFangSong-Z02S;/*方正仿宋简体*/
+    margin-bottom:2mm;
+    width:105mm;
+}
+.agreement_bank ul {
+    border-top:1px solid #333;
+    border-bottom:1px solid #333;
+    line-height:17pt;
+    padding:2mm 0;
+    float:right;
+    width:105mm;
+}
+.agreement_bank ul li {
+    font-size:10pt;
+    float:left;
+}
+.agreement_bank ul li:nth-child(odd) {
+    font-family:"FZLanTingHei-L-GBK";
+    width:20mm;
+}
+.agreement_bank ul li:nth-child(even) {
+    font-size:11pt;
+    font-family:"FZFangSong-Z02S";
+    width:80mm;
+}
+.agreement_bank ul li:last-child {
+    font-size:11pt !important;
+    font-family:"Segoe UI" !important;
+    width:80mm;
+}
+
+
+/*--------------补充条款  附件  章-------------*/
+
+.agreement_seal {
+    border-bottom:1px solid #CCC;
+    font-size:10pt;
+    position:absolute;
+    left:20mm;
+    width:55mm;
+}
+.agreement_seal {
+    bottom:80mm;
+    height:41mm;
+}
+.agreement_seal + .agreement_seal{
+    bottom:25mm;
+    height:32mm;
+}
+.agreement_seal p {
+    font-family:"FZLanTingHei-B-GBK";
+    margin-right:2mm;
+}
+.agreement_seal p span{
+    font-family:"FZLanTingHei-L-GBK";/*方正兰亭细黑_GBK*/
+    margin:0 2px 0 0;
+}
+.agreement_seal p span:first-child{ margin-left:2mm;}
+.agreement_clause {
+    margin:29mm 20mm 18mm 0;
+    width:110mm;
+    float:right;
+    position:relative;
+}
+.agreement_clause p {
+    font-size:11pt;
+    font-family:FZFangSong-Z02S;
+    line-height:18pt;
+    margin:0 0 2mm 0;
+}
+.agreement_clause li {
+    border-bottom:1px solid #CCC;
+    height:9mm;
+}
+
+.agreement_file {
+    font-size:11pt;
+    font-family:FZFangSong-Z02S;
+    line-height:18pt;
+    float:right;
+    margin:0 20mm 0 0;
+    position:relative;
+    width:110mm;
+}
+.agreement_file p{
+    font-size:10pt;
+    font-family:"FZLanTingHei-B-GBK";
+}
+.agreement_file p:last-child {
+    margin-bottom:1mm;
+}
+.agreement_file p span{
+    font-family:"FZLanTingHei-L-GBK";
+}
+.agreement_address_j,.agreement_address_y {
+    font-size:10pt;
+    font-family:"FZLanTingHei-L-GBK";
+    float:right;
+    position:absolute;
+    right:20mm;
+    width:110mm;
+}
+.agreement_address_j {
+    bottom:80mm;
+}
+.agreement_address_y {
+    bottom:25mm;
+}
+.agreement_address_j > li,.agreement_address_y > li{
+    float:left;
+    height:9mm;
+}
+.agreement_address_j > li:nth-child(odd),.agreement_address_y > li:nth-child(odd) {
+    line-height:14mm;
+    width:14mm;
+    margin-right:2px;
+}
+.agreement_address_j > li:nth-child(even),.agreement_address_y > li:nth-child(even){
+    border-bottom:1px solid #C9C9CA;
+    line-height:14mm;
+    text-indent:3mm;
+    width:95mm;
+}
+
+/*--------------定制套餐与项目组合-------------*/
+
+.handtailor_title{
+	position:absolute;
+	right:20mm;
+	top:20mm;
+	width:120mm;
+}
+.handtailor_title h1{
+	display:block;
+	color:#9F9FA0;
+	line-height:35px;
+	font-size:21pt;
+	font-family:"FZLanTingHei-B-GBK";/*方正兰亭粗黑_GBK*/
+	float:right;
+	white-space:nowrap;
+
+}
+.handtailor_title .title_h1{ color:#000;}
+.handtailor_title .title_h1 span{ color:#9F9FA0;}
+.handtailor_title div{
+	border-top:1px solid #CCC;
+	float:right;
+	margin-top:2mm;
+    width:275px;
+}
+.handtailor_title div dl{
+	margin:2mm 0 0 5mm;
+	float:right;
+}
+.handtailor_title dl dd{
+	text-align:right;
+	font-size:28pt;
+	font-family:"Segoe WP Light";
+}
+.handtailor_title dl dd span{
+	color:#939598;
+	font-size:9pt;
+	font-family:"FZLanTingHei-R-GBK";/*方正兰亭黑_GBK*/
+    margin-left:2px;
+}
+.handtailor_title dl dt{
+	font-size:9pt;
+	font-family:"FZLanTingHei-R-GBK";/*方正兰亭黑_GBK*/
+	margin-top:-5px;
+}
+.ullist{
+	padding:73mm 0 0 0;
+	margin-right:20mm;
+	overflow:hidden;
+	float:right;
+	width:170mm;
+	height:auto;
+}
+.ullist div{ width:auto; float:right;}
+.ullist li{
+    width:14mm;
+    height:auto;
+    margin-left:5mm;
+    float:left;
+}
+.ullist li > .sexdiv{
+    border-bottom:1px solid #CCC;
+    padding-bottom:2px;
+    margin:0 auto;
+    width:51px;
+    height:21px;/*25*/
+}
+.ullist li div:last-child{
+    padding-top:4px;
+    text-align:center;
+    font-size:9pt;
+    font-family:"FZLanTingHei-L-GBK";/*方正兰亭细黑_GBK*/
+    width:14mm;
+}
+
+.title,.children{
+	width:170mm;
+	height:auto;
+	overflow:hidden;
+	float:right;
+    margin-right:20mm;
+}
+.title, .Price_title,.pricediv{
+	margin-top:5mm;
+}
+.title:first-child{
+	margin-top:0;
+}
+.title dt{
+	width:auto;
+	height:25px;
+	line-height:25px;
+	margin-right:2mm;
+	font-size:9pt;
+	font-family:"FZLanTingHei-B-GBK";/*方正兰亭粗黑_GBK*/
+	float:right;
+}
+.title dd{
+	border-bottom:2px solid;
+	border-top:1px solid #FFF;
+	border-left:1px solid #FFF;
+	border-right:1px solid #FFF;
+	line-height:0;
+	float:right;
+	width:115mm;
+	height:9px;
+}
+
+.children dt{
+	line-height:22px;
+	margin-right:2mm;
+	font-size:9pt;
+	font-family:"FZLanTingHei-L-GBK";/*方正兰亭细黑_GBK*/
+	float:right;
+	width:auto;
+	height:22px;
+}
+.children dd{
+	border-bottom:1px solid #CCC;
+	line-height:0;
+	float:right;
+    width:115mm;
+	height:10px;
+}
+.children dd >div{
+    float:right;
+	position:relative;
+	width:auto;
+	height:20px;
+}
+.children dd >div >p{
+    margin-left:5mm;
+	margin-top:2.9mm;
+	float:left;
+    position:relative;
+    width:14mm;
+    height:10px;
+}
+.children dd >div >p span {
+    position:absolute;
+    left:5.5mm;
+    top:0;
+    font-size:19px;
+    font-family: Microsoft YaHei UI;
+}
+.children dd >div >p .test {
+    position:absolute;
+    left:5.5mm;
+    top:-1.5px;
+    font-size:19px;
+    font-family: Microsoft YaHei UI;
+}
+.pricediv{
+    margin-right:20mm;
+	float:right;
+	width:170mm;
+	height:30mm;
+}
+.price_title{
+	float:right;
+	overflow:hidden;
+	width:auto;
+	height:auto;
+}
+.price_title dt{
+	width:auto;
+	height:25px;
+	line-height:25px;
+	margin-right:2mm;
+	font-size:9pt;
+	font-family:"FZLanTingHei-B-GBK";/*方正兰亭粗黑_GBK*/
+	float:right;
+}
+.price_title dd{
+	border-bottom:1px solid;
+	line-height:0;
+	float:right;
+    width:115mm;
+	height:10px;
+}
+.price_title dd >div{
+	width:115mm;
+    height:20px;
+}
+.price_title dd >div >p{
+    width:14mm;
+    height:10px;
+    margin:12.5px 0 0 5mm;
+    float:right;
+}
+.price_title dd > div > p:after {
+    content:"∣";
+    color:#CCC;
+    font-size:10px;
+    margin-left:25px;
+}
+.price{
+    float:right;
+    overflow:hidden;
+    width:auto;
+    height:auto;
+}
+.price dt{
+	line-height:22px;
+	margin-right:2mm;
+	font-size:9pt;
+	font-family:"FZLanTingHei-L-GBK";/*方正兰亭细黑_GBK*/
+	float:right;
+	width:auto;
+	height:22px;
+}
+.price >dt span{color:red;}
+.price dd{
+	width:115mm;
+	float:right;
+	font-size:11pt;
+	font-family:"Segoe UI";
+}
+.price dd div{width:auto;float:right;}
+.price dd p{
+	width:14mm;
+	float:left;
+	text-align:right;
+}
+.price dd p:nth-child(1){
+	margin:0 22px 0 0 !important;
+}
+.price dd p:nth-child(2),
+.price dd p:nth-child(3),
+.price dd p:nth-child(4),
+.price dd p:nth-child(5),
+.price dd p:nth-child(6){
+	margin:0 18px 0 0 !important;
+}
+/*-------------圆圈----------------*/
+
+.ullist li >.sexdiv[sex='男']:after {
+    content:"●";
+    color:#00A0E9;
+    font-size:19px;
+    font-family: Microsoft YaHei UI;
+    margin-left:20px;
+}
+.ullist li >.sexdiv[sex='女']:after  {
+    content:"●";
+    color:rgb(225,145,182);
+    font-size:19px;
+    font-family: Microsoft YaHei UI ;
+    margin-left:20px;
+}
+.ullist li >.sexdiv[sex='共通']:after  {
+    content:"●";
+    color:#000;
+    font-size:19px;
+    font-family: Microsoft YaHei UI ;
+    margin-left:20px;
+}
+/*----项目内容圆圈颜色-------*/
+.男 {
+    color:#00A0E9;
+}
+.女 {
+    color:#E191B6;
+}
+.disabled {
+    color:rgba(0,0,0,0.6);
+    font-size:13.5px !important;
+    margin-left:0.5mm;
+}
+
+/*----注释-----*/
+.zhushi,.zhushi_p {
+    color:rgba(0,0,0,0.8);
+    font-size:7pt;
+    font-family:"FZLanTingHei-L-GBK";/*方正兰亭细黑_GBK*/
+    position:absolute;
+    left:20mm;
+    bottom:15mm;
+}
+    .zhushi span,.zhushi_p span{
+        font-size:12px;
+        font-family: Microsoft YaHei UI ;
+}
+        .zhushi span:nth-child(1){
+        color:rgba(0,0,0,0.7);
+        }
+        .zhushi span:nth-child(4),.zhushi span:nth-child(7) {
+        color:rgba(0,0,0,1);
+        }
+        .zhushi span:nth-child(2), .zhushi span:nth-child(5) {
+        color:#00A0E9;
+        }
+        .zhushi span:nth-child(3),.zhushi span:nth-child(6) {
+        color:#E191B6;
+        }
+.zhushi_p span{color:red;}
+.zhushi + .zhushi_p{
+    bottom:11mm !important;
+    left:20mm !important;
+}
+/*--------------------意义及明细---------------------------*/
+.gist_title{
+	padding-top:20mm;
+	margin-right:20mm;
+	float:right;
+	overflow:hidden;
+	width:170mm;
+	height:65mm;
+}
+.gist_title h1{
+	display:block;
+	line-height:35px;
+	font-size:21pt;
+	font-family:"FZLanTingHei-B-GBK";/*方正兰亭粗黑_GBK*/
+	float:right;
+	text-align:right;
+	width:90%;
+}
+.gist_title h1:first-child,.gist_title h1 >span{ color:#9F9FA0;}
+.gist_title div{
+	border-top:1px solid #CCC;
+	float:right;
+	margin-top:2mm;
+	width:195px;
+}
+.gist_title div dl{
+	margin:2mm 0 0 5mm;
+	float:right;
+	width:auto;
+}
+.gist_title dl dd{
+	text-align:right;
+	font-size:28pt;
+	font-family:"Segoe WP Light";
+}
+.gist_title dl dd span{
+	color:#939598;
+	font-size:9pt;
+	font-family:"FZLanTingHei-R-GBK";/*方正兰亭黑_GBK*/
+    margin-left:2px;
+}
+.gist_title dl dt{
+	font-size:9pt;
+	font-family:"FZLanTingHei-R-GBK";/*方正兰亭黑_GBK*/
+	margin-top:-5px;
+}
+.gist_con_title,.gist_con{
+	margin-right:20mm;
+	float:right;
+	width:auto;
+	height:auto;
+}
+.gist_con_title:first-child{margin-top:20mm;}
+.gist_con_title >h2{
+	border-bottom:3px solid;
+	border-top:1px solid #fff;
+	border-left:1px solid #fff;
+	border-right:1px solid #fff;
+	font-size:14pt;
+	font-family:"FZLanTingHei-B-GBK";/*方正兰亭粗黑_GBK*/
+	line-height:22pt;
+	width:126mm;
+}
+.gist_con_title >p{
+	color:#666;
+	font-size:9pt;
+	font-family:"FZLanTingHei-L-GBK";/*方正兰亭细黑_GBK*/
+	float:left;
+	line-height:6mm;
+	height:6mm;
+}
+.gist_con_title >p:nth-child(2) { 
+	width:41mm;
+	margin-right:4.7mm;
+}
+.gist_con_title >p:nth-child(3) {
+	width:38.5mm;
+	margin-right:4mm;
+}
+.gist_con_title >p:nth-child(4) { 
+	width:38.5mm;
+}
+.gist_con >dt{
+	font-size:9pt;
+	font-family:"FZLanTingHei-B-GBK";/*方正兰亭粗黑_GBK*/
+	float:right;
+        text-align:right;
+	margin:8px 10px 0 0;
+	width:auto;
+}
+.gist_con > dt p{
+    font-size:9pt;
+    font-family:'Segoe UI';
+    text-align:right;
+    margin-top:2px;
+}
+.gist_con > dt p span {
+    font-size:9pt;
+    font-family:"FZLanTingHei-L-GBK";/*方正兰亭细黑_GBK*/
+    margin-left:2px;
+}
+.gist_con >dt >span{
+	display:block;
+	margin-top:3px;
+	text-align:right;
+}
+.gist_con >dd{
+	border-top:1px solid;
+	float:right;
+	margin-bottom:5mm;
+	width:126mm;
+}
+.gist_con >dd >div{
+	font-size:10pt;
+	font-family:"FZKai-Z03S";/*方正楷体简体*/
+	float:left;
+	line-height:14pt;
+	margin:5px 4mm 0 0;
+        text-align:justify;
+        text-justify:inter-ideograph;
+	width:41mm;
+}
+.gist_con >dd >ul{
+	font-size:9pt;
+	font-family:"FZLanTingHei-L-GBK";/*方正兰亭细黑_GBK*/
+	float:right;
+	height: auto;
+	margin-top:5px;
+	width:81mm;
+}
+.gist_con >dd >ul li{
+	line-height:14pt;
+	width:38mm;
+	float:left;
+	margin-right:4mm;
+}
+ .gist_con >dd >ul li:nth-child(even) {
+    margin-right:0;
+}
+
+
+/*------------附件二 检前须知 特别提醒-------------------*/
+.agreement_xuzhi,.agreement_tixing {
+    font-size:9pt;
+    font-family:"FZLanTingHei-L-GBK";
+    float:left;
+    line-height:16pt;
+    margin-left:105mm;
+    margin-bottom:20mm;
+    position:relative;
+    width:85mm;
+}
+ .agreement_xuzhi {
+    padding-top:38mm;
+    padding-bottom:-38mm;
+}
+ .agreement_xuzhi >li,.agreement_tixing >li {
+     text-indent:-6mm;
+     text-align:justify;
+     text-justify:inter-ideograph;
+}
+.agreement_xuzhi >li:before,.agreement_tixing >li:before {
+    content:"—";
+    font-size:8pt;
+    font-family:"FZLanTingHei-B-GBK";
+    font-weight:bold;
+    margin-right:10px;
+    height:50px;
+}
+.agreement_xuzhi >li >span,.agreement_tixing >li >span {
+    font-size:10pt;
+    font-family:"Segoe WP";
+}
+
+.agreement_zhuwen {
+    font-size:9pt;
+    font-family:"FZLanTingHei-L-GBK";
+    line-height:16pt;
+    position:absolute;
+    right:20mm;
+    bottom:26mm;
+    width:140mm;
+}
+
+/*----------地图  地址----------------------------*/
+
+.page:last-of-type{
+    padding-top:20mm;
+    height:251.5mm;
+}
+
+/*--------地图--------------*/
+.agreement_map{
+    font-size:11pt;
+    font-family: "FZLanTingHei-R-GBK";/*方正兰亭黑_GBK*/
+    margin:0 0 20mm 20mm;
+    position:relative;
+    width:168mm;
+    height:142mm;
+}
+.agreement_map p{
+    font-family:"FZLanTingHei-L-GBK";
+    position:absolute;
+}
+.agreement_map p span{
+    color:#686667;
+    display:block;
+    font-size:8pt;
+}
+    .agreement_map p:first-of-type{
+        right:8mm;
+        top:0;
+        width:8mm;
+        height:20mm;
+    }
+        .agreement_map p:first-of-type span {
+            font-size:11pt;
+            font-family: "FZLanTingHei-R-GBK";/*方正兰亭黑_GBK*/
+            margin:0 auto;
+            text-align: center;
+        }
+        .agreement_map p:first-of-type svg {
+            margin-top:10px;
+            width:8mm;
+            height:9mm;
+        }
+    .agreement_map p:nth-of-type(2){
+        left:16mm;
+        top:36mm;
+        width:16mm;
+    }
+    .agreement_map p:nth-of-type(3){
+        left:62mm;
+        top:50mm;
+        width:12mm;
+    }
+    .agreement_map p:nth-of-type(4){
+        bottom:55mm;
+        left:70mm;
+        text-align: right;
+        width:16mm;
+    }
+    .agreement_map p:nth-of-type(5){
+        left:93mm;
+        top:67mm;
+        width:20mm;
+    } 
+    .agreement_map p:nth-of-type(6){
+        right:22mm;
+        top:37mm;
+    }    
+    .agreement_map p:nth-of-type(7){
+        bottom:31mm;
+        right:37mm;
+    }
+        .agreement_map p:nth-of-type(7) span,
+        .agreement_map p:nth-of-type(6) span{
+            float:left;
+            margin-right:1.5mm;
+        }
+    .agreement_map p:nth-of-type(8){
+        bottom:10mm;
+        right:82mm;
+	text-align:right;
+        width:25mm;
+    }
+        .agreement_map p:nth-of-type(8) span{
+            display:block;
+            float:right;
+        }
+    .agreement_map p:nth-of-type(9),
+    .agreement_map p:nth-of-type(10),
+    .agreement_map p:nth-of-type(11){
+        width:5mm;
+        font-family: "FZLanTingHei-R-GBK";
+    }
+    .agreement_map p:nth-of-type(12),
+    .agreement_map p:nth-of-type(13){
+        width:auto;
+        font-family: "FZLanTingHei-R-GBK";
+     }
+    .agreement_map p:nth-of-type(9){
+        left:30mm;
+        top:73mm;
+    }
+    .agreement_map p:nth-of-type(10){
+        left:54mm;
+        top:73mm;
+    }
+    .agreement_map p:nth-of-type(11){
+        left:84mm;
+        top:40mm;
+    }
+    .agreement_map p:nth-of-type(12){
+        bottom:21mm;
+        right:37mm;
+    }
+    .agreement_map p:nth-of-type(13){
+        bottom:0;
+        right:37mm;
+    }
+    .agreement_map .hswk{
+        position:absolute;
+        top:37mm;
+        left:93mm;
+        width:53mm;
+        height:21mm;
+    }
+    .agreement_map .hswk dd{
+        background:#2893A1;
+        color:#FFF;
+        font-size:50pt;
+        font-family:"Helvetica-Roman-SemiB";
+        float:left;
+        line-height:29mm;
+        text-align:center;
+        width:12mm;
+        height:21mm;
+    }
+    .agreement_map .hswk dt{
+        font-family:"FZLanTingHei-B-GBK";
+        float:left;
+        margin:1mm 0 0 2mm;
+    }
+    .agreement_map .hswk dt:first-of-type{
+        margin-top:8mm;
+    }
+
+.agreement_map div{
+    background:#686667;
+    color:#FFF;
+    font-family: "FZLanTingHei-R-GBK" !important;
+    text-align: center;
+    position:absolute;
+}
+    .agreement_map div:nth-of-type(1),
+    .agreement_map div:nth-of-type(2),
+    .agreement_map div:nth-of-type(3){
+        left:0;
+        width:168mm;
+    }
+    .agreement_map div:nth-of-type(1){
+        line-height:10mm;
+        top:25mm;
+        height:10mm;
+        z-index: 1;
+    }
+        .agreement_map div:nth-of-type(1) span:first-child{ 
+            margin:0 3.5mm 0 0.5mm;
+        }
+        .agreement_map div:nth-of-type(1) span:nth-child(2){ 
+            margin:0 34mm 0 0;
+        }
+        .agreement_map div:nth-of-type(1) span:nth-child(4){ 
+            font-family:"FZLanTingHei-B-GBK";/*方正兰亭粗黑_GBK*/
+            margin:0 18mm 0 20mm;
+        }
+
+    .agreement_map div:nth-of-type(2){
+        top:112mm;
+        height:3mm;
+    }
+    .agreement_map div:nth-of-type(3){
+        bottom:5mm;
+        height:3mm;
+    }
+    .agreement_map div:nth-of-type(4){
+        bottom:0;
+        left:10mm;
+        padding-top:40mm;
+        width:5mm;
+        height:82mm;/*122-40*/
+    }
+    .agreement_map div:nth-of-type(5){
+        bottom:0;
+        left:35mm;
+        width:2mm;
+        height:122mm;
+    }
+    .agreement_map div:nth-of-type(6){
+        bottom:0;
+        left:59mm;
+        width:2mm;
+        height:110mm;
+    }
+    .agreement_map div:nth-of-type(7){
+        bottom:0;
+        left:89mm;
+        width:2mm;
+        height:122mm;
+    }
+    .agreement_map div:nth-of-type(8){
+        bottom:0;
+        right:10mm;
+        padding-top:40mm;
+        width:5mm;
+        height:82mm;/*122-40*/
+    }
+
+/*--------地址--------------*/
+.agreement_maptext{
+    margin:0 0 0 20mm;
+    width:168mm;
+    height:90mm;
+}
+
+.agreement_maptext .left{
+    line-height:18pt;
+    font-size:11pt;
+    float:left;
+    width:55mm;
+}
+.agreement_maptext .left p{
+    font-family:"FZLanTingHei-B-GBK";/*方正兰亭粗黑_GBK*/
+    margin-bottom:2.5mm;
+    margin-top:-2px;
+
+}
+.agreement_maptext .left li{
+    font-family:"FZLanTingHei-l-GBK";/*方正兰亭粗黑_GBK*/
+}
+    .agreement_maptext .left li:nth-child(odd){
+        margin-bottom:2.5mm;
+    }
+    .agreement_maptext .left li:nth-child(even){
+        color:rgba(0,0,0,0.5);
+    }
+.agreement_maptext .right{
+    line-height:16pt;
+    font-size:11pt;
+    float:right;
+    width:88mm;
+}
+.agreement_maptext .right dt{
+    font-family:"FZLanTingHei-B-GBK";/*方正兰亭粗黑_GBK*/
+    float:left;    
+    width:88mm;
+    height:6mm;
+}
+    .agreement_maptext .right dt:first-child{
+        border-bottom:1px solid;
+        margin-bottom:3mm;
+    }
+    .agreement_maptext .right dt:last-of-type{
+        margin-top:3mm;
+    }
+        .agreement_maptext .right dt span{
+            display:block;
+	    float:left;
+	    margin-right:3mm;
+            height:5mm;
+        }
+            .agreement_maptext .right dt span svg{
+                width:5mm;
+                height:5mm;
+            }
+.agreement_maptext .right dd{
+    line-height:18pt;
+    font-family:"FZLanTingHei-L-GBK";/*方正兰亭粗黑_GBK*/
+    float:right;
+    position:relative;
+    width:80.5mm;
+    height:auto;
+}
+.agreement_maptext .right dd:before{
+    content:"—";
+    font-size:8pt;
+    font-family:"FZLanTingHei-B-GBK";
+    font-weight:bold;
+    position:absolute;
+    left:-25px;
+    height:30px;
+}
+
+.agreement_maptext .right dd p span{
+    display:block;
+    float:left;
+    margin-left:-5px;
+    white-space:nowrap;
+}
+.agreement_maptext .right dd p span:first-child,.agreement_maptext .right dd p span:nth-child(7),.agreement_maptext .right dd p span:nth-child(12) {
+    margin-left:0;
+}
+

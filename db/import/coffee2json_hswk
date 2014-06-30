@@ -1,0 +1,106 @@
+#!/usr/bin/env coffee
+coffee   = require 'coffee-script'
+fs       = require 'fs'
+mongoose = require 'mongoose'
+db       = mongoose.createConnection 'localhost', 'hswk'
+
+userSchema        = require '../../models/User'
+seqSchema         = require '../../models/Seq'
+routeSchema       = require '../../models/Route'
+departmentSchema  = require '../../models/Department'
+batchSchema       = require '../../models/Batch'
+productSchema     = require '../../models/Product'
+recordSchema      = require '../../models/Record'
+configurationSchema = require '../../models/Configuration'
+
+User = db.model 'User', userSchema
+Seq  = db.model 'Seq', seqSchema
+Route = db.model 'Route', routeSchema
+Department = db.model 'Department', departmentSchema
+Product = db.model 'Product', productSchema
+Batch = db.model 'Batch', batchSchema
+Record = db.model 'Record', recordSchema
+Configuration = db.model 'Configuration', configurationSchema
+parse_date = (obj, obj2, key2) ->
+  obj = obj or obj2
+  for key, value of obj
+    if key is "$date"
+      obj2[key2] = new Date value
+    if key is '$oid'
+      obj2[key2] = value
+    if (typeof value) is 'object'
+      parse_date value, obj, key
+    else
+      obj[key] = value
+  obj
+
+files = process.argv.slice(2)
+count = files.length
+combo_count = 0
+
+for file in files
+  content = fs.readFileSync file
+  obj     = eval(coffee.compile content.toString(), {bare: true})
+  #read_data = parse_date obj
+  read_data = obj
+  pre = file.split('/')[0]
+  if pre is 'suggestions'
+    process.exit()
+  else if pre is 'suggestion_groups'
+    process.exit()
+  else if pre is 'users'
+    user = new User read_data
+    user.save (error, user) ->
+      console.log error, read_data if error
+      process.exit() unless --count
+  else if pre is 'seqs'
+    seq = new Seq read_data
+    seq.save (error, seq) ->
+      console.log error if error
+      process.exit() unless --count
+  else if pre is 'routes'
+    route = new Route read_data
+    route.save (error, route) ->
+      console.log error if error
+      process.exit() unless --count
+  else if pre is 'departments'
+    department = new Department read_data
+    department.save (error, department) ->
+      console.log error if error
+      process.exit() unless --count
+  else if pre is 'batches'
+    batch = new Batch read_data
+    batch.save (error, batch) ->
+      console.log error if error
+      process.exit() unless --count
+  else if pre is 'depositcards'
+    depositcard = new DepositCard read_data
+    depositcard.save (error, depositcard) ->
+      console.log error if error
+      process.exit() unless --count
+  else if pre is 'products'
+    product = new Product read_data
+    # --count
+    #console.log product.name
+    if product.category is 'combo' or product.name is '定制套餐' or not product.batch
+      ++combo_count if product.category is 'combo'
+      product.order = combo_count if product.category is 'combo'
+      console.log product.order, 'product.order' if product.category is 'combo'
+      product.save (error, product) ->
+	# console.log product if product.name is '定制套餐'
+        console.log error if error
+        process.exit() unless --count
+    else
+      --count
+    
+  else if pre is 'records'
+    record = new Record read_data
+    record.save (error, record) ->
+      console.log error if error
+      process.exit() unless --count
+  else if pre is 'configurations'
+    configuration = new Configuration read_data
+    configuration.save (error, configuration) ->
+      console.log error if error
+      process.exit() unless --count
+

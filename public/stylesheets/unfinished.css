@@ -1,0 +1,254 @@
+﻿* { margin:0;padding:0;
+}
+
+/*listview列表左右滑动出现按钮样式***开始**/
+/*延期*/
+li .rightSwipeBtn {
+	border-radius:0;
+	border-right:1px solid #30A4D6;
+    border-bottom:1px solid #30A4D6;
+	border-bottom-right-radius:1em;
+	border-left:none;
+	border-top:none;
+	background:#68BEE1;
+	outline:none;
+	line-height:50px;
+	float: left;
+	font-size: 12px;
+	font-family:'Microsoft YaHei' !important;
+	text-shadow: 0 1px 30px #30A4D6;
+    margin: 0 !important;
+	padding: 0;
+	width:70px;
+	height:70px;
+		
+	z-index: 100;
+}
+/*放弃*/
+li .leftSwipeBtn {
+	border-radius:0;
+	border-left:1px solid #C91418;
+    border-bottom:1px solid #C91418;
+    border-bottom-left-radius:1em;
+	border-right:none;
+	border-top:none;
+	background:#F06C70;
+	outline:none;
+	line-height:50px;
+	float: right;
+	font-size: 12px;
+	font-family:'Microsoft YaHei' !important;
+	margin: 0 !important;
+	padding: 0;
+	text-shadow: 0 1px 30px #C91418;
+	width:70px;
+	height:70px;
+	
+	z-index: 100;
+}
+/*刷新*/
+.refresh_li{
+    background:#F0F0F0;
+    border:1px solid #FFF;
+    color:#808080;
+    cursor:pointer;
+    font-size:30px !important;
+    font-family:'Microsoft YaHei';
+    font-weight:normal;
+    text-align:center;
+    line-height:70px;
+    padding:0 !important;
+    outline:1px dashed #C2C2C2;
+    width:100%;
+    height:70px !important;
+}
+
+/*li .ui-li-has-thumb .rightSwipeBtn{
+	margin-top: 22px !important;
+}
+li .rightSwipeBtn .ui-btn-inner {
+	padding: 0.6em .9em !important;
+}
+li .rightSwipeBtn .ui-btn-corner-all {
+	border-radius: .5em;
+}
+listview列表左右滑动出现按钮样式***结束**/
+
+/*处理页面出现滚动条现象，去掉listview原有的padding属性
+#outdiv {
+  padding: 0px;
+}*/
+/*处理dom节点过多滚动卡屏*/
+.wk {
+  -webkit-transform: translate3d(0px,0px,0px);
+}
+
+#outdiv {
+    overflow: hidden;
+}
+
+/* --延期 未完成 按钮---*/
+#content_page >div:last-child {
+    border-width:0;
+    position:fixed;
+    left:-1px;
+    bottom:0;
+    overflow:hidden;
+    width:100%;
+	
+	  /* 设置阴影 */
+   -webkit-box-shadow:0 -5px 20px rgba(0, 0, 0, 0.2);
+    box-shadow:0 -5px 20px rgba(0, 0, 0, 0.2);
+}
+#tab{
+  height:45px;
+  font-size:16pt !important;
+  font-family:'Microsoft YaHei' !important;
+  text-align:center;
+}
+.tab_checked{
+  color:#FFF;
+  background:#3B3F4B;
+  border-top:1px solid #8F99B5;
+}
+.tab_init {
+  color:#333;
+  background:#FFF;
+  background-image: linear-gradient(#DBDBDB,#FFF,#FFF);
+  border-top:1px solid #FFF;
+  text-shadow:none;
+}
+#tab_a{
+  cursor: pointer;
+  width:50%;
+  height:50px;
+  line-height:55px;
+  font-size:16pt !important;
+  font-family:'Microsoft YaHei' !important;
+  font-weight:normal;
+  float:left;
+}
+#tab_b{
+  cursor: pointer;
+  width:50%;
+  height:50px;
+  line-height:55px;
+  font-size:16pt !important;
+  font-family:'Microsoft YaHei' !important;
+  font-weight:normal;
+  float:left;
+}
+
+/* --延期 未完成 按钮   end---*/
+
+.refreshword {
+  color:#000;
+  font-size:14pt;
+  font-family:'Microsoft YaHei';
+}
+li.swipeleft {
+  background-color: #7ACEF4;
+}
+
+#content_page {
+    width:100%;
+}
+
+.ui-btn-up-d {
+    border-color:#d2d4d4;
+}
+
+[role="heading"]{
+	/*background-image: linear-gradient(#6facd5,#497bae);*/
+	background: #3B3F4B;
+	border: 1px solid #1E212A;
+	text-shadow: 0 1px 0 #1E212A;
+    font-family:'Microsoft YaHei';
+    font-size:12pt;
+    font-weight:normal;
+}
+[role="heading"] span{
+    font-family:'Microsoft YaHei';
+    border:none;
+    padding: .2em .6em !important;
+
+}
+.content_li {
+    background:#F0F0F0;
+    font-family:'Microsoft YaHei';
+    font-size:12pt;
+    font-weight:normal;
+    padding:0 !important;
+    outline:1px solid #FFF;
+
+    width:100%;/*-webkit-calc( 100% - (5px + 5px)) !important;*/
+    height:auto !important;
+}
+
+    .content_li >div {
+        height:auto;
+    }
+        .content_li >div >div:nth-of-type(1) {
+          padding:.5em 0 .2em 0;
+          height:auto;
+          overflow:auto;
+        }
+        .content_li >div >div:nth-of-type(2) {
+          padding:.2em 0 .4em 11px;
+          overflow:auto;
+          height:auto;
+        }
+        .content_li >div >div:nth-of-type(3) {
+          padding:.5em 0 .4em 0;
+          height:auto;
+          overflow:auto;
+        }
+          .content_li >div >div:nth-of-type(1) >span {
+            display:block;
+            float:left;
+            margin-right:15px;
+        }
+           .content_li >div >div:nth-of-type(1) span:nth-of-type(1) {
+            margin-left:10px;
+    }
+        .content_li >div >div:nth-of-type(1) span:nth-of-type(2) {
+            min-width:80px;
+            margin-right:20px;
+    }
+        /*.content_li > div > div:nth-of-type(2) >span:first-child {
+            margin-left:5px;
+        }*/
+        .content_li >div >div:nth-of-type(3) p {
+            border-radius:5px;
+            background:rgba(255, 255, 255, 0.5);
+            border:1px solid rgba(255, 255, 255, 1);
+            
+            margin-left:5px;
+            padding:5px;
+            width:75%;
+            height:auto;
+            z-index:1;
+    }
+        .content_li >div >div:nth-of-type(3) p span {
+            display:block;
+            font-size:10pt;
+            font-family:'Microsoft YaHei';
+            float:left;
+            margin:0 15px 2px 0;
+        }
+        .content_li > div a {
+                border-radius:50px;
+                background:url( http://mobile-img.oss-cn-hangzhou.aliyuncs.com/40X40_w.png ) no-repeat center center rgba(60,173,155,0.5);
+                border: 3px solid rgba(255,255,255,0.5);/* #84C4A3 #00AD94 #44B1AC*/
+                display:block;
+                padding:30px;
+                position: absolute;
+                right: 5px;
+                top: 4%;
+                width:0;
+                height:0;
+        }
+        
+        .content_li > div a:visited {
+                -webkit-transform: rotate(170deg);
+        }

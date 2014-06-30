@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>注册</title>
+    <style>
+        p {
+            display: none;
+            color: red;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>注册</h1>
+    <form>
+        <label>邮箱：</label><input placeholder="输入邮箱地址" type="text" />
+        <br />
+        <br />
+
+        <label>用户名：</label><input placeholder="用户名" type="text" />
+        <br />
+        <br />
+        <input value="注册" type="reset" id="input_reset" />
+    </form>
+
+
+    <p id="p_alert">提示：您的注册信息已提交，我们需要对您的账户进行审核，在审核完成后将通知您！</p>
+
+    <script type="text/javascript">
+        document.getElementById('input_reset').onclick = function () {
+            document.getElementById('p_alert').className = "show";
+        }
+    </script>
+</body>
+</html>

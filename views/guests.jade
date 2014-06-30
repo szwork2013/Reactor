@@ -1,0 +1,65 @@
+html(lang='en')
+  head
+    title 打印客人信息
+    meta(http-equiv="x-UA-Compatible")(content="IE=edge")
+    style.
+      
+      body{
+        width:21cm;
+        display:block;
+        font-size:18px;
+      }
+      .row{
+        height:2.8cm;
+        width:6.7cm;
+        -float:left;
+        display:inline-block;
+        padding:5px 0 0 2mm;
+        border:1px solid rgba(0,0,0,0.2);
+        border-left:none;
+        border-top:none;
+        position:relative;
+      }
+      @media all{
+        .row{
+          page-break-before:always;
+          -background:Red;
+        }
+      }
+      .base{
+        position:absolute;
+      }
+      .base span{
+        padding-right:10px;
+      }
+      .name{
+        font-size:30px;
+        font-family:sans-serif;
+      }
+      .barcode{
+        float:right;
+        margin-top:5px;
+      }
+      .division,.staff{
+        position:absolute;
+        top:50px;
+      }
+      .staff{
+        top :80px;
+      }
+      .staff:before{
+        content:"员工编号：";
+      }
+      .staff:empty:before{
+        content:"";
+      }
+  body
+    each card in cards
+      div.row
+        div.base
+          span.name #{card.name}
+          span.sex #{card.sex}
+          span.age #{card.age}
+        span.division #{card.division}
+        span.staff #{card.staff}
+        span.barcode !{card.barcode}

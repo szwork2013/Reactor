@@ -1,0 +1,28 @@
+#!/usr/bin/env coffee
+
+coffee   = require 'coffee-script'
+fs       = require 'fs'
+_        = require 'underscore'
+mongoose = require 'mongoose'
+db       = mongoose.createConnection 'localhost', 'hswk'
+{string_to_suggestionGroup} = require '../../utils/util.coffee'
+
+departmentSchema      = require '../../models/Department'
+suggestionGroupSchema = require '../../models/SuggestionGroup'
+
+Department = db.model 'Department', departmentSchema
+SuggestionGroup  = db.model 'SuggestionGroup', suggestionGroupSchema
+
+files = process.argv.slice(2)
+files = files.filter (f) -> f.trim() isnt 'suggestions/README.md'
+count = files.length
+
+for file in files
+  do (file) ->
+    content = fs.readFileSync file
+    content = content.toString()
+    suggestionGroup = string_to_suggestionGroup(content)
+    suggGroup = new SuggestionGroup(suggestionGroup)
+    suggGroup.save (error, sugg) ->
+      console.log error if error
+      process.exit() unless --count

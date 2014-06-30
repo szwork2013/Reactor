@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+./dump
+cd import
+mongo drop_hswk_routes.js
+mongo drop_test_routes.js
+cd ../samples_data
+echo -e "Importing Collection: routes...\c"
+../import/coffee2json_hswk routes/*.coffee
+../import/coffee2json_test routes/*.coffee
+echo "Done"

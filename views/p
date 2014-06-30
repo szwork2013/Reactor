@@ -1,0 +1,1195 @@
+﻿!!! 5
+html.waijian.junquyixie(lang='en')
+  head
+    title #{profile.name}-#{profile.sex}-#{profile.age}
+    style.
+      /*军区医协 start*/
+      .junquyixie_abc,
+      .junquyixie_letter1{
+        display:none;
+      }
+      .junquyixie .abc,
+      .junquyixie .letter1{
+         display:none;
+      }
+      .junquyixie .junquyixie_abc.abc,
+      .junquyixie .junquyixie_letter1.letter1{
+         display:block;
+      }
+      /*军区医协 end*/
+      /*外检控制*/
+      .waijian .h1,
+      .waijian .clinic_doctors_and_quit_departments,
+      .waijian .last_page{
+        display:none;
+      }
+      .waijian .check_date_container{
+        visibility: hidden;
+      }
+      .waijian_h1{
+        display:none;
+      }
+      .waijian .waijian_h1{
+        display:block;
+        width:400px;
+      }
+      html:not(.waijian) .h1{
+        display:block;
+      }
+      html:not(.waijian) .waijian_h1{
+        display:none;
+      }
+      .waijian_h1 span{
+        font-size:18px;
+        display:inline-block;
+        min-width:30px;
+      }
+      .waijian_h1 span:first-child{
+        font-size:40px;
+        margin-right:15px;
+      }
+      .waijian .check_date_container{}
+
+      /*外检结束*/
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      /*暂时隐藏放射科报告、超声报告*/
+      /*.ultrasound_images{
+         display:none;
+      }*/
+      /*.x_ray_report{
+        display:none;
+      }*/
+      .ultrasound_images{
+        clear: both;
+        font-size: 9pt;
+        padding-top: 36mm;
+        position: relative;
+        page-break-after: always;
+        width: 175mm;
+      }
+      .ultrasound_images >h1 {
+        font-size: 14pt;
+        font-family: '方正兰亭粗黑_GBK','FZLTCHK--GBK1-0';
+        line-height: 8mm;
+        position: absolute;
+        left: 20mm;
+        top:40.2mm; 
+        width: 35mm;
+      }
+      .ultrasound_images .shadow{
+        margin-left: 55mm;
+        width: 110mm;
+        overflow:hidden;
+      }
+      .ultrasound_images .shadow .title_dl{
+        color: rgba(0,0,0,0.6);
+        font-family: '方正兰亭细黑_GBK','FZLTXHK';
+        float: left;
+        line-height:9pt;
+        margin-bottom:1mm;
+        overflow: hidden;
+        width: 110mm;
+      }
+      .ultrasound_images .shadow .title_dl dt{
+        float: left;
+        line-height: 9pt;
+        margin-bottom:-0.5mm;
+      }
+      .ultrasound_images .shadow .title_dl >div{
+        float: left;
+        font:0;
+        height:5px;
+        line-height: 0;
+        margin-top:3px;
+      }
+      .ultrasound_images .shadow >ul{
+        width:110mm;
+        height:210mm;
+        float: left;
+        margin-top:-0.2mm;
+        -moz-column-count:2;
+        -moz-column-gap:1mm;
+        -moz-column-width: 53mm;
+        -moz-column-fill: auto;
+        column-count:2;
+        column-gap:1mm;
+        column-width: 53mm;
+        column-fill: auto;
+      }
+      .ultrasound_images .shadow >ul >li{
+        break-inside:avoid-column;
+        width:54mm;
+        height:40.5mm;
+        margin-bottom:1mm;
+        float: left;
+        outlien:1px solid #ccc;
+      }
+      .ultrasound_images .shadow >ul >li img{
+        border:none;
+        width:53mm;
+        height:40.5mm;
+      }
+      .x_ray_report{
+        clear:both;
+        font-size:9pt;
+        line-height:5.5mm;
+        padding-top:35mm;
+        position:relative;
+        page-break-after:always;       
+        width:175mm;
+      }
+      .x_ray_report  >h1 {
+        font-size: 14pt;
+        font-family: '方正兰亭粗黑_GBK','FZLTCHK--GBK1-0';
+        line-height: 8mm;
+        position: absolute;
+        left: 20mm;
+        top: 39mm;
+        width: 35mm;
+      }    
+      .x_ray_report ul{
+        position: absolute;
+        left: 20mm;
+        top: 45mm;
+        margin:5mm 0 0 0;
+        width: 32mm;
+        height:auto;
+      }
+      .x_ray_report ul li{
+        font-family: '方正兰亭细黑_GBK','FZLTXHK';
+        font-size: 9pt;
+        margin: 0;
+      }
+      .x_ray_report ul li:first-child{
+        color:rgba(0,0,0,0.6)
+      }
+      .x_ray_report ul li:last-child{
+        color:rgba(0,0,0,1)
+      }
+      .x_ray_report .report{
+        margin-left:55mm;
+        width:110mm;
+        overflow:hidden;
+      }
+      .x_ray_report .report .title_dl{
+        color:rgba(0,0,0,0.6);
+        font-family:"方正兰亭黑_GBK";
+        font-size:9pt;
+        float:left;
+        line-height:9pt;
+        margin-bottom:0.5mm;
+        overflow:hidden;
+        width:110mm;
+      }
+      .x_ray_report .report .title_dl dt{
+        float: left;
+        line-height: 9pt;
+        margin-bottom:-0.5mm;
+      }
+      .x_ray_report .report .title_dl >div{
+        float: left;
+        font:0;
+        height:5px;
+        line-height: 0;
+        margin-top:3px;
+      }
+      .x_ray_report .report .ps_dl{
+        float:left;
+        width:110mm;
+        overflow:hidden;
+      }
+      .x_ray_report .report .ps_dl >div{
+        float: left;
+        font:0;
+        height:5px;
+        line-height: 0;
+        margin-top:0;
+        margin-bottom:3px;
+      }
+      .x_ray_report .report .ps_dl .imgdd{
+        width:458px;
+        height:495px;
+        overflow:hidden;
+        position:relative;
+        top:-20px;
+      }
+      .x_ray_report .report .ps_dl .imgdd >img{
+        position:absolute;
+        left:-126px;
+        bottom:0;
+      }
+      .x_ray_report .report .con_dl{
+        color:rgba(0,0,0,1);
+        font-family:"方正兰亭黑_GBK";
+        font-size:9pt;
+        margin-top:2px;
+        width:110mm;
+        height:auto;
+        overflow:hidden;
+      }
+      .x_ray_report .report .con_dl >div{
+        float: left;
+        font:0;
+        height:5px;
+        line-height: 0;
+        margin-top:15px;
+      }
+      .x_ray_report .report .con_dl >dt{
+        float:left;
+        width:100px;
+        height:auto;
+      }
+       .x_ray_report .report .con_dl >dd{
+        float:right;
+        width:300px;
+        height:auto;
+      } 
+      .x_ray_report .report .ps_dl .bgimg{
+        width:458px;
+        height:495;
+        margin:0.5mm auto 0 auto;
+      }
+      body {
+        width:100%;
+      }
+      h1, h2, h3, h4 {
+        font-weight:normal;
+      }
+      ul li {
+        list-style-type:none;
+      }
+      .cover {
+        clear:both;
+        font-size: 9pt;
+        height: 239mm;
+        padding-top: 19mm;
+        page-break-after: always;
+        width: 175mm;
+      }
+      .cover_left {
+        float: left;
+        margin-left: 17mm;
+        padding-top:15mm;
+        text-align: left;
+        width: 35mm;
+      }
+      .check_date_container {
+        font-size: 9pt;
+        font-family: '方正小标宋简体','FZXBSJW--GB1-0';
+        line-height: 5mm;
+      }
+      .join {
+        font-family: '方正小标宋简体','FZXBSJW--GB1-0';
+        font-size: 9pt;
+        line-height: 5mm;
+        margin-top: 131.5mm; /*128.9mm*/
+        text-align: left;
+      }
+      .join .title {
+        color:rgba(0,0,0,0.65);
+        font-size: 9pt;
+        font-family: '方正小标宋简体','FZXBSJW--GB1-0';
+        line-height:5mm;
+        letter-spacing:-0.5px;
+        margin-bottom:8.9mm;/*11.8mm*/
+        text-align:justify;
+        width:27mm;
+      }
+      .join .font {
+        font-family: 'Arno Pro';
+        font-size:14pt;
+      }
+      .join .title span{
+        color:black;
+      }
+      .erweima {
+        font-family: '方正小标宋简体','FZXBSJW--GB1-0';
+        font-size:9pt;
+        margin-top: 7mm;
+      }
+      .code {
+        -background: black;
+        float: left;
+        height: 25mm;
+        margin-top: 1.9mm;
+        width: 25mm;
+      }
+      .cover_right {
+        float: right;
+        font-family: '方正小标宋简体','FZXBSJW--GB1-0';
+        font-size: 14pt;
+        margin-right: 15mm;
+        width: 101mm;
+      }
+      .cover .blank {
+        background: none;
+        border:0px solid #fff;
+        height: 140mm;
+        margin-bottom: 14mm;/*8mm*/
+        width:93.5mm;
+      }
+      .cover .content {
+        height: 100mm;
+        margin-left:-4mm;
+      }
+      .cover .content .h2div{
+        margin-top:5mm;
+        height:12mm;
+        width:auto;
+      }
+      .cover .content .h2div .h2 {
+        color:black;
+        font-size: 14pt;
+        line-height:16pt; /*18pt;*/
+        font-family: '方正小标宋简体','FZXBSJW--GB1-0';
+        margin-bottom:0;
+      }
+      .cover .content .h2div[type='个检'] .h2:first-child{
+        margin-top:4.5mm;
+      }
+      .cover .content > div {
+        font-size:0;
+        line-height:0;
+        margin-top:0.5mm;
+        overflow:hidden;
+        width:90mm;
+      }
+      .cover .content .h1{
+        color:black;
+        font-size: 30pt;
+        font-family: '方正大标宋简体','FZDBSJW--GB1-0';
+        margin:4.5mm 0 11mm 0;/*6mm 0 13mm 0*/
+        width:13cm;
+      }
+      .cover .content p{
+        color:rgba(0,0,0,0.6);
+        line-height: 7mm;
+      }
+      .cover .content .let{
+        letter-spacing: -0.2mm;
+        width:96mm;
+      }
+      .abc {
+        -text-align:justify;
+        width:100mm;
+        font-family:'方正大标宋简体','FZDBSJW--GB1-0';
+      }
+      .abc_b {
+        font-size:30pt;
+        display:block;
+        line-height:42pt;
+      }
+      .abc_span_tel{
+        font-size:12px;
+        margin-right:5.5px;
+      }
+      .abc_tel {
+        margin-right:-1mm; /* -3px */
+      }
+      .cover .content p span{
+        color: black;
+        display:inline-block;
+        white-space:nowrap;
+        font-weight:lighter;
+      }
+      .cover .content .h3{
+        color: black;
+        font-size: 30pt;
+        font-family: '方正大标宋简体','FZDBSJW--GB1-0';
+        margin: 4mm 0;
+      }
+      .summary_container {
+        clear:both;
+        font-size: 9pt;
+        line-height: 5.8mm;
+        position: relative;
+        padding-top: 35mm;
+        page-break-after: always;
+        vertical-align: top;
+        width: 175mm;
+      }
+      .summary_container ul {
+        height: 40mm;
+        position: absolute;
+        left: 20mm;
+        top: 40.6mm;
+        text-align: left;
+        width: 36mm;
+      }
+      .summary_container ul h1 {
+        font-size: 14pt;
+        font-family: '方正兰亭粗黑_GBK','FZLTCHK--GBK1-0';
+        line-height: 6mm;
+      }
+      .summary_container ul h1 span{
+        display:block;
+      }
+      .summary_container ul li {
+        font-size: 9pt;
+        font-family: '方正兰亭细黑_GBK','FZLTXHK';
+        margin-top: 8mm;
+      }
+      .summary_container ul .sign {
+        height: 4mm;
+        width: 35mm;
+        overflow:hidden;
+      }
+      .summaries {
+        margin:0 10mm 0 65mm;
+        overflow:hidden;
+      }
+      .all_normal{
+        font-size:12px;
+        font-family: '方正兰亭黑_GBK','FZLTHK--GBK1-0';
+        margin:20px 0 0 10px
+      }
+      .summary_title {
+        color: rgba(0,0,0,0.6);
+        font-family: '方正兰亭细黑_GBK','FZLTXHK';
+        line-height:9pt;
+        width:100mm;
+      }
+      .summary_title > div {
+        float:left;
+        height:5px;
+        line-height:0;
+        margin-top:0.5mm;
+      }
+      .conclusion_title {
+        float:left;
+        line-height:9pt;
+        margin-right: 3mm;
+        width: 32mm;
+      }
+      .suggestion_title {
+        line-height:9pt;
+        width: 65mm;
+      }
+      .summary {
+        float:left;
+        line-height:5mm;
+        margin-top:2mm;
+        vertical-align: top;
+        width:100mm;
+      }
+      .summary > div{
+        float:left;
+        height:5px;
+        line-height:0px;
+        margin-top:1mm;
+      }
+      .summary dt {
+        font-family: '方正兰亭黑_GBK','FZLTHK--GBK1-0';
+        float:left;
+        margin-right: 3mm;
+        width: 32mm;
+      }
+      .summary dt span{
+        display:block;
+        line-height:15pt;
+      }
+      .summary dt .more{
+        display:inline-block;
+      }
+      .summary dd {
+        font-family: '方正兰亭细黑_GBK','FZLTXHK';
+        float:right;
+        letter-spacing:-0.1mm;
+        text-justify:inter-ideograph;
+        text-align:justify;
+        width: 65mm;
+      }
+      .clinic_container {
+        clear: both;
+        font-size: 9pt;
+        line-height: 5.5mm;
+        padding-top: 36mm;
+        position: relative;
+        page-break-after: always;
+        width: 175mm;
+      }
+      .clinic_container h1 {
+        font-size: 14pt;
+        font-family: '方正兰亭粗黑_GBK','FZLTCHK--GBK1-0';
+        position: absolute;
+        left: 20mm;
+        top: 24mm;
+        width: 40mm;
+      }
+      .clinic_container h2{
+         display:none;
+      }
+      /*.clinic_container h2{
+        font-size:14pt;
+        font-family:方正小标宋简体;
+        float:left;
+        width:auto;
+      }*/
+      .clinic_doctors_and_quit_departments {
+        font-size: 6pt;
+        font-family: '方正兰亭细黑_GBK','FZLTXHK';
+        position: absolute;
+        left:20mm;
+        top: 43.1mm;
+        width: 40mm;
+      }
+      .clinic_doctors_and_quit_departments dl {
+        margin:1mm 0 2mm 0;
+        }
+      .clinic_doctors_and_quit_departments h2 {
+        color: rgba(0,0,0,0.6);
+        font-family: '方正兰亭细黑_GBK','FZLTXHK';
+        font-size: 6pt;
+        line-height: 3mm;
+        margin-top: 0;
+      }
+      .clinic_doctors_and_quit_departments dt {
+        color: rgba(0,0,0,0.6);
+        height:2.8mm;
+      }
+      .clinic_doctors_and_quit_departments dd {
+        height:2.8mm;
+      }
+      .clinic_doctors_and_quit_departments div{
+        
+      }
+      .clinic_doctors_and_quit_departments div span{
+        display:block;
+      }
+      .clinic_doctors_and_quit_departments div span:first-child{
+        color: rgba(0,0,0,0.6);
+      }
+      .quit_departments {
+        margin-top: 11mm;
+        line-height: 3mm;
+      }
+      .quit_departments p{
+        color: rgba(0,0,0,0.6);
+        height:10px;
+        line-height:6pt;
+        width:15mm;
+      }
+      .quit_departments .string{
+        height:5px;
+        line-height:0px;
+        overflow:hidden;
+        width:4mm;
+      }
+      .quit_departments li{
+        
+      }
+      /*.clinic_items{
+        display:none; 
+      }*/
+      .clinic_items {
+        float: left;
+        margin:0 6mm 0 3mm;
+        overflow:hidden;
+        vertical-align: top;
+        width: 61mm;
+      }
+      .clinic_items.clinic_left{
+        margin-left: 34.5mm; /*38mm*/
+      }
+      .clinic_item_title {
+        color: rgba(0,0,0,0.6);
+        font-family: '方正兰亭细黑_GBK','FZLTXHK';
+        float:left;
+        line-height:9pt;
+        margin-bottom:-2mm;
+        width: 59mm;
+      }
+      .clinic_item_title dt {
+        display: inline-block;
+        float:left;
+        min-height:2mm;
+        width: 15mm;
+      }
+      .clinic_item_title dd {
+        float:left;
+        width: 22mm;
+      }
+      .clinic_item_title .clinic_item_value_title , .clinic_item_title .value_title{
+        float:right;
+        width:auto;
+        margin-right:-7px;
+      }
+      /*.clinic_item_title .value_title {
+        float:left;
+        text-align:right;
+        width: 22mm;
+      }*/
+      .clinic_item {
+        float:left;
+        line-height:16pt;
+        margin:0;
+        padding-top: 0;
+        /*width: 61mm;*/
+        width:100%;
+      }
+      .clinic_item > .title_div {
+        font-size:0;
+        height:1px;
+        line-height: 0px;
+        margin:0.5mm 0 2mm 0;
+        padding:0;
+        width:102mm;
+      }
+      .clinic_item > div {
+        height:3px;
+        line-height: 0px;
+        margin-bottom: 3.1mm;
+        padding-top:2mm;
+        width:102mm;
+      }
+      .clinic_item dt {
+        font-family: '方正兰亭粗黑_GBK','FZLTCHK--GBK1-0';
+        float: left;
+        min-height: 2mm;
+        width: 15mm;
+      }
+      .clinic_item dd {
+        font-family: '方正兰亭黑_GBK','FZLTHK--GBK1-0';
+        float: left;
+        width: auto;
+        white-space:nowrap;
+      }
+      .clinic_item .value {
+        color: rgba(0,0,0,0.6);
+        font-family: '方正兰亭细黑_GBK','FZLTXHK';
+        float:none;
+        /*margin-right:1mm;*/
+        text-align: right;
+        overflow:hidden;
+        width: auto;
+        white-space: normal;
+        padding-left:1mm;
+      }
+      .clinic_item .value > span:after{
+        content:"，";
+      }
+      .clinic_item .value > span:last-child:after{
+        content:"";
+      }
+       /*.clinic_item .value span[class='more']:after{
+        content:"";
+      }*/
+      .clinic_item .value .more{
+         display:inline-block;
+         white-space:nowrap;
+      }
+      .clinic_item[department='undefined'] {
+        background: none;
+        margin-top: 0mm;
+      }
+      .clinic_item[normal='false'] .red,.clinic_item[normal='false'] .value{
+        color:#FF3333;
+      }
+      .laboratory_container {
+        clear: both;
+        font-size: 9pt;
+        padding-top: 36mm;
+        position: relative;
+        page-break-after: always;
+        width: 175mm;
+      }
+      .laboratory_container > h1 {
+        font-size: 14pt;
+        font-family: '方正兰亭粗黑_GBK','FZLTCHK--GBK1-0';
+        line-height: 8mm;
+        position: absolute;
+        left: 20mm;
+        top: 40mm;
+        width: 35mm;
+      }
+      .lab_doctors_and_quit_departments {
+        position: absolute;
+        left: 20mm;
+        top: 56mm;
+      }
+      /*.lab_doctors_and_quit_departments > h2{
+        color: rgba(0,0,0,0.6);
+        font-family: '方正兰亭细黑_GBK','FZLTXHK';
+        font-size: 6pt;
+        line-height: 3mm; 
+        margin: 3mm 0;
+      }
+      .lab_doctors_and_quit_departments > dl{
+        line-height: 3mm;
+        margin-top: 3mm;
+        overflow:hidden;
+      }
+      .lab_doctors_and_quit_departments > dl > dt{
+        color: rgba(0,0,0,0.6);
+      }
+      .lab_doctors_and_quit_departments > ul{
+        line-height: 4mm;
+        margin-top: 11mm;
+      }*/
+      .lab_doctors_and_quit_departments > ul > li{
+        color: black;
+      }
+      .lab_items {
+        margin-left: 55mm;
+        width: 110mm;
+      }
+      .lab_items .title_dl{
+        color: rgba(0,0,0,0.6);
+        font-family: '方正兰亭细黑_GBK','FZLTXHK';
+        float: left;
+        line-height:9pt;
+        margin-bottom:-3mm;
+        overflow: hidden;
+        width: 110mm;
+      }
+      .lab_items .title_dl dt{
+        float: left;
+        min-height: 2mm;
+        width: 20mm;
+      }
+      .lab_items .title_dl dd{
+        float: left;
+        width: 38mm;
+      }
+      .lab_items .title_dl .lab_item_value_title {
+        float: left;
+        margin-right: 6mm;
+        text-align: right;
+        width: 14mm;
+      }
+      .lab_items .title_dl .lab_item_rrs_title { 
+        float: left;
+        width: 18mm;
+      }
+      .lab_items .title_dl .lab_item_unit_title {
+        float: right;
+        text-align: right;
+        width: 14mm;
+      }
+      .lab_item[department='undefined'] {
+        background: none;
+        margin-top: 0mm;
+      }
+      .lab_item[normal='false'] .red ,.lab_item[normal='false'] .lab_item_value {
+        color:#FF3333;
+      }
+      .lab_item .arrow{
+        width:6mm;
+        height:2mm;
+        margin-top:4px;
+      }
+      .lab_item .up:after{
+        content:"↑";
+        color:red;
+        font-size:8pt;
+        font-family:'Meiryo';
+      }
+      .lab_item .down:after{
+        content:"↓";
+        color:red;
+        font-size:8pt;
+        font-family:'Meiryo';
+      }
+      .lab_item {
+        font-family: '方正兰亭细黑_GBK','FZLTXHK';
+        float: left;
+        line-height: 11pt;
+        width: 110mm;
+      }
+      .lab_item > div{
+        height:5px;
+        line-height:0px;
+        margin:3mm 0 1.4mm 0;
+        overflow:hidden;
+        width: 110mm;
+      }
+      .lab_item > dt{
+        color:black;
+        font-family: '方正兰亭粗黑_GBK','FZLTCHK--GBK1-0';
+        float:left;
+        margin-top:1mm;
+        min-height:2mm;
+        width: 20mm;
+      }
+      .lab_item > dd{
+        color:black;
+        font-family: '方正兰亭黑_GBK','FZLTHK--GBK1-0';
+        float:left;
+        margin-bottom: 1mm;
+        margin-top:1mm;
+        white-space:nowrap;
+        width: 32mm;
+      }
+      .lab_item .lab_item_value{
+        /*font-family: 'Segoe UI','方正兰亭黑_GBK','FZLTHK--GBK1-0';*/
+        font-family:'方正兰亭细黑_GBK','FZLTXHK';
+        float:left;
+        margin-top:1.1mm;
+        margin-right:0;
+        text-align: right;
+        width: 20mm;
+        white-space:normal;
+      }
+      .lab_item .lab_item_rrs{
+        color: rgba(0,0,0,0.6);
+        /*font-family: 'Segoe UI';*/
+        font-family:'方正兰亭细黑_GBK','FZLTXHK';
+        float:left;
+        width: 18mm;
+        margin-top:1.1mm;
+      }
+      .lab_item .lab_item_unit{
+        color: rgba(0,0,0,0.6);
+        /*font-family: 'Segoe UI';*/
+        font-family:'方正兰亭细黑_GBK','FZLTXHK';
+        float:right;
+        height:4mm;
+        position:relative;
+        text-align: right;
+        width: 14mm;
+      }
+      .lab_item .lab_item_unit span{
+        height:4mm;
+        position:absolute;
+        right:0;
+        top:-1.5px;
+      }
+      .lab_item .lab_item_unit span sup{
+        font-size:75%;
+      }
+      .last_page {
+        height: 246mm;
+        margin-top: 19mm;
+        position: relative;
+        width: 175mm;
+        clear: both;
+      }
+      .last_page_content {
+        height: auto;
+        position: absolute;
+        left: 97mm;
+        bottom:3cm;
+        -top: 177mm;
+        text-align: right;
+        width: 60mm;
+      }
+      .last_page_content * {
+        text-align: right;
+      }
+      .last_page_content h1 {
+        font-size: 14pt;
+        font-family: '方正兰亭粗黑_GBK','FZLTCHK--GBK1-0';
+        float:left;
+        margin-left:11.5mm;
+        width: 56mm;
+      }
+      .last_page_content .solid {
+        line-height:0;
+        font-size:0;
+        float:left;
+        margin:3mm 0 3mm 11.5mm;
+        width:56mm;
+      }
+      .last_page_content h2 {
+        font-size: 14pt;
+        font-family: '方正小标宋简体','FZXBSJW--GB1-0';
+        float:left;
+        margin:0 0 1.2mm 17mm;
+        width: 56mm;
+      }
+      .last_page_content p {
+        font-size: 9pt;
+        font-family: '方正小标宋简体','FZXBSJW--GB1-0';
+        float:left;
+        line-height:5mm;
+        text-align:rigth;
+        width: 60mm;
+      }
+       .letter1{
+        letter-spacing:0.2mm;
+        margin-left:8mm;
+      }
+       .letter2{
+        letter-spacing:-0.2mm;
+        margin-left:8mm;
+      }
+       .letter3{
+        letter-spacing:0.2mm;
+        margin-left:11.2mm;
+      }
+      .next_check_time {
+        font-family: '方正小标宋简体','FZXBSJW--GB1-0';
+        float:left;
+        margin: 18mm 0 0 17mm;
+        text-align: right;
+        width: 56mm;
+      }
+      .lbl_next_time {
+        font-family: '方正小标宋简体','FZXBSJW--GB1-0';
+        font-size: 14pt;
+        float:right;
+        margin:0 0 1.5mm 0;
+        text-align: right;
+        width: 56mm;
+      }
+      .next_time {
+        font-size: 14pt;
+        float:right;
+        margin-right:5mm;
+        width: 56mm;
+      }
+      /*页头、页尾*/
+      .page_header{
+        position:absolute;
+        top:50px;
+        right:37px;
+        width:auto;
+        height:50px;
+        -background:red;
+        text-align:right;
+        font-family:'方正兰亭细黑_GBK','FZLTXHK';
+        font-size:12px;
+        overflow:hidden;
+        padding: 0 1px 0 1px;
+      }
+      .page_header_svg{
+        position:absolute;
+        right:2px;
+        top:10px;
+      }
+      .page_number{
+        position:absolute;
+        right:37px;
+        bottom:30px;
+        height:20px;
+        width:40px;
+        font-size:12px;
+        text-align:right;
+        font-style: italic;
+        font-family:'方正兰亭细黑_GBK','FZLTXHK';
+      }
+      .summary_container .page_number:after{
+        content:"a";
+      }
+      .clinic_container .page_number:after{
+        content:"b";
+      }
+      .laboratory_container .page_number:after{
+        content:"c";
+      }
+      .last_page .page_number:after{
+        content:"d";
+      }
+      
+      .summary_container,
+      .clinic_container,
+      .laboratory_container,
+      .last_page{
+        height:240mm;
+      }
+      /*.summary_container{
+        background:red;
+      }
+      .clinic_container{
+        background:green;
+      }
+      .laboratory_container{
+        background:pink;
+      }*/
+      .last_page{
+        -background:orange;
+        margin-top:0;
+        height:276mm;
+      }
+  script.
+    header_text = "#{profile.name} #{profile.sex} #{profile.age}";
+  body
+    div.cover
+      div.cover_left
+        div.check_date_container
+          lable 健检日期
+          div.check_date #{appeared}
+        div.join
+          p.title
+            span 立即关注
+            我们的微博和微信，成为健康“微社区”的一员，我们将定期为您带来意外惊喜。
+          p 新浪微博
+          p.font @wedocare
+        div.erweima
+          div 关注我们的微信
+          div.code <?xml version="1.0" encoding="utf-8"?><!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25mm" height="25mm" viewBox="0 0 1109 1110" enable-background="new 0 0 1109 1110" xml:space="preserve"><g><path fill-rule="evenodd" clip-rule="evenodd" d="M0,0c69.668,0,139.333,0,209,0c0,70,0,139.999,0,210c-70,0-139.998,0-210,0 C-1,141-1,72-1,3C-1.086,1.581-1.164,0.168,0,0z M29,33c0,49,0,98,0,147c50,0,100,0,150,0c0-50,0-100,0-150 c-49.666,0-99.332,0-149,0C28.836,30.168,28.914,31.581,29,33z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M900,0c69.668,0,139.334,0,209,0c0,70,0,139.999,0,210c-70,0-139.998,0-210,0 c0-69,0-138,0-207C898.916,1.581,898.836,0.168,900,0z M929,33c0,49,0,98,0,147c50,0,100,0,150,0c0-50,0-100,0-150 c-49.666,0-99.332,0-149,0C928.836,30.168,928.916,31.581,929,33z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M149,60c0,30,0,60,0,90c-30,0-60,0-90,0c0.666-29.667-1.332-61.999,1-90 C89.668,60,119.334,60,149,60z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M1049,60c0,30,0,60,0,90c-30,0-59.998,0-90,0c0.666-29.667-1.332-61.999,1-90 C989.668,60,1019.334,60,1049,60z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M629,180c0,20,0,40,0,60c-10,0-20,0-30,0c0-20,0-40,0-60C609,180,619,180,629,180 z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M179,240c10,0,20,0,30,0c0,10,0,20,0,30c-10,0-20,0-30,0C179,260,179,250,179,240 z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M899,270c0,10,0,20,0,30c-20,0-40,0-60,0c0-10,0-20,0-30C859,270,879,270,899,270 z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M359,300c10,0,20,0,30,0c0,10,0,20,0,30c-10,0-20,0-30,0C359,320,359,310,359,300 z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M329,690c10,0,20,0,30,0c0,10,0,20,0,30c-10,0-20,0-30,0C329,710,329,700,329,690 z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M1019,720c10,0,20,0,30,0c0,10,0,20,0,30c-10,0-20,0-30,0 C1019,740,1019,730,1019,720z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M89,780c10,0,20,0,30,0c0,10,0,20,0,30c-10,0-20,0-30,0C89,800,89,790,89,780z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M599,840c10,0,20,0,30,0c0,10,0,20,0,30c-10,0-20,0-30,0C599,860,599,850,599,840 z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M0,900c69.668,0,139.333,0,209,0c0,70.001,0,139.999,0,210c-70,0-139.998,0-210,0 c0-69,0-138,0-207C-1.086,901.581-1.164,900.168,0,900z M29,933c0,49,0,98,0,147c50,0,100,0,150,0c0-50,0-100,0-150 c-49.666,0-99.332,0-149,0C28.836,930.168,28.914,931.581,29,933z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M569,900c10,0,20,0,30,0c0,10,0,20,0,30c-10,0-20,0-30,0C569,920,569,910,569,900 z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M899,900c10,0,20,0,30,0c0,10,0,20,0,30c-10,0-20,0-30,0C899,920,899,910,899,900 z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M149,960c0,30,0,60,0,90c-30,0-60,0-90,0c0.666-29.667-1.332-61.999,1-90 C89.668,960,119.334,960,149,960z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M1109,1080c0,10,0,20,0,30c-20,0-40,0-60,0c0-10,0-20,0-30 C1069,1080,1089,1080,1109,1080z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M299,30c0,10,0,20,0,30c-20,0-40,0-60,0c0-20,0-40,0-60c30,0,60,0,90,0 c0,10,0,20,0,30c9.668,0,19.334,0,29,0c2.328-8.007,0.339-20.328,1-30c10,0,20,0,30,0c0,10,0,20,0,30c-9.666,0-19.332,0-29,0 c-2.326,8.007-0.338,20.328-1,30c-10,0-20,0-30,0c0-10,0-20,0-30C319,30,309,30,299,30z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M599,90c0-9.667,0-19.333,0-29c-7.674-2.326-19.659-0.339-29-1 c-2.326,8.007-0.338,20.328-1,30c-10,0-20,0-30,0c0-9.667,0-19.333,0-29c-7.674-2.326-19.659-0.339-29-1 c-2.326,8.007-0.338,20.328-1,30c-10,0-20,0-30,0c0-10,0-20,0-30c10,0,20,0,30,0c0-9.667,0-19.333,0-29 c-8.006-2.326-20.328-0.338-30-1c0-10,0-20,0-30c10,0,20,0,30,0c0,9.667,0,19.333,0,29c8.008,2.326,20.328,0.338,30,1 c0,10,0,20,0,30c9.667,0,19.334,0,29,0c2.328-8.007,0.339-20.328,1-30c9.667,0,19.334,0,29,0c2.328-8.007,0.339-20.328,1-30 c10,0,20,0,30,0c0,9.667,0,19.333,0,29c8.008,2.326,20.33,0.338,30,1c0,10,0,20,0,30c10,0,20,0,30,0c0-10,0-20,0-30c20,0,40,0,60,0 c0,10,0,20,0,30c-20,0-40,0-60,0c0,19.667,0,39.333,0,59c17.67,2.332,39.666,0.335,59,1c2.328-8.007,0.339-20.328,1-30 c9.668,0,19.334,0,29,0c2.328-8.007,0.339-20.328,1-30c10,0,20,0,30,0c0-9.667,0-19.333,0-29c-8.006-2.326-20.328-0.338-30-1 c0-10,0-20,0-30c20,0,40,0,60,0c0,20,0,40,0,60c10,0,20,0,30,0c0,50,0,100,0,150c-10,0-20,0-30,0c0-10,0-20,0-30 c-9.666,0-19.332,0-29,0c-2.33,18.002-0.334,40.332-1,60c10,0,20,0,30,0c0,10,0,20,0,30c-20,0-40,0-60,0c0,10,0,20,0,30 c-10,0-20,0-30,0c0,9.667,0,19.333,0,29c8.008,2.326,20.33,0.338,30,1c0,30,0,60,0,90c10,0,20,0,30,0c0-20,0-40,0-60 c10,0,20,0,30,0c0-10,0-20,0-30c10,0,20,0,30,0c0,10,0,20,0,30c-9.666,0-19.332,0-29,0c-2.33,18.002-0.334,40.332-1,60 c-10,0-20,0-30,0c0,10,0,20,0,30c10,0,20,0,30,0c0,20,0,40,0,60c-9.666,0-19.332,0-29,0c-2.326,8.007-0.338,20.328-1,30 c-10,0-20,0-30,0c0-10,0-20,0-30c10,0,20,0,30,0c0-9.667,0-19.333,0-29c-18-2.332-40.332-0.334-60-1c0,20,0,40,0,60 c-10,0-20,0-30,0c0-10,0-20,0-30c-10,0-20,0-30,0c0-10,0-20,0-30c9.668,0,19.334,0,29,0c2.328-8.007,0.339-20.328,1-30 c9.668,0,19.334,0,29,0c2.326-7.674,0.34-19.661,1-29c-8.006-2.326-20.328-0.338-30-1c0,10,0,20,0,30c-9.666,0-19.332,0-29,0 c-2.326,8.007-0.338,20.328-1,30c-9.666,0-19.332,0-29,0c-2.326,8.007-0.338,20.328-1,30c-10,0-20,0-30,0c0,10,0,20,0,30 c-10,0-20,0-30,0c0-20,0-40,0-60c-20,0-40,0-60,0c0-9.667,0-19.333,0-29c-8.006-2.326-20.328-0.338-30-1c0-10,0-20,0-30 c10,0,20,0,30,0c0-10,0-20,0-30c19.667,0,39.334,0,59,0c2.328-8.007,0.339-20.328,1-30c10,0,20,0,30,0c0,10,0,20,0,30 c-9.666,0-19.332,0-29,0c-2.326,8.007-0.338,20.328-1,30c39.668,0,79.334,0,119,0c2.332-18.002,0.336-40.332,1-60 c-9.666,0-19.332,0-29,0c-2.326,8.007-0.338,20.328-1,30c-10,0-20,0-30,0c0-20,0-40,0-60c9.668,0,19.334,0,29,0 c2.328-8.007,0.339-20.328,1-30c9.668,0,19.334,0,29,0c2.332-18.002,0.336-40.332,1-60c-10,0-20,0-30,0c0-10,0-20,0-30 c10,0,20,0,30,0c0-10,0-20,0-30c9.668,0,19.334,0,29,0c2.328-8.007,0.339-20.328,1-30c10,0,20,0,30,0c0-10,0-20,0-30 c-9.666,0-19.332,0-29,0c-2.326,8.007-0.338,20.328-1,30c-20,0-40,0-60,0c0,20,0,40,0,60c-10,0-20,0-30,0c0-30,0-60,0-90 c-10,0-20,0-30,0c0-9.667,0-19.333,0-29c-7.674-2.326-19.66-0.339-29-1c-2.33,18.002-0.334,40.332-1,60c-9.666,0-19.333,0-29,0 c-2.332,38-0.333,80.333-1,120c-10,0-20,0-30,0c0,10,0,20,0,30c9.667,0,19.334,0,29,0c2.328-8.007,0.339-20.328,1-30 c40,0,80.002,0,120,0c0,10,0,20,0,30c-20,0-40,0-60,0c0,10,0,20,0,30c-10,0-20,0-30,0c0-9.667,0-19.333,0-29 c-7.674-2.326-19.659-0.339-29-1c-2.33,18.002-0.334,40.332-1,60c-10,0-20,0-30,0c0-9.667,0-19.333,0-29 c-8.006-2.326-20.328-0.338-30-1c0-10,0-20,0-30c-9.666,0-19.333,0-29,0c-2.33,18.002-0.334,40.332-1,60c-20,0-40,0-60,0 c0,9.667,0,19.333,0,29c18.002,2.332,40.332,0.335,60,1c0-10,0-20,0-30c10,0,20,0,30,0c0,20,0,40,0,60c-39.666,0-79.332,0-119,0 c-2.33,18.002-0.334,40.332-1,60c-10,0-20,0-30,0c0-20,0-40,0-60c9.668,0,19.334,0,29,0c2.328-8.007,0.339-20.328,1-30 c-10,0-20,0-30,0c0,10,0,20,0,30c-9.666,0-19.332,0-29,0c-2.332,28.001-0.334,60.333-1,90c10,0,20,0,30,0c0,10,0,20,0,30 c9.668,0,19.334,0,29,0c2.328-8.007,0.339-20.328,1-30c9.668,0,19.334,0,29,0c2.332-18.002,0.336-40.332,1-60c10,0,20,0,30,0 c0,20,0,40,0,60c10,0,20,0,30,0c0-10,0-20,0-30c10,0,20,0,30,0c0,20,0,40,0,60c-40,0-80,0-120,0c0,9.666,0,19.333,0,29 c8.008,2.326,20.328,0.339,30,1c0,9.667,0,19.333,0,29c8.008,2.326,20.328,0.339,30,1c0-10,0-20,0-30c10,0,20,0,30,0 c0,10,0,20,0,30c-9.666,0-19.333,0-29,0c-2.326,8.007-0.338,20.328-1,30c-20,0-40,0-60,0c0,10,0,20,0,30c-10,0-20,0-30,0 c0-30,0-60,0-90c-20,0-40,0-60,0c0,10,0,20,0,30c-10,0-20,0-30,0c0-9.667,0-19.333,0-29c-28-2.332-60.332-0.334-90-1 c0-10,0-20,0-30c20,0,40,0,60,0c0-20,0-40,0-60c10,0,20,0,30,0c0,20,0,40,0,60c9.668,0,19.334,0,29,0c2.334-48,0.334-100.333,1-150 c-39.666,0-79.332,0-119,0c-2.326,7.674-0.338,19.661-1,29c28.002,2.333,60.333,0.334,90,1c0,10,0,20,0,30c-30,0-60,0-90,0 c0,9.667,0,19.333,0,29c8.008,2.326,20.328,0.338,30,1c0,10,0,20,0,30c-10,0-20,0-30,0c0-10,0-20,0-30c-10,0-20,0-30,0 c0-10,0-20,0-30c10,0,20,0,30,0c0-9.667,0-19.333,0-29c-8.006-2.326-20.328-0.338-30-1c0-10,0-20,0-30c10,0,20,0,30,0 c0-10,0-20,0-30c9.668,0,19.334,0,29,0c2.328-8.007,0.34-20.328,1-30c9.668,0,19.334,0,29,0c2.328-8.007,0.34-20.328,1-30 c9.668,0,19.334,0,29,0c2.328-8.007,0.339-20.328,1-30c20,0,40,0,60,0c0,10,0,20,0,30c-19.666,0-39.332,0-59,0 c-2.33,18.002-0.334,40.332-1,60c9.668,0,19.334,0,29,0c2.328-8.007,0.339-20.328,1-30c10,0,20,0,30,0c0,20,0,40,0,60 c10,0,20,0,30,0c0-10,0-20,0-30c19.668,0,39.334,0,59,0c2.328-8.007,0.339-20.328,1-30c9.668,0,19.334,0,29,0 c2.332-18.002,0.336-40.332,1-60c9.667,0,19.334,0,29,0c2.328-8.007,0.339-20.328,1-30c-9.666,0-19.333,0-29,0 c-2.326,8.007-0.338,20.328-1,30c-30,0-60,0-90,0c0-9.667,0-19.333,0-29c-18.002-2.332-40.332-0.335-60-1c0-20,0-40,0-60 c10,0,20,0,30,0c0,10,0,20,0,30c10,0,20,0,30,0c0-10,0-20,0-30c9.668,0,19.334,0,29,0c2.326-7.674,0.341-19.661,1-29 c-27.667-2.333-59.666-0.334-89-1c-2.326,8.007-0.338,20.328-1,30c-10,0-20,0-30,0c0,10,0,20,0,30c-10,0-20,0-30,0c0-40,0-80,0-120 c10,0,20,0,30,0c0,9.667,0,19.333,0,29c27.668,2.333,59.666,0.334,89,1c2.328-8.007,0.339-20.328,1-30c20,0,40,0,60,0 c0-10,0-20,0-30c10,0,20,0,30,0c0,20,0,40,0,60c-9.666,0-19.332,0-29,0c-2.326,7.674-0.338,19.661-1,29 c18.002,2.332,40.332,0.334,60,1c0-10,0-20,0-30c20,0,40,0,60,0c0,9.667,0,19.333,0,29c8.008,2.326,20.33,0.338,30,1 c0-20,0-40,0-60C579,90,589,90,599,90z M479,180c-10,0-20,0-30,0c-0.661,9.672,1.328,21.993-1,30c-9.666,0-19.332,0-29,0 c0-10,0-20,0-30c-10,0-20,0-30,0c0,20,0,40,0,60c20,0,40,0,60,0c0-10,0-20,0-30c10,0,20,0,30,0c0.662-9.672-1.326-21.993,1-30 c9.667,0,19.334,0,29,0c0,10,0,20,0,30c10,0,20,0,30,0c0-10,0-20,0-30c-9.672-0.662-21.992,1.326-30-1c0-9.667,0-19.333,0-29 c-10,0-20,0-30,0C479,160,479,170,479,180z M749,180c0,30,0,60,0,90c10,0,20,0,30,0c0-30,0-60,0-90C769,180,759,180,749,180z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M179,330c0,10,0,20,0,30c-9.666,0-19.332,0-29,0c-2.326,8.007-0.338,20.328-1,30 c-20,0-40,0-60,0c0,10,0,20,0,30c-10,0-20,0-30,0c0-9.667,0-19.333,0-29c-7.674-2.326-19.66-0.339-29-1 c-2.332,28.001-0.334,60.333-1,90c-10,0-20,0-30,0c0-60,0-119.999,0-180c9.668,0,19.334,0,29,0c2.328-8.007,0.34-20.328,1-30 c10,0,20,0,30,0c0,9.667,0,19.333,0,29c7.674,2.326,19.662,0.339,29,1c2.332-18.002,0.336-40.332,1-60c10,0,20,0,30,0 c0,40,0,80,0,120c9.668,0,19.334,0,29,0c2.328-8.007,0.34-20.328,1-30C159,330,169,330,179,330c0-10,0-20,0-30c10,0,20,0,30,0 c0,10,0,20,0,30C199,330,189,330,179,330z M59,360c10,0,20,0,30,0c0-10,0-20,0-30c-10,0-20,0-30,0C59,340,59,350,59,360z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M58,480c2.328-8.007,0.34-20.328,1-30c9.668,0,19.334,0,29,0 c2.328-8.007,0.34-20.328,1-30c10,0,20,0,30,0c0,30,0,60,0,90c-10,0-20,0-30,0c0-10,0-20,0-30c-9.666,0-19.332,0-29,0 c-2.33,18.002-0.334,40.332-1,60c10,0,20,0,30,0c0,9.666,0,19.333,0,29c7.674,2.326,19.662,0.339,29,1 c2.332-18.002,0.336-40.332,1-60c10,0,20,0,30,0c0,20,0,40,0,60c-10,0-20,0-30,0c0,9.667,0,19.333,0,29 c8.008,2.326,20.328,0.339,30,1c0,10,0,20,0,30c9.668,0,19.334,0,29,0c2.328-8.007,0.34-20.328,1-30c20,0,40,0,60,0c0,10,0,20,0,30 c-20,0-40,0-60,0c0,9.667,0,19.333,0,29c18.002,2.332,40.332,0.335,60,1c0-10,0-20,0-30c20,0,40,0,60,0c0,10,0,20,0,30 c-20,0-40,0-60,0c0,10,0,20,0,30c-20,0-40,0-60,0c0,10,0,20,0,30c-20,0-40,0-60,0c0,10,0,20,0,30c-9.666,0-19.332,0-29,0 c-2.326,8.007-0.338,20.328-1,30c-10,0-20,0-30,0c0-10,0-20,0-30c9.668,0,19.334,0,29,0c2.333-28.001,0.334-60.333,1-90 c10,0,20,0,30,0c0,10,0,20,0,30c9.668,0,19.334,0,29,0c2.332-17.669,0.336-39.665,1-59c-18.002-2.332-40.332-0.335-60-1 c0-10,0-20,0-30c-10,0-20,0-30,0c0-9.667,0-19.333,0-29c-8.006-2.326-20.328-0.339-30-1c0,10,0,20,0,30c-10,0-20,0-30,0 c0-30,0-60,0-90c10,0,20,0,30,0c0-10,0-20,0-30C38.668,480,48.334,480,58,480z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M299,840c0-10,0-20,0-30c10,0,20,0,30,0c0,9.667,0,19.333,0,29 c7.674,2.326,19.662,0.339,29,1c2.332-18.002,0.336-40.332,1-60c-10,0-20,0-30,0c0-10,0-20,0-30c30,0,60,0,90,0c0,10,0,20,0,30 c10,0,20,0,30,0c0-10,0-20,0-30c-10,0-20,0-30,0c0-10,0-20,0-30c10,0,20,0,30,0c0-9.667,0-19.333,0-29 c-18.002-2.332-40.332-0.335-60-1c0-10,0-20,0-30c20,0,40,0,60,0c0-10,0-20,0-30c10,0,20,0,30,0c0-10,0-20,0-30c10,0,20,0,30,0 c0-20,0-40,0-60c10,0,20,0,30,0c0-10,0-20,0-30c10,0,20,0,30,0c0,10,0,20,0,30c-9.666,0-19.333,0-29,0 c-2.33,18.002-0.334,40.332-1,60c-10,0-20,0-30,0c0,10,0,20,0,30c-10,0-20,0-30,0c0,9.667,0,19.333,0,29 c18.002,2.332,40.332,0.335,60,1c0-10,0-20,0-30c9.667,0,19.334,0,29,0c2.328-8.007,0.339-20.328,1-30c9.667,0,19.334,0,29,0 c2.328-8.007,0.339-20.328,1-30c10,0,20,0,30,0c0,9.667,0,19.333,0,29c7.676,2.326,19.662,0.339,29,1 c2.332-18.002,0.336-40.332,1-60c10,0,20,0,30,0c0,9.666,0,19.333,0,29c18.002,2.332,40.332,0.335,60,1c0,10,0,20,0,30 c-20,0-40,0-60,0c0,10,0,20,0,30c-10,0-20,0-30,0c0,9.667,0,19.333,0,29c8.008,2.326,20.33,0.339,30,1c0,10,0,20,0,30 c-9.666,0-19.332,0-29,0c-2.326,8.007-0.338,20.328-1,30c-39.998,0-80,0-120,0c0-10,0-20,0-30c-10,0-20,0-30,0c0,10,0,20,0,30 c-9.666,0-19.333,0-29,0c-2.33,18.002-0.334,40.332-1,60c9.667,0,19.334,0,29,0c2.332-18.002,0.336-40.332,1-60c10,0,20,0,30,0 c0,10,0,20,0,30c10,0,20,0,30,0c0,9.667,0,19.333,0,29c18.002,2.332,40.332,0.335,60,1c0-10,0-20,0-30c9.668,0,19.334,0,29,0 c2.328-8.007,0.339-20.328,1-30c30.002,0,60,0,90,0c0-10,0-20,0-30c-10,0-20,0-30,0c0-20,0-40,0-60c20,0,40,0,60,0c0-10,0-20,0-30 c30.002,0,60,0,90,0c0-10,0-20,0-30c10,0,20,0,30,0c0,10,0,20,0,30c-10,0-20,0-30,0c0,10,0,20,0,30c-30,0-59.998,0-90,0 c0,9.667,0,19.333,0,29c8.008,2.326,20.33,0.339,30,1c0,10,0,20,0,30c-10,0-20,0-30,0c0,10,0,20,0,30c-9.666,0-19.332,0-29,0 c-2.332,28.001-0.332,60.333-1,90c10,0,20,0,30,0c0-10,0-20,0-30c10,0,20,0,30,0c0,9.667,0,19.333,0,29 c8.008,2.326,20.33,0.339,30,1c0,10,0,20,0,30c-30,0-59.998,0-90,0c0,20,0,40,0,60c-39.998,0-80,0-120,0c0-10,0-20,0-30 c10,0,20,0,30,0c0-10,0-20,0-30c20,0,40,0,60,0c0-20,0-40,0-60c-9.666,0-19.332,0-29,0c-2.326,8.007-0.338,20.328-1,30 c-10,0-20,0-30,0c0-10,0-20,0-30c9.668,0,19.334,0,29,0c2.328-8.007,0.339-20.328,1-30c-9.666,0-19.332,0-29,0 c-2.326,8.007-0.338,20.328-1,30c-9.666,0-19.332,0-29,0c-2.326,8.007-0.338,20.328-1,30c-10,0-20,0-30,0c0,10,0,20,0,30 c-30,0-60,0-90,0c0,10,0,20,0,30c-9.666,0-19.333,0-29,0c-2.33,18.002-0.334,40.332-1,60c9.667,0,19.334,0,29,0 c2.332-18.002,0.336-40.332,1-60c10,0,20,0,30,0c0,30,0,60,0,90c-9.666,0-19.333,0-29,0c-2.326,8.007-0.338,20.328-1,30 c-20,0-40,0-60,0c0-50,0-100,0-150c9.667,0,19.334,0,29,0c2.326-7.674,0.341-19.661,1-29c-8.006-2.326-20.328-0.339-30-1 c0,10,0,20,0,30c-10,0-20,0-30,0c0-10,0-20,0-30c-9.666,0-19.332,0-29,0c-2.33,18.002-0.334,40.332-1,60c10,0,20,0,30,0 c0,20,0,40,0,60c-10,0-20,0-30,0c0,10,0,20,0,30c10,0,20,0,30,0c0,20,0,40,0,60c-20,0-40,0-60,0c0-10,0-20,0-30 c-9.666,0-19.332,0-29,0c-2.326,7.674-0.338,19.661-1,29c8.008,2.326,20.328,0.339,30,1c0,9.667,0,19.333,0,29 c8.008,2.326,20.328,0.339,30,1c0,10,0,20,0,30c-9.666,0-19.332,0-29,0c-2.326,8.007-0.338,20.328-1,30c-30,0-60,0-90,0 c0-20,0-40,0-60c9.668,0,19.334,0,29,0c2.332-18.002,0.336-40.332,1-60c-9.666,0-19.332,0-29,0c-2.326,8.007-0.338,20.328-1,30 c-10,0-20,0-30,0c0-10,0-20,0-30c9.668,0,19.334,0,29,0c2.333-28.001,0.334-60.333,1-90c-10,0-20,0-30,0c0-10,0-20,0-30 c20,0,40,0,60,0c0,9.667,0,19.333,0,29c8.008,2.326,20.328,0.339,30,1c0,10,0,20,0,30c-10,0-20,0-30,0c0,9.667,0,19.333,0,29 c7.674,2.326,19.662,0.339,29,1c2.328-8.007,0.339-20.328,1-30c20,0,40,0,60,0c0-9.667,0-19.333,0-29 c-8.006-2.326-20.328-0.339-30-1c0-9.667,0-19.333,0-29c-8.006-2.326-20.328-0.339-30-1c0-9.667,0-19.333,0-29 C320.994,838.674,308.672,840.661,299,840z M599,660c-10,0-20,0-30,0c0,10,0,20,0,30c10,0,20,0,30,0C599,680,599,670,599,660 c10,0,20,0,30,0c0-10,0-20,0-30c-10,0-20,0-30,0C599,640,599,650,599,660z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M449,1020c0,20,0,40,0,60c-10,0-20,0-30,0c0,10,0,20,0,30c-10,0-20,0-30,0 c0-10,0-20,0-30c9.668,0,19.334,0,29,0c2.332-18.002,0.336-40.332,1-60C429,1020,439,1020,449,1020z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M599,1080c10,0,20,0,30,0c0,10,0,20,0,30c-10,0-20,0-30,0c0-9.667,0-19.333,0-29 c-18.001-2.332-40.332-0.335-60-1c0,10,0,20,0,30c-10,0-20,0-30,0c0-10,0-20,0-30c-10,0-20,0-30,0c0,10,0,20,0,30c-10,0-20,0-30,0 c0-10,0-20,0-30c9.667,0,19.334,0,29,0c2.332-18.002,0.336-40.332,1-60c10,0,20,0,30,0c0-10,0-20,0-30c20,0,40,0,60,0 c0-10,0-20,0-30c10,0,20,0,30,0c0,10,0,20,0,30c20,0,40,0,60,0c0,9.667,0,19.333,0,29c7.676,2.326,19.662,0.339,29,1 c2.332-17.669,0.336-39.665,1-59c-18-2.332-40.332-0.335-60-1c0-10,0-20,0-30c20,0,40,0,60,0c0,10,0,20,0,30c30.002,0,60,0,90,0 c0-10,0-20,0-30c10,0,20,0,30,0c0-10,0-20,0-30c-10,0-20,0-30,0c0-10,0-20,0-30c10,0,20,0,30,0c0,10,0,20,0,30c10,0,20,0,30,0 c0-20,0-40,0-60c9.668,0,19.334,0,29,0c2.332-18.002,0.336-40.332,1-60c10,0,20,0,30,0c0-10,0-20,0-30c-30,0-59.998,0-90,0 c0-10,0-20,0-30c10,0,20,0,30,0c0-20,0-40,0-60c9.668,0,19.334,0,29,0c2.328-8.007,0.339-20.328,1-30c10,0,20,0,30,0 c0-10,0-20,0-30c10,0,20,0,30,0c0-10,0-20,0-30c20,0,40,0,60,0c0-9.667,0-19.334,0-29c-8.006-2.326-20.328-0.338-30-1 c0-10,0-20,0-30c10,0,20,0,30,0c0-10,0-20,0-30c19.668,0,39.334,0,59,0c2.328-8.007,0.339-20.328,1-30c9.668,0,19.334,0,29,0 c2.326-7.674,0.34-19.661,1-29c-7.674-2.326-19.66-0.339-29-1c-2.326,8.007-0.338,20.328-1,30c-10,0-20,0-30,0c0-10,0-20,0-30 c10,0,20,0,30,0c0-10,0-20,0-30c9.668,0,19.334,0,29,0c2.334-28.001,0.334-60.333,1-90c-9.666,0-19.332,0-29,0 c-2.326,8.007-0.338,20.328-1,30c-10,0-20,0-30,0c0-9.667,0-19.333,0-29c-8.006-2.326-20.328-0.338-30-1c0,10,0,20,0,30 c-10,0-20,0-30,0c0,10,0,20,0,30c10,0,20,0,30,0c0,10,0,20,0,30c-9.666,0-19.332,0-29,0c-2.326,8.007-0.338,20.328-1,30 c-9.666,0-19.332,0-29,0c-2.326,8.007-0.338,20.328-1,30c-20,0-40,0-60,0c0-10,0-20,0-30c9.668,0,19.334,0,29,0 c2.332-18.002,0.336-40.332,1-60c9.668,0,19.334,0,29,0c2.326-7.674,0.34-19.661,1-29c-8.006-2.326-20.328-0.338-30-1 c0-10,0-20,0-30c29.668,0,59.334,0,89,0c2.326-7.674,0.34-19.661,1-29c-18-2.332-40.332-0.335-60-1c0-10,0-20,0-30 c30.002,0,60,0,90,0c0,9.667,0,19.333,0,29c8.008,2.326,20.328,0.338,30,1c0-10,0-20,0-30c20,0,40,0,60,0c0,70,0,139.999,0,210 c-9.666,0-19.332,0-29,0c-2.326,8.007-0.338,20.328-1,30c-9.666,0-19.332,0-29,0c-2.33,18.002-0.334,40.332-1,60c10,0,20,0,30,0 c0-10,0-20,0-30c10,0,20,0,30,0c0,30,0,60,0,90c-10,0-20,0-30,0c0,10,0,20,0,30c-10,0-20,0-30,0c0,10,0,20,0,30c10,0,20,0,30,0 c0-10,0-20,0-30c10,0,20,0,30,0c0,30,0,60,0,90c-10,0-20,0-30,0c0-9.667,0-19.333,0-29c-28-2.332-60.332-0.334-90-1c0,10,0,20,0,30 c-9.666,0-19.332,0-29,0c-2.33,18.002-0.334,40.332-1,60c-20,0-40,0-60,0c0,9.667,0,19.333,0,29c28.002,2.332,60.334,0.334,90,1 c0,49.667,0,99.333,0,149c7.676,2.326,19.662,0.339,29,1c2.332-18.002,0.336-40.332,1-60c10,0,20,0,30,0c0-9.667,0-19.333,0-29 c-8.006-2.326-20.328-0.339-30-1c0-10,0-20,0-30c19.668,0,39.334,0,59,0c2.334-28.001,0.334-60.333,1-90c10,0,20,0,30,0 c0,30,0,60,0,90c-10,0-20,0-30,0c0,10,0,20,0,30c10,0,20,0,30,0c0,20,0,40,0,60c-20,0-40,0-60,0c0,10,0,20,0,30 c-9.666,0-19.332,0-29,0c-2.326,8.007-0.338,20.328-1,30c-20,0-40,0-60,0c0,10,0,20,0,30c-10,0-20,0-30,0c0-9.667,0-19.333,0-29 c-7.674-2.326-19.66-0.339-29-1c-2.326,8.007-0.338,20.328-1,30c-20,0-40,0-60,0c0,10,0,20,0,30c10,0,20,0,30,0 c0,9.667,0,19.333,0,29c18.002,2.332,40.332,0.335,60,1c0,10,0,20,0,30c-30,0-59.998,0-90,0c0-9.667,0-19.333,0-29 c-8.006-2.326-20.328-0.339-30-1c0-20,0-40,0-60c9.668,0,19.334,0,29,0c2.334-27.668,0.334-59.666,1-89 c-8.006-2.326-20.328-0.339-30-1c0,10,0,20,0,30c-10,0-20,0-30,0c0,50,0,100,0,150c-10,0-20,0-30,0c0-10,0-20,0-30c-10,0-20,0-30,0 c0-10,0-20,0-30c9.668,0,19.334,0,29,0c2.332-17.669,0.336-39.665,1-59c-7.674-2.326-19.66-0.339-29-1 c-2.326,8.007-0.338,20.328-1,30c-10,0-20,0-30,0c0,10,0,20,0,30c-30,0-59.998,0-90,0C599,1060,599,1070,599,1080z M509,1020 c0,10,0,20,0,30c30,0,60,0,90,0c0-10,0-20,0-30C569,1020,539,1020,509,1020z M870,870c-2.332,28.001-0.332,60.333-1,90 c30.002,0,60,0,90,0c0-30,0-60,0-90C929.334,870,899.668,870,870,870z M1079,600c0-10,0-20,0-30c-10,0-20,0-30,0c0,10,0,20,0,30 c-9.672-0.661-21.992,1.326-30-1c0-9.667,0-19.333,0-29c-10,0-20,0-30,0c-0.664,19.668,1.332,41.998-1,60c-29.666,0-59.332,0-89,0 c0,20,0,40,0,60c10,0,20,0,30,0c0-10,0-20,0-30c30.002,0,60,0,90,0c0-10,0-20,0-30c10,0,20,0,30,0c0.662-9.672-1.326-21.993,1-30 C1059.668,600,1069.334,600,1079,600z M929,720c10,0,20,0,30,0c0-10,0-20,0-30c-10,0-20,0-30,0C929,700,929,710,929,720z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M1079,960c0,9.667,0,19.333,0,29c8.008,2.326,20.328,0.339,30,1c0,20,0,40,0,60 c-10,0-20,0-30,0c0-10,0-20,0-30c-9.666,0-19.332,0-29,0c-2.326,8.007-0.338,20.328-1,30c-9.666,0-19.332,0-29,0 c-2.326,8.007-0.338,20.328-1,30c-20,0-40,0-60,0c0-20,0-40,0-60c10,0,20,0,30,0c0,10,0,20,0,30c9.668,0,19.334,0,29,0 c2.332-18.002,0.336-40.332,1-60c10,0,20,0,30,0c0-10,0-20,0-30C1059,960,1069,960,1079,960z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M989,450c0,10,0,20,0,30c-19.666,0-39.332,0-59,0c-2.33,18.002-0.334,40.332-1,60 c-20,0-40,0-60,0c0,10,0,20,0,30c-10,0-20,0-30,0c0-20,0-40,0-60c10,0,20,0,30,0c0-10,0-20,0-30c20,0,40,0,60,0c0-10,0-20,0-30 C949,450,969,450,989,450z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M1049,390c-9.666,0-19.332,0-29,0c-2.326,8.007-0.338,20.328-1,30 c-10,0-20,0-30,0c0-10,0-20,0-30c10,0,20,0,30,0c0-10,0-20,0-30c10,0,20,0,30,0C1049,370,1049,380,1049,390z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M29,661c-8.006-2.326-20.328-0.339-30-1c0-10,0-20,0-30c20,0,40,0,60,0 c0,20,0,40,0,60c-10,0-20,0-30,0c0,10,0,20,0,30c-10,0-20,0-30,0c0-10,0-20,0-30c10,0,20,0,30,0C29,680.333,29,670.667,29,661z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M269,720c0,10,0,20,0,30c-10,0-20,0-30,0c0,10,0,20,0,30c-9.666,0-19.332,0-29,0 c-2.326,8.007-0.338,20.328-1,30c-20,0-40,0-60,0c0,9.667,0,19.333,0,29c18.002,2.332,40.332,0.335,60,1c0-10,0-20,0-30 c10,0,20,0,30,0c0-10,0-20,0-30c10,0,20,0,30,0c0,20,0,40,0,60c-20,0-40,0-60,0c0,10,0,20,0,30c-40,0-80,0-120,0c0-10,0-20,0-30 c9.668,0,19.334,0,29,0c2.328-8.007,0.34-20.328,1-30c10,0,20,0,30,0c0-10,0-20,0-30c20,0,40,0,60,0c0-10,0-20,0-30 c-10,0-20,0-30,0c0-10,0-20,0-30C209,720,239,720,269,720z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M-1,810c0-10,0-20,0-30c10,0,20,0,30,0c0,9.667,0,19.333,0,29 c8.008,2.326,20.328,0.339,30,1c0,20,0,40,0,60c-20,0-40,0-60,0c0-10,0-20,0-30c10,0,20,0,30,0c0-9.667,0-19.333,0-29 C20.994,808.674,8.672,810.661-1,810z"/></g></svg>
+      div.cover_right
+        div.blank
+        div.content
+          div.h2div(type='#{profile.source}')
+            p.h2 #{profile.source}
+            p.h2 #{profile.division}
+          div <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg width="500" height="1pt" version="1.1"xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="0" x2="500" y2="0"style="stroke:rgb(99,99,99);stroke-width:0.4pt;fill:#fff;"/></svg>
+          p.h1
+            span #{profile.name}
+            span
+              if profile.sex == '男'
+                先生
+              else
+                女士
+            span ，您好！
+          p.h1.waijian_h1
+            span #{profile.name}
+            span #{profile.sex}
+            span #{profile.age}
+            span.employee_id #{employee_id}
+          p.abc 您在<span>瀚思维康</span>的健检已完成。综合检查结果，总检医生对您的健检状况进行了分析。<span class='abc_b'>这是您的健检报告。</span>请仔细阅读！如有疑问，可立即通过<span>微博</span>、<span>微信</span>与我们取得联系，亦可致电健康顾问：010<span class='abc_span_tel'>-</span>62659812。瀚思维康，守护您的健康！
+          p.junquyixie_abc.abc 您在<span>军区医协体检中心</span>的健康体检已完成，总检医生对您的健检状况进行了综合分析。<span class='abc_b'>这是您的健检报告。</span>请仔细阅读！如有疑问，可立即通过<span>微博</span>、<span>微信</span>与我们取得联系，亦可致电健康顾问：010<span class='abc_span_tel'>-</span>62659812。军区医协，守护您的健康！
+    div.summary_container
+      ul
+        h1 总检结论与建议
+        li 总检医生
+        li.sign <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg width="500" height="1pt" version="1.1"xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="0" x2="500" y2="0"style="stroke:rgb(99,99,99);stroke-width:0.4pt;fill:#fff;"/></svg>
+      div.summaries
+        if suggestions.length
+          dl.summary_title
+            dt.conclusion_title 总检结论
+            dd.suggestion_title 建议
+            div <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg width="500" height="1pt" version="1.1"xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="0" x2="500" y2="0"style="stroke:rgb(99,99,99);stroke-width:0.4pt;fill:#fff;"/></svg>
+          each suggestion in suggestions
+            dl.summary
+              dt !{suggestion.conditions}
+              dd !{suggestion.content}
+              div <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg width="500" height="1pt" version="1.1"xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="0" x2="500" y2="0"style="stroke:rgb(99,99,99);stroke-width:0.4pt;stroke-dasharray:3;fill:#fff;"/></svg>
+        else
+          div.all_normal 您本次健检所有检查项目未见明显重大异常。
+  div.clinic_container
+    h1 物理检查
+    h2 您已自愿放弃所有物理检查项目。
+    dl.clinic_doctors_and_quit_departments
+      h2 检查医生
+      each doctor in clinic_doctors
+        dl
+          each department in doctor.departments
+            dt !{department}
+          dd !{doctor.name}
+      if giveup_clinic_departments.length
+        ul.quit_departments
+          p 注
+          div.string <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg width="500" height="1pt" version="1.1"xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="0" x2="500" y2="0"style="stroke:rgb(93,93,93);stroke-width:0.4pt;fill:#fff;"/></svg>
+          li 您本次健检
+          li 自愿放弃的
+          li 物理检查：
+          each department in giveup_clinic_departments
+            li #{department}
+    div.clinic_items.clinic_left
+      dl.clinic_item_title
+        dt
+        dd 项目名称
+        dd.value_title 检查结果
+      each item in clinic_items 
+        dl.clinic_item(department='#{item.department}')(normal='#{item.normal}')
+          if item.department
+            div <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg width="500" height="1pt" version="1.1"xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="0" x2="500" y2="0"style="stroke:rgb(99,99,99);stroke-width:0.4pt;fill:#fff;"/></svg>
+          dt.clinic_item_department !{item.department}
+          dd.red !{item.item}
+          dd.value !{item.value}
+  div.laboratory_container
+    h1 实验室检验
+    div.clinic_doctors_and_quit_departments.lab_doctors_and_quit_departments
+      h2 检验技师
+      each doctor in laboratory_doctors
+        dl
+          each department in doctor.departments
+            dt !{department}
+          dd !{doctor.name}
+      div
+        span 审核
+        span 李晓明
+      if giveup_lab_departments.length
+        ul.quit_departments
+          p 注
+          div.string <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg width="500" height="1pt" version="1.1"xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="0" x2="500" y2="0"style="stroke:rgb(93,93,93);stroke-width:0.4pt;fill:#fff;"/></svg>
+          li 您本次健检自愿放弃
+          li 的实验室检查：
+          each department in giveup_lab_departments
+            li #{department}
+    div(class='lab_items')
+      dl.title_dl
+        dt
+        dd 项目名称
+        dd.lab_item_value_title 检查结果
+        dd.lab_item_rrs_title 参考范围
+        dd.lab_item_unit_title 单位
+      each item in laboratory_items
+        dl.lab_item(department='#{item.department}')(normal='#{item.normal}')
+          if item.department
+            div <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg width="500" height="1pt" version="1.1"xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="0" x2="500" y2="0"style="stroke:rgb(99,99,99);stroke-width:0.4pt;fill:#fff;"/></svg>
+          dt.lab_item_department !{item.department}
+          dd.red !{item.item}
+          dd.lab_item_value !{item.value}
+          dd.arrow(class='#{item.arrow}')
+          dd.lab_item_rrs !{item.range}
+          dd.lab_item_unit
+            span !{item.unit}
+
+  if ultrasound_images.length
+    div.ultrasound_images
+      div.page_header
+        p
+          span #{profile.name}&nbsp;
+          span #{profile.sex}&nbsp;
+          span #{profile.age}
+        div.page_header_svg <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" width="500" height="1pt" version="1.1"><line x1="0" y1="0" x2="500" y2="0" style="stroke:rgb(99,99,99);stroke-width:0.4pt;stroke-dasharray:3;fill:#fff;"></line></svg>
+      h1 超声影像
+      div.shadow
+        dl.title_dl
+          dt 超声影像图
+          div <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg width="500" height="1pt" version="1.1"xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="0" x2="500" y2="0"style="stroke:rgb(99,99,99);stroke-width:0.4pt;fill:#fff;"/></svg>  
+        ul
+          each image in ultrasound_images
+            li
+              img(src = '../../images/#{image._id}.jpeg') 
+  each image in x_ray_report
+    div.x_ray_report    
+      div.page_header
+        p
+          span #{profile.name}&nbsp;
+          span #{profile.sex}&nbsp;
+          span #{profile.age}
+        div.page_header_svg <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" width="500" height="1pt" version="1.1"><line x1="0" y1="0" x2="500" y2="0" style="stroke:rgb(99,99,99);stroke-width:0.4pt;stroke-dasharray:3;fill:#fff;"></line></svg>
+      h1 放射学检查
+      ul
+        li 检查部位
+        li 胸部正位片
+      div.report
+        dl.title_dl
+          dt 放射学影像图
+          div <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg width="500" height="1pt" version="1.1"xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="0" x2="500" y2="0"style="stroke:rgb(99,99,99);stroke-width:0.4pt;fill:#fff;"/></svg> 
+        dl.ps_dl  
+          dd.imgdd
+            img(src = '../../images/#{image._id}.jpeg')
+          div
+            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg width="500" height="1pt" version="1.1"xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="0" x2="500" y2="0"style="stroke:rgb(99,99,99);stroke-width:0.4pt;fill:#fff;"/></svg>
+        dl.con_dl
+          dt X线所见
+          dd #{image.detail}         
+          div <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg width="500" height="1pt" version="1.1"xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="0" x2="500" y2="0"style="stroke:rgb(99,99,99);stroke-width:0.4pt;fill:#fff;"/></svg>
+        dl.con_dl
+          dt 诊断意见
+          dd #{image.conclusion}
+
+   div.last_page
+     div.last_page_content
+       h1 历年健检结果对比
+       div.solid <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "     -//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"     ><svg width="155" height="1pt" version="1.1"xmlns="http://www.w3.org/2000/s     vg"><line x1="0" y1="0" x2="155" y2="0"style="stroke:rgb(99,99,99);stroke-w     idth:0.4pt;fill:#fff;"/></svg>
+       h2 下次健检时，为您呈现！
+       p.letter1 选择瀚思维康，为您提供定期的健检服
+       p.letter1.junquyixie_letter1 选择军区医协，为您提供定期的健检服
+       p.letter2 务，我们会对您历年的健检结果做对比
+       p.letter3 与分析，以便您掌控自身健康变化趋势。
+       div.next_check_time
+         div.lbl_next_time 建议下次健检的日期是：
+         div.next_time #{next_time}
+
+   
+  script(src='/vendor/jquery.js')
+  script(src='/pages/report.js')

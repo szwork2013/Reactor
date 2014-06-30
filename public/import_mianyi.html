@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <style>
+    table td{
+      padding-left: 5px;
+      padding-right: 5px;
+      border: dashed 1px #cccccc;
+      white-space: nowrap;
+      min-width: 60px;
+    }
+  </style>
+</head>
+<body>
+  <div id='drag_box' style='width: 150px; height: 80px; background: blue;'>托拽文件到此处</div>
+  <div>
+    <input id='btn_import' type='button' value='导入数据' />
+  </div>
+  <table>
+  <thead id="title" style="width: 1800px; border: dashed 1px #cccccc;">
+    <tr>	  
+      <td>编号</td>
+      <td>HBsAg</td>
+      <td>HBsAb</td>
+      <td>HBeAg</td>
+      <td>HBeAb</td>
+      <td>HBcAb</td>
+      <td>HBV-DNA</td>
+      <td>CEA</td>
+      <td>AFP</td>
+      <td>T-PSA</td>
+      <td>PSA-F</td>
+      <td>CA125</td>
+      <td>CA15-3</td>
+      <td>CA19-9</td>
+      <td>CA72-4</td>
+      <td>CA50</td>
+      <td>CYFRA21-1</td>
+      <td>NSE</td>
+      <td>CA242</td>
+      <td>SCC-Ag</td>
+      <td>AFU</td>
+      <td>EBV</td>
+      <td>FER</td>
+      <td>β-HCG</td>
+      <td>T3</td>
+      <td>FT3</td>
+      <td>T4</td>
+      <td>FT4</td>
+      <td>TSH</td>
+      <td>T</td>
+      <td>PRL</td>
+      <td>E2</td>
+      <td>梅毒螺旋体抗体</td>
+      <td>抗-HIV</td>
+      <td>HP</td>
+      <td>HCV</td>
+      <td>HAV</td>
+    </tr>
+  </thead>
+
+  <tbody id="data" style="width: 1800px; border: dashed 1px #cccccc">
+  </tbody>
+  <script id='template' type='text/template'>
+    {{#.}}
+    <tr>
+      <td>{{barcode}}</td>
+      {{#entries}}
+        <td>
+          <input type='text' value='{{value}}' style=' background: none; border-width: 0px; width: 60px;' />
+        </td>	  
+      {{/entries}}
+    </tr>
+    {{/.}}
+  </script>
+  <script type="text/javascript" src="/vendor/jquery.js"></script>
+  <script type="text/javascript" src="/vendor/underscore-min.js"></script>
+  <script type="text/javascript" src="/vendor/mustache.js"></script>
+  <script type="text/javascript">
+    var results = [];
+    var items = [
+      {name: 'HBsAg'},
+      {name: 'HBsAb'},
+      {name: 'HBeAg'},
+      {name: 'HBeAb'},
+      {name: 'HBcAb'},
+      {name: 'HBV-DNA'},
+      {name: 'CEA', lt: 1.0, ut: 4.0, length: 1},
+      {name: 'AFP', lt: 3, ut: 18, length: 0},
+      {name: 'T-PSA', lt: 1.0, ut: 3.5, length: 1},
+      {name: 'PSA-F', lt: 0.20, ut: 0.65, length: 2},
+      {name: 'CA125', lt: 3.0, ut: 30.0, length: 1},
+      {name: 'CA15-3', lt: 4.0, ut: 26.0, length: 1},
+      {name: 'CA19-9', lt: 5.0, ut: 32.0, length: 1},
+      {name: 'CA72-4', lt: 2.0, ut: 5.9, length: 1},
+      {name: 'CA50', lt: 3, ut: 27, length: 0},
+      {name: 'CYFRA21-1', lt: 0.9, ut: 3.0, length: 1},
+      {name: 'NSE', lt: 1.0, ut: 11.5,length: 1},
+      {name: 'CA242', lt: 2.0, ut: 20.0, length: 1},
+      {name: 'SCC-Ag', lt: 3, ut: 13, length: 0},
+      {name: 'AFU', lt: 13, ut: 33, length: 0},
+      {name: 'EBv', lt: 0.8, ut: 1.9, length: 1},
+      {name: 'FER', lt: 15, ut: 110, length: 0},
+      {name: 'β-HCG', lt: 1.0, ut: 2.8, length: 1},
+      {name: 'T3', lt: 0.7, ut: 2.4, length: 1},
+      {name: 'FT3', lt: 1.89, ut: 5.91, length: 2},
+      {name: 'T4', lt: 49, ut: 114, length: 0},
+      {name: 'FT4', lt: 13.5, ut: 20.7, length: 1},
+      {name: 'TSH', lt: 0.8, ut: 4.5, length: 1},
+      {name: 'T', male_lt: 1.6, male_ut: 10.0, female_lt: 0.1, female_ut: 2.3, expression: true},
+      {name: 'PRL', male_lt: 75, male_ut: 350, female_lt: 65, female_ut: 660,  expression: true},
+      {name: 'E2', lt: 15.0, ut: 159.0},
+      {name: '梅毒螺旋体抗体'},
+      {name: '抗-HIV'},
+      {name: 'HP'},
+      {name: 'HCV'},
+      {name: 'HAV'} 
+    ];
+    drag_box = $('#drag_box');
+
+    drag_box.bind('dragover', function (evt) {
+      evt.stopPropagation();
+      return evt.preventDefault();
+    });
+
+    drag_box.bind('drop', function (evt) {
+      results = [];
+      var files, reader;
+      evt.stopPropagation();
+      evt.preventDefault();
+      ids = [];
+      files = evt.originalEvent.dataTransfer.files;
+      reader = new FileReader();
+      reader.readAsText(files[0]);
+      return reader.onload = function () {
+        var rows, titles;
+        results = [];
+	rows = this.result.split('\r\n');
+	rows = rows.filter(function(row){
+	  return row.trim().length > 0	
+	});
+	for(var i = 0; i< rows.length; i++){
+	  var result = {barcode: rows[i].split(',')[0], entries: []}
+	  for(var j = 0; j < items.length; j++){
+	    var item = items[j];
+	    var entry ={name: item.name}
+	    if(item.ut){
+	      var ut = item.ut;
+	      var lt = item.lt;
+	      if(item.expression){
+		if(rows[i].split(',')[1] == '男'){
+		  ut = item.male_ut;
+	          lt = item.male_lt;	  
+		}
+		else{
+		   ut = item.female_ut;
+		   lt = item.female_lt;
+		}
+	      }
+	      value =  parseFloat(Math.random() * (ut - lt) + lt).toFixed(items[j].length);
+              entry.value = value
+	    }
+	    else{
+	      entry.value = '阴性';
+	    }
+	    result.entries.push(entry);
+	  }
+	  results.push(result);
+	}
+	var template = $('#template').html();
+        $('#data').html(Mustache.render(template, results));
+	post_data();
+      };
+    });
+
+    var post_data = function(){
+      $.ajax({
+        url: '/records/departments/mianyi',
+        //url: 'http://www.baidu.com',
+        type: 'PUT',
+        contentType: 'application/json',
+        data: JSON.stringify(results),
+        success: function (data) {
+        alert("导入成功! 共有" + data.raw_items + "个项目，已导入" + data.valid_items + "个项目，未导入" + (data.raw_items - data.valid_items) + "个项目。");
+          //drag_box.html('导入成功！' + data);
+        },
+        error: function () {
+
+        }
+      })
+    };
+
+    $('#data').delegate('input', 'blur', function(){
+      var row_index = $(this).parents('tr').index();
+      var col_index = $(this).parent().index()      
+      var value = this.value;
+      results[row_index].entries[col_index - 1].value = value;
+    });
+
+    $('#btn_import').click(function(){
+      post_data();		    
+    });
+  </script>
+</body>
+</html>

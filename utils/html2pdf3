@@ -1,0 +1,121 @@
+-- set infile to "http://hswk.healskare.com:5124/reports/10000001"
+--set infile to "http://www.apple.com"
+-- set outfile to "./output.pdf"
+on run argv
+set infile to item 1 of argv
+set outfile to item 2 of argv
+
+html2pdf(infile, outfile)
+end
+
+on html2pdf(infile, outfile) -- v0.2
+    (*
+        string infile : POSIX path or URL of input html file
+        string outfile : POSIX path of output pdf file
+        
+        * output is pdf document with pagination
+    *)
+    set rb to "require 'osx/cocoa'
+OSX.require_framework 'WebKit'
+include OSX
+
+class AppDelegate < NSObject
+    attr_accessor :infile, :outfile
+
+    def init()
+        @DEBUG = false
+        @infile, @outfile = '', ''
+        self
+    end
+    
+    def applicationDidFinishLaunching(notif)
+        begin
+            win = NSWindow.alloc.objc_send(
+                :initWithContentRect, NSMakeRect(0, 0, 600, 600),
+                :styleMask, NSTitledWindowMask | NSClosableWindowMask | NSMiniaturizableWindowMask | NSResizableWindowMask,
+                :backing, NSBackingStoreBuffered,
+                :defer, false)
+            win.setLevel(NSStatusWindowLevel)
+            win.center
+            webview = WebView.alloc.objc_send(
+                :initWithFrame, NSMakeRect(0, 0, 600, 600),
+                :frameName, nil,
+                :groupName, nil)
+            webview.setFrameLoadDelegate(self)
+            win.setContentView(webview)
+            win.orderFrontRegardless if @DEBUG
+
+            if ( @infile =~ %r[^(http|https|file)://]i )    # url
+                url = NSURL.URLWithString(@infile)
+            else
+                url = NSURL.fileURLWithPath(@infile)
+            end
+            urlreq = NSURLRequest.requestWithURL(url)
+            webview.mainFrame.loadRequest(urlreq)
+        rescue
+            NSApp.terminate(self)
+            raise
+        end
+    end
+    
+    def applicationShouldTerminateAfterLastWindowClosed(app)
+        true
+    end
+    
+    def applicationShouldTerminate(sender)
+        NSTerminateNow
+    end
+    
+    def webView_didFinishLoadForFrame(sender, frame)
+        return unless frame == sender.mainFrame        # ignore other than main frame
+        begin
+            pinfo = NSPrintInfo.sharedPrintInfo
+            pdict = pinfo.dictionary
+            pdict.objc_send(
+                :setObject, NSPrintSaveJob,
+                :forKey, NSPrintJobDisposition)
+            pdict.objc_send(
+                :setObject, @outfile,
+                :forKey, NSPrintSavePath)
+            pinfo = NSPrintInfo.alloc.initWithDictionary(pdict)
+            pinfo.setHorizontalPagination(NSFitPagination)
+            pinfo.setVerticalPagination(NSAutoPagination)
+            pinfo.setTopMargin(0)
+            pinfo.setBottomMargin(0)
+            pinfo.setLeftMargin(0)
+            pinfo.setRightMargin(0)
+	    pinfo.setPaperSize(NSMakeSize(523.55, 820.7))
+	    # pinfo.setOrientation(0)
+            
+            docview = frame.frameView.documentView
+            po = NSPrintOperation.objc_send(
+                :printOperationWithView, docview,
+                :printInfo, pinfo)
+            po.setShowsPrintPanel(false)
+            po.setShowsProgressPanel(false)
+            if ( ! po.runOperation? )
+                raise RuntimeError, 'Print operation failed.'
+            end
+        ensure
+            NSApp.terminate(self) unless @DEBUG
+        end
+    end
+end
+
+def main(*argv)
+    raise ArgumentError, %Q[Usage: $0 <infile> <outfile>] unless argv.length == 2
+    infile, outfile = *argv
+    raise ArgumentError, %Q[Output path does not exist: #{outfile}] unless File.exists?(File.dirname(outfile))
+    app = NSApplication.sharedApplication
+    delegate = AppDelegate.alloc.init
+    delegate.infile, delegate.outfile = infile, outfile
+    app.setDelegate(delegate)
+    app.run
+end
+
+if __FILE__ == $0
+    main(*ARGV)
+end
+"
+    do shell script "/usr/bin/ruby -e " & rb's quoted form & " " & infile's quoted form & " " & outfile's quoted form
+end html2pdf

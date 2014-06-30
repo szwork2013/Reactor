@@ -1,0 +1,43 @@
+/*右侧上方菜单下坠效果样式表*/
+
+.mainUl {
+list-style: none;
+float: right;
+width: 418px;
+}
+.mainUl >li {
+	width: 100px;
+	height: 100px;
+	background:url("http://web-img.oss.aliyuncs.com/bg-menu.png ");
+	float: left;
+	margin-left:1mm;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+    cursor:pointer;
+}
+
+.mainUl >li p {
+	font-size:18px;
+	color: #FFF;/*#191919*/
+	text-align: center;
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+}
+.mainUl >li p a { 
+	color: #FFF;
+	text-decoration: none;
+}
+.subtext {
+	padding-top: 15px;
+}
+
+.blue{ background:#2DA0D2 !important;}
+.blue >p>a{ color:#000 !important;}
+.yellow{ background:#F5D754 !important;}
+.yellow >p>a{ color:#000 !important;}
+.green{ background:#69BF93 !important;}
+.green >p>a{ color:#000 !important;}
+.red{ background:#EC694A !important;}
+.red >p>a{ color:#000 !important;}

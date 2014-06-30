@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+coffee search_records.coffee
+coffee multi2single.coffee
+cd samples_data
+find . -mindepth 1 -maxdepth 1 -type d | sort | while read dir; do
+  dir=${dir:2}
+  find $dir -name "*.js" | while read file; do
+    (echo -n "a = " && cat $file) > "$file.a.js"
+    (js2coffee "$file.a.js"| tail -n +2 | sed -e 's/^  //') > "${file%.*}.coffee"
+  done
+  if [ "$dir" = "records" ]; then 
+    rm records/*.js
+  fi
+done
+echo "js2coffee finished!"

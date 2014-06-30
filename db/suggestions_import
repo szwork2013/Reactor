@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+cd import
+mongo drop_hswk_suggestions.js
+mongo drop_test_suggestions.js
+cd ../samples_data
+echo -e "Importing Collection: suggestions...\c"
+../import/md2json_hswk suggestions/*.md
+../import/md2json_test suggestions/*.md
+echo "Done"

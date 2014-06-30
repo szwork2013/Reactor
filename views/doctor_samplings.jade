@@ -1,0 +1,12 @@
+html(lang='en')
+  head
+    title 医生采样信息
+    meta(http-equiv="x-UA-Compatible")(content="IE=edge")
+      
+  body
+    div= date
+    each result in results
+      pre
+        span #{result.name}  
+        span #{result.doctor}
+        span （#{result.count}）

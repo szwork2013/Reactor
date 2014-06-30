@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+./dump
+cd import
+mongo drop_hswk_departments.js
+mongo drop_test_departments.js
+cd ../samples_data
+echo -e "Importing Collection: departments...\c"
+../import/coffee2json_hswk departments/*.coffee
+../import/coffee2json_test departments/*.coffee
+echo "Done"

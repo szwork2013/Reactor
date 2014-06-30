@@ -1,0 +1,27 @@
+﻿!!! 5
+html(xmlns='http://www.w3.org/1999/xhtml')
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1', charset='utf-8')
+    title 客户统计
+    link(href='/stylesheets/jquery.mobile.css', rel='stylesheet')
+    link(href='/stylesheets/hook.css', rel='stylesheet')
+    link(href='/stylesheets/unfinished.css', rel='stylesheet')
+    script(src='/vendor/jquery.js')
+    script(src='/vendor/jquery.mobile.js')
+    //处理下拉更新
+    script(src='/vendor/mousewheel.js')
+    script(src='/vendor/hook.min.js')
+    script(src='/vendor/underscore-min.js')
+    script(src='/scripts/unfinished.js')
+  body
+    #content_page(data-role='page')
+      #outdiv(data-role='content', data-theme='d')
+        #hook.hook
+        #delayDiv.tabdiv
+          ul#delayTab(data-role='listview')
+        #unfinishDiv.tabdiv(style='display: none;')
+          ul#unfinishTab(data-role='listview')
+      div(data-role='footer')
+        #tab
+          #tab_a 延期名单
+          #tab_b 未完成名单

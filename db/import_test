@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#./js2coffee
+mongo ./import/dropdb_test.js
+cd samples_data
+find . -mindepth 1 -maxdepth 1 -type d | sort | while read dir; do
+  dir=${dir:2}
+  echo $dir
+  echo -e "Importing Collection: $dir...\c"
+  if [ "$dir" = "suggestions" ]; then
+    ../import/md2json_test $dir/*.md
+  else
+    ../import/coffee2json_test $dir/*.coffee
+  fi
+  echo "Done"
+done
+cd ..

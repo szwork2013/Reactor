@@ -1,0 +1,84 @@
+!!! 5
+html(lang='en', xmlns='http://www.w3.org/1999/xhtml')
+  head
+    meta(charset='utf-8')
+    title
+    style.
+      * {
+      margin:0;
+      padding:0;
+      }
+      html, body {
+      background:#EEEEEE;
+      }
+      img{ border:none;}
+      .mask {
+      font-family:'方正兰亭黑_GBK';
+      line-height:25px;
+      padding-top:10%;
+      text-align:center;
+      }
+      .mask div{
+      color:#808080;
+      font-family:'方正兰亭黑_GBK';
+      font-size:20px !important;
+      margin-top:30px;
+      text-shadow:0px 1px 0px #FFF;
+      }
+      .mask dt {
+      font-size: 35px;
+      }
+      .mask dd {
+      width:550px;
+      height:140px;
+      overflow:hidden;
+      margin:50px auto 60px auto;
+      }
+      .mask dd a {
+      display:block;
+      color:#191818;
+      font-size:16px;
+      float:left;
+      text-decoration:none;
+      margin-right:30px;
+      width:115px;
+      }
+      .mask dd .last{
+      margin-right:0;
+      }
+      .mask dd a p {
+      margin-top:25px;
+      }
+      .mask dd p span {
+      display:inline;
+      font-family:'Segoe UI';
+      }
+  body
+    dl#mask.mask
+      dt 您的浏览器版本过低，请选择以下版本：
+      div 给您带来的不便敬请谅解！
+      dd
+        a(href='http://www.google.cn/intl/zh-CN/chrome/browser/index.html')
+          span
+            img(src='http://web-img.oss-cn-hangzhou.aliyuncs.com/Chrome_logo.png')
+          p
+            span Chrome
+            | 浏览器
+        a(href='http://chrome.360.cn/')
+          span
+            img(src='http://web-img.oss-cn-hangzhou.aliyuncs.com/360jis_logo.png')
+          p
+            span 360
+            | 极速浏览器
+        a(href='http://www.opera.com/zh-cn')
+          span
+            img(src='http://web-img.oss-cn-hangzhou.aliyuncs.com/Firefox_logo.png')
+          p
+            span Firefox
+            | 浏览器
+        a.last(href='http://www.opera.com/zh-cn')
+          span
+            img(src='http://web-img.oss-cn-hangzhou.aliyuncs.com/opera-logo.png')
+          p
+            span Opera
+            | 浏览器

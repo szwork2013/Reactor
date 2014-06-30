@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style>
+    #header span {
+      display: inline-block;
+      margin-top: 15mm;
+      font-size: 9pt;
+      margin-left: 2.4mm;
+      font-family: '方正兰亭细黑_GBK';
+    }
+    #age{
+      font-family: 'Segoe UI';
+    }
+    #name{
+      margin-left: 0mm !important;
+    }
+  </style>
+  <script src="jquery.js"></script>
+  <script>
+    function subst() {
+      var vars = {};
+      var url = decodeURI(document.location.search);
+      var x = url.substring(1).split('&');
+      for (var i in x) { var z = x[i].split('=', 2); vars[z[0]] = unescape(z[1]); }
+      if (vars['page'] == 1) {
+        document.getElementById('header').innerHTML = '';
+      }
+      else {
+        var values = vars['title'].split('-');
+        document.getElementById('name').textContent = values[0];
+        document.getElementById('sex').textContent = values[1] == 'male'? '男': '女';
+        document.getElementById('age').textContent = values[2];
+        document.getElementById('line').style.width = document.getElementById('profile').offsetWidth + 'px';
+      }
+    }
+  </script>
+</head>
+<body onload="subst()">
+  <div id="header" style="height:19mm; text-align:right; position:absolute;top:0; right:0; padding-right: 10mm;">
+    <div id='profile' style='display: inline; padding: 0mm;'>
+      <span id="name"></span>
+      <span id="sex"></span>
+      <span id="age"></span>
+    </div>
+    <div id='line' style='margin-top: -3mm; text-align: right; overflow:hidden'><!--?xml version="1.0" standalone="no"?-->
+     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="1mm" width="300"><line style="stroke:rgb(99,99,99);stroke-width:0.4pt;fill:#fff;stroke-dasharray:3;" y2="0" x2="300" y1="0" x1="0"/></svg></div>
+  </div>
+</body>
+</html>

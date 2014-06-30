@@ -1,0 +1,88 @@
+!!! 5
+html(lang='en')
+  head
+    title 放射科
+    meta(http-equiv='x-UA-Compatible')(content='IE=edge')
+    script(type='text/javascript',src='/vendor/jquery.js')
+    script(type='text/javascript',src='/vendor/mustache.js')
+    script(type='text/template',id='record_template')
+      div#title
+        span#name{{profile.name}}
+        span#sex{{profile.sex}}
+        span#age{{profile.age}}
+      ul#images
+        {{#images}}
+        {{#胸部}}
+        li.item
+          div.tag
+            select(class='胸部',_id='{{_id}}')
+              option(selected='selected')胸部
+              option颈椎
+              option腰椎
+          div.img
+            img(src ='../images/{{_id}}.jpeg')
+        {{/胸部}}
+        {{#颈椎}}
+        li.item
+          div.tag
+            select(class='颈椎',_id='{{_id}}')
+              option胸部
+              option(selected='selected')颈椎
+              option腰椎
+          div.img
+            img(src='../images/{{_id}}.jpeg')
+        {{/颈椎}}
+        {{#腰椎}}
+        list.item
+          div.tag
+            select(class='腰椎',_id='{{_id}}')
+              option胸部
+              option颈椎
+              option(selected='selected')腰椎
+          div.img
+            img(src='../images/{{_id}}.jpeg')
+        {{/腰椎}}
+        {{/images}}
+    style
+      #title{
+        margin:50px 0 0 40px;
+        font-size:26pt;
+        font-family: '方正兰亭黑_GBK','FZLTHK--GBK1-0';
+      }
+      #title >span{
+        margin-right:10px;
+      }
+      select{
+        font-size:14pt;
+        font-family: '方正兰亭黑_GBK','FZLTHK--GBK1-0';
+        padding:5px;
+        width:150px;
+        height:35px;
+       }
+      select option{
+        line-height:35px;
+        height:15px;
+        padding:10px 5px;
+      }
+      .img{
+        margin:10px 0 20px 0;
+      }
+      img{
+        width:150px;
+        height:230px;
+       }
+      ul
+       {
+        margin :20px auto;
+       }
+      li{
+       margin:0 20px 20px 0;
+       float:left;
+       list-style-type:none;
+      }
+      .item>div
+       {
+       /* float:left;*/
+       }  
+  body
+  script(type='text/javascript',src ='/pages/xray.js')

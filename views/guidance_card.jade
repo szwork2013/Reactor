@@ -1,0 +1,383 @@
+!!! 5
+html(lang='en')
+  head
+    title 打印导检卡
+    meta(http-equiv="x-UA-Compatible")(content="IE=edge")
+    style.
+      @media all {
+      * {
+      padding: 0;
+      margin: 0;
+      }
+      
+      body {
+      font-family: 'Microsoft YaHei UI';
+      font-size: 16px;
+      }
+      
+      .guidance-cards-content-out {
+      position: relative;
+      width: 14.815cm;
+      height: 20.958cm;
+      overflow: hidden;
+      }
+      
+      .guidance-cards-content {
+      position: absolute;
+      top: 20px;
+      left: 49px;
+      }
+      
+      .guidance-cards-content img {
+      width: 14.8cm;
+      height: 21cm;
+      margin-top: -0.6cm;
+      }
+      
+      .guidance-cards-content img.bg {
+          display: none;
+      }
+      
+      .guidance-cards-content-name {
+      position: absolute;
+      top: 14px;
+      left: 153px;
+      width: 200px;
+      }
+      
+      .guidance-cards-content-sex {
+      position: absolute;
+      top: 52px;
+      left: 153px;
+      }
+      
+      .guidance-cards-content-age {
+      position: absolute;
+      top: 91px;
+      left: 153px;
+      width: 200px;
+      }
+      
+      .guidance-cards-content-month {
+      position: absolute;
+      top: 71px;
+      left: 299px;
+      font-size: 16px;
+      width: 200px;
+      }
+      
+      .guidance-cards-content-week {
+      position: absolute;
+      top: 92px;
+      left: 299px;
+      font-size: 16px;
+      width: 200px;
+      }
+      
+      .guidance-cards-content-time {
+      position: absolute;
+      top: 94px;
+      left: 400px;
+      width: 200px;
+      }
+      
+      .guidance-cards-content-company-title,
+      .guidance-cards-content-department-title {
+      position: absolute;
+      top: 129px;
+      left: 114px;
+      opacity: 0.2;
+      width: 50px;
+      font-size: 16px;
+      }
+      
+      .guidance-cards-content-department-title {
+      left: 296px;
+      }
+      
+      .guidance-cards-content-company,
+      .guidance-cards-content-department {
+      position: absolute;
+      top: 129px;
+      left: 161px;
+      width: 112px;
+      height: 30px;
+      -line-height: 37px;
+      font-size: 16px;
+      -white-space: nowrap;
+      -border-bottom: 1px solid #ccc;
+      }
+      
+      .guidance-cards-content-company:empty {
+      display: none;
+      }
+      
+      .guidance-cards-content-company:empty ~ .guidance-cards-content-company-title {
+          display: none;
+      }
+      
+      .guidance-cards-content-department:empty {
+      display: none;
+      }
+      
+      .guidance-cards-content-department:empty ~ .guidance-cards-content-department-title {
+          display: none;
+      }
+      
+      .guidance-cards-content-company:after,
+      .guidance-cards-content-department:after{
+        content:"";
+        position:absolute;
+        border-bottom:1px solid #ccc;
+        bottom:5px;
+        left:0px;
+        display:block;
+        width:100%;
+      }
+      .guidance-cards-content-department {
+      left: 340px;
+      }
+      
+      .guidance-cards-content-rooms {
+      position: absolute;
+      top: 167px;
+      font-size: 14px;
+      color: #000;
+      }
+      
+      .guidance-cards-content-rooms .guidance-cards-content-room {
+      min-width: 100px;
+      position: absolute;
+      -ms-writing-mode: tb-rl;
+      -moz-writing-mode: tb-rl;
+      writing-mode: tb-rl;
+      -webkit-column-width: 16px;
+      -webkit-column-gap: 4px;
+      direction: rtl;
+      line-height: 15px;
+      -height: 63px;
+      height:70px;
+      }
+     
+      .guidance-cards-content-rooms .guidance-cards-content-room > span:first-child:empty ~ div{
+        position:absolute;
+        right:-23px;
+      } 
+      .guidance-cards-content-room:nth-child(1) {
+      top: 27px;
+      left: 96px;
+      }
+      
+      .guidance-cards-content-room:nth-child(2) {
+      top: 27px;
+      left: 207px;
+      }
+      
+      .guidance-cards-content-room:nth-child(3) {
+      top: 27px;
+      left: 308px;
+      }
+      
+      .guidance-cards-content-room:nth-child(4) {
+      top: 131px;
+      left: 340px;
+      }
+      
+      .guidance-cards-content-room:nth-child(5) {
+      top: 131px;
+      left: 242px;
+      }
+      
+      .guidance-cards-content-room:nth-child(6) {
+      top: 131px;
+      left: 136px;
+      }
+      
+      .guidance-cards-content-room:nth-child(7) {
+      top: 131px;
+      left: 26px;
+      }
+      
+      .guidance-cards-content-room:nth-child(8) {
+      top: 233px;
+      left: -11px;
+      }
+      
+      .guidance-cards-content-room:nth-child(9) {
+      top: 233px;
+      left: 97px;
+      }
+      
+      .guidance-cards-content-room:nth-child(10) {
+      top: 233px;
+      left: 210px;
+      }
+      
+      .guidance-cards-content-room:nth-child(11) {
+      top: 233px;
+      left: 314px;
+      }
+      
+      .guidance-cards-content-room:nth-child(12) {
+      top: 336px;
+      left: 348px;
+      }
+      
+      .guidance-cards-content-room:nth-child(13) {
+      top: 336px;
+      left: 248px;
+      }
+      
+      .guidance-cards-content-room:nth-child(14) {
+      top: 336px;
+      left: 135px;
+      }
+      
+      .guidance-cards-content-room:nth-child(15) {
+      top: 338px;
+      left: 19px;
+      }
+      
+      .guidance-cards-content-room:nth-child(16) {
+      top: 440px;
+      left: -11px;
+      }
+      
+      .guidance-cards-content-room:nth-child(17) {
+      top: 440px;
+      left: 107px;
+      }
+      
+      .guidance-cards-content-room:nth-child(18) {
+      top: 440px;
+      left: 226px;
+      }
+      
+      .guidance-cards-content-room:nth-child(19) {
+      display: none;
+      }
+      
+      .guidance-cards-content-room .door_number {
+      -ms-writing-mode: lr-bt;
+      font-size: 48px;
+      font-family: 'Segoe UI';
+      font-weight: 100;
+      color: rgba(0,0,0,0.75);
+      position: absolute;
+      top: 25px;
+      left: 20px;
+      }
+      .guidance-cards-content-room div span{
+      display:block;
+      position:absolute;
+      right:19px;
+      top:0px;
+      width:10px;
+      height:200px;
+      }
+      .guidance-cards-content-room div span:nth-child(2){
+      right:39px;
+      }
+      .guidance-cards-content-room div span:nth-child(3){
+      right:60px;
+      }
+      .guidance-cards-content-room:before {
+      -ms-writing-mode: lr-bt;
+      -moz-writing-mode: lr-bt;
+      -webkit-writing-mode: lr-bt;
+      writing-mode: lr-bt;
+      font-size: 12px;
+      font-weight: 100;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      opacity: 0.8;
+      background-position: 57px 14px;
+      background-repeat: no-repeat;
+      }
+      /*早餐*/
+      .guidance-cards-content-room[status="breakfast"]:before {
+      -background-image: url("data:image/png;base64,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");
+      }
+      /*未完成*/
+      /*.guidance-cards-content-room[status="incomplete"]:before{
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHoSURBVDhPtZPPSwJBGIb9hzuElWVZ3Tt279o5ijA1yyQo6BKBSJcoOqSmrro/zIiveWabbXYdjy68LDPzvs98881ubjqdyjKUi6JIXBr5oVw+j+Xw9lNK1a6snH7oN2PmWXfljJzg+9eJFC86sl7pS7E+lt2GL/vNSL8Z63m1js+VR3Pgs5Yn+XIM3GuGC8U6PvxZBkqB715G2lxqBDHgJtDV0Qa0et6RQs1L4PjwuypPwPSMHupKFRCtqdBJayLm6fvfcvTgyUZlkHjwk8v2PAFzIYDoI9pUlQHhefNmep0nmP1IodyV0nXce0SOdSeY22Z3YzZH5DlodFPVsyEbGy858ilwGIaCuOWdK3UsVQnaqg7k+HGkYUBtMBDAxkuOvGGhBMzFGKMRcPpJ9aYVtMXlZc4JZsftuqd3t8VXYSpt9750f9nM9pBbWDHHo0JMtkyvzaUBzXrIkXeCOWq+3JsLUbHd6+w6Ikc+BQ6CQNBwrG5XHUdXfakCf6J3T++hrpifxF5D+MmRNyyUgBF/HqBi7R9uV6xPZEHx4Sdnc1AKjPj3MRcq6rtWQUQLgJoxYh0f/iwDzYERFXBRwADo4yoYb8Z6Xq27KjVyghE9q7SH8R+pekh/eTNmPtvTrHK+78sytCSwL7/muBPArXF+pgAAAABJRU5ErkJggg==");
+      }*/
+      /*已完成*/
+        .guidance-cards-content-room[status="complete"]:before {
+          background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM5SURBVFhHvVjtleMgDEwHV8KVsCWkhBj79veVkBKuhC0hJaSElJAS3IG9HeQ0IMcIxIdZJ/Pe7CaA0VhIAnL4CSZjPqauP38bcyHeHPuH4/LdXDAGY/mx92Dq+9/fXf9FYsZVVDVHPIs5eLr9YQVaz6kCGkie3lsweeGfbmwH0txsph3Oi/09mlyQ4pCMTV13Ih7xjCU+U5t7ST92Vd6bvYvgpwnmYMKFo02Qz89fPLwIjHWJl4zteXPCZUTOeywVh5I6f7VYXm5tkvblUcB2tLCai3awPDRQedhceMjuSFSSezasaElQH4OHXidygSqWtHC3BMelHExvxt0vB2wFth9qvColpBwrO0LPDXPjbgfNmygl3P02cPmSOnyvKjEyctfbAdtSi5cj1CBcPnXDX+56O2Db10KcuaM7hh1bdpytcCVwuKZscIkMHNcdlQOHufIzu8PmQk/Z3Q8P/E+JhQahCbshMstvrEkiZOhWr0/dnyMJnJ1IphnUGh0nFWU/fRD1y7o5g6dB08vSkcE0UNz5AgXjs4MSjncI9RseOU9FBhMe8YEx4pmQFK889AmOU6ErEspjI6QMQjwPEbDGnvGYpL5NEiJdUYOCklGEAw+1cEkzjOE4n6kXXBDpihoSsFtcmAwrn+dIqoMnfA/6fVadOSNd9EfsBLlkYk9pxon2vHrW+xbWnWmVZBpJaFie8kuSz+AMM0U+RLw7oTxFZ9Dy+ZMMf0VCstx2fYEGoQlnU3LzSTRWHkjgIV2U4FxKGg3Q4GuCRrVm2Y4CKspPVdKEUBy31nZytdxbwwNrAulKULjzZADbgZZ1Q1DforCVLuAtdRVJG0OrSNhUdMjVpcbwh4Gx1uBaCdrv/DaUFA3cvULzKrKPu4toiUcfsBXaj7y5APEQD3793Um7K4nYDMHuF6dr8JVXE+XqAZZvGVpAO+7/Q4S23CA08JA8Em8J3qsnyYCdofx01LB6GbFEc20R7ATGebCwOcT4zaOY9eh+k6dxWkyhzc7hzhNh6fE5t7y4gN19ot1iT5pbzdGvGhwKOa9s5di81DVwgn/iYfLgKwWGwHK5Qm1LjJrBTOpD8vXn9iU+HP4Dq6s2W1lnaKQAAAAASUVORK5CYII=");
+        }
+      /*改期*/
+      /*.guidance-cards-content-room[status="reschedule"]:before{
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHoSURBVDhPtZPPSwJBGIb9hzuElWVZ3Tt279o5ijA1yyQo6BKBSJcoOqSmrro/zIiveWabbXYdjy68LDPzvs98881ubjqdyjKUi6JIXBr5oVw+j+Xw9lNK1a6snH7oN2PmWXfljJzg+9eJFC86sl7pS7E+lt2GL/vNSL8Z63m1js+VR3Pgs5Yn+XIM3GuGC8U6PvxZBkqB715G2lxqBDHgJtDV0Qa0et6RQs1L4PjwuypPwPSMHupKFRCtqdBJayLm6fvfcvTgyUZlkHjwk8v2PAFzIYDoI9pUlQHhefNmep0nmP1IodyV0nXce0SOdSeY22Z3YzZH5DlodFPVsyEbGy858ilwGIaCuOWdK3UsVQnaqg7k+HGkYUBtMBDAxkuOvGGhBMzFGKMRcPpJ9aYVtMXlZc4JZsftuqd3t8VXYSpt9750f9nM9pBbWDHHo0JMtkyvzaUBzXrIkXeCOWq+3JsLUbHd6+w6Ikc+BQ6CQNBwrG5XHUdXfakCf6J3T++hrpifxF5D+MmRNyyUgBF/HqBi7R9uV6xPZEHx4Sdnc1AKjPj3MRcq6rtWQUQLgJoxYh0f/iwDzYERFXBRwADo4yoYb8Z6Xq27KjVyghE9q7SH8R+pekh/eTNmPtvTrHK+78sytCSwL7/muBPArXF+pgAAAABJRU5ErkJggg==");
+      }*/
+      /*放弃*/
+      .guidance-cards-content-room[status="giveup"]:before {
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKgSURBVFhHzVj/dYMgEHaDjtAROkJHqJDm747QETpCR3CEjJARMoIbaDZI7+BM5LhDJaj93vveSwDh836BVM+gs/a1qw9f19r+XI05e9oWeANeqO2E/V1dv9Nj26A7Hl+cOCfECVpIcwLRHzRdeaBAbznbx4tnsS0uGN2GE7OFCtGcMYRoqXyAFX/lBe5scQyGA75QZ8ybDw/47Wi/XZymPdFnW9e52ieHNDHQNCiKhs8CiknNiS9LQ+fBi9SSBZLhSVehpWEueX7IAxo2DXIVnyTfPQq0sJplWcps/nC/1M1zQaWOr3dLrkcu4Q+tJnKAIrbFEKQhIaCTx83qIgf46hCsLcer9Fb4MHVvAiE3+ihxoZEVdHOmrs2AolBcoAMSjrrl2MQ26t4UQjL31OVM3oSd21tzANXwkRZnNF8W4U9g7sU7RGEIhmsqzOqwEYRqZWEjoAWZplbI9v3cPkByfxy84yzbEaAlqELxfjtxKOjqTzi6FWLicIOeHeuKGu4ZpuBqD7dy1I0yR2iyfsoL5nKJ0IWulxfM5TKhPJn+idDwgATJwU8t6fIEY/BNi7A76BsL9I80OaHRPv/YW3eCqok1Tmb+2ojyBo5/viM6B8LeuiNAg3z2EA/NJS4FMiBqGZ89oIFdEGxvVdrj+QE+1BGVKeBU8S+NODYFz9Lb8GsX/UuwMIRMBypexWyPB9vL2mLpTMyNFH/YjRFXAMfVxCoiH5mugUJAuhe6lP7GJw9GImcnsvjZ6tmX+Nb3xhA9B1xYbcgl2uVtO+kaAc4AvrpIRgBmlsREGAyEBU2DorWwwGweXeZKc3iW+ASSamxBlr3O9HEbHmafJhhgtdLnY9ddEChxNkm8819PIAcu5MqL2/aSloaEhH4Ul13equoPqXqlEnPmwSQAAAAASUVORK5CYII=");
+      }
+      
+      .barcode {
+      position: absolute;
+      left: 380px;
+      top: 692px;
+      text-align: center;
+      z-index: 10000;
+      }
+      
+      .guidance-cards-content-note {
+      position: absolute;
+      left: 100px;
+      top: 727px;
+      width: 400px;
+      font-size: 24px;
+      }
+      .guidance-cards-content-note:before{
+        position:absolute;
+        left:-100px;
+        font-size:14px;
+        top:10px;
+        content:"请到前台领取：";
+      }
+      .guidance-cards-content-note:empty:before{
+        content:"";
+      }
+      
+      .guidance-cards-content-zhegai {
+      position: absolute;
+      top: 160px;
+      left: 10px;
+      width: 195px;
+      height: 20px;
+      background: #000;
+      }
+      }
+
+  body
+    .guidance-cards-content-out
+      .guidance-cards-content
+        div.guidance-cards-content-name.nochange(id='name') #{name}
+        div.guidance-cards-content-sex.nochange(id='sex') #{sex}
+        div.guidance-cards-content-age.nochange(id='age') #{age}
+        div.guidance-cards-content-month.nochange(id='month') #{check_date}
+        div.guidance-cards-content-week.nochange(id='week') #{weekday}
+        div.guidance-cards-content-time.nochange(id='time') #{check_time}
+        div.guidance-cards-content-company.nochange(id='company') #{source}
+        div.guidance-cards-content-company-title 公司
+        div.guidance-cards-content-department.nochange(id='division') #{division}
+        div.guidance-cards-content-department-title 部门
+        div.guidance-cards-content-rooms(id='rooms')
+          each room in rooms
+            div.guidance-cards-content-room(status='#{room.status}')
+              span.nochange #{room.door_name}
+              span.door_number.nochange #{room.door_number}
+              div
+                each item in room.items
+                  span.nochange #{item}
+        div
+          div.barcode(id='barcode') !{barcode}
+        div.guidance-cards-content-note(id='note') #{note}
+          

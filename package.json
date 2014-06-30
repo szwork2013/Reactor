@@ -1,0 +1,36 @@
+{
+  "name": "Reactor",
+  "version": "0.0.3",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:baoshan/fairy.git"
+  },
+  "private": true,
+  "scripts": {
+    "start": "coffee app"
+  },
+  "dependencies": {
+    "mongodb": "*",
+    "mongoose": "*",
+    "express": "*",
+    "jade": "*",
+    "coffee-script": "*",
+    "connect-redis": "*",
+    "underscore": "*",
+    "superagent": "*",
+    "xregexp": "*",
+    "moment": "*",
+    "fairy": "*",
+    "jsdom": "*",
+    "ws": "*",
+    "async": "*",
+    "node-redis": "*",
+    "websocket": "*",
+    "csv": "*",
+    "coffeeify": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  }
+}

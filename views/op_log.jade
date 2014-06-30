@@ -1,0 +1,14 @@
+!!! 5
+html(lang='en')
+  head
+  title 瀚思维康运营日志
+  link(href='/stylesheets/op_log.css')(rel='stylesheet')
+  body
+    div #{op.date}（#{op.week}），#{op.appeared}人到场，其中#{op.first_appeared}人首次到场；营业额#{op.tally_income + op.tally_refund + op.actual_income + op.actual_refund}元。
+    ul 一、首次到场人数明细
+      each value, key in op.group
+        li #{key}：#{value}人。
+      li 个检：#{op.individual_count}人。
+    ul 二、营业额明细
+      li 团体记账营业额#{op.tally_income + op.tally_refund}元。
+      li 现金、银行卡营业额#{op.actual_income + op.actual_refund}元。

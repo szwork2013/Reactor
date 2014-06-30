@@ -1,0 +1,1059 @@
+﻿/* CSS Document */
+*{
+  margin:0;
+  padding:0;
+}
+body {
+  width:100%;
+}
+h1, h2, h3, h4, h5, h6,th {
+  font-weight:normal;
+}
+ol,ul li {
+  list-style-type:none;
+}
+/*--------内容结构---------------*/
+body >div{
+  color:#221814;
+  page-break-after: always;
+  position: relative;
+  height: 289.9mm;
+  width: 185mm;
+}
+body >div div.header {
+  position: absolute;
+  right: 8mm;
+  top: 10mm;/*15mm*/
+  width: 155mm;
+}
+body >div div.container{
+  font: 9pt '方正兰亭黑_GBK','FZLTHK--GBK1-0' ;
+  position:absolute;
+  right:15mm;
+  top:38mm;
+  height:233.9mm;/*290-(43+15) */
+  width:143mm;/*186-(28+15)*/
+}
+body >div div.footer{
+  position:absolute;
+  right:10mm;
+  bottom:0;
+  height:15mm;
+  width:148mm;
+}
+/*--------页眉 页脚------开始--------*/
+body >div div.header div.page_header {
+  font: 9pt "方正兰亭细黑_GBK", "FZLTXHK";
+  float:right;
+  text-align: right;
+  position:relative;
+  overflow:hidden;
+  width: 6mm;
+}
+body >div div.header div.page_header >span { 
+  display: block;
+  float: left;
+  line-height: 13px;
+  margin-bottom: 5px;
+  text-align: center;
+  width: 5mm;
+}
+body >div div.header div.page_header >span:last-of-type {
+  margin-bottom:0 !important;
+}
+body >div div.header div.page_header .vlinediv { 
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+body >div div.header div.page_header .vlinediv >svg{
+  margin-top:-1mm
+}
+body >div div.header ul.package {
+  font: 6pt '方正兰亭细黑_GBK','FZLTXHK';
+  float:left;
+  width:145mm;
+}
+body >div div.header ul.package li{
+  font-size:6pt;
+  float:right;
+  width:3mm;
+}
+body >div div.header ul.package li.thick {
+  font-family:'方正兰亭粗黑_GBK','FZLTCHK--GBK1-0';
+}
+body >div div.header ul.package li.vlinediv {
+  float:right;
+  margin:-1.5mm 0 0 3px;
+  overflow:hidden;
+  height:8mm;
+}  
+body >div div.header ul.package li >span {
+  display:block;
+  margin:2px 0 5px -3px;
+  -webkit-transform: rotate(90deg); 
+}
+body >div div.footer >div.page_number{
+  font:italic 12px '方正兰亭细黑_GBK','FZLTXHK' ;
+  float:right;
+  width:10px;
+}
+body >div div.footer >p.zhushi {
+  font: 6pt/3mm '方正兰亭细黑_GBK','FZLTXHK';
+  float:left;
+  width:140mm;
+}
+body >div div.footer >p.zhushi span {
+  margin-right: 5px;
+}
+/*--------页眉 页脚-----结束---------*/
+/*---------通用---------------*/
+h1,h2 {
+  font: 14pt '方正兰亭粗黑_GBK','FZLTCHK--GBK1-0';
+  white-space:nowrap;
+}
+h1 {
+  position:absolute;
+  left:0;
+  top:-5mm;  
+}
+.summary .header >h1,
+.clinic .header >h1,
+.laboratory .header >h1 {
+  position:absolute;
+  left:5mm;
+  top: 23.5mm;
+}
+h2 {
+  border-top:2px solid #999;
+  float:left;
+  padding-top:7px;
+}
+h3 {
+  font: 9pt '方正兰亭粗黑_GBK','FZLTCHK--GBK1-0';
+  float:left;  
+}
+.title {
+  font-family: '方正兰亭细黑_GBK','FZLTXHK';
+  margin-top:10mm;
+}
+.title span {
+  display:inline-block;/*display:block;*/
+}
+.hrdiv,.hrdiv_clone {
+  line-height:0;
+  height:5px;
+}
+.color_grey {
+  color: #DEDEDE;
+}
+/*---------封页--------------*/
+.cover .check_date_container {
+  font: 9pt '方正小标宋简体','FZXiaoBiaoSong-B05S';
+  line-height: 4mm;
+  position:absolute;
+  right:15mm;
+  top:15mm;
+  width:95mm;
+}
+.cover .check_date_container li.date {
+  float:right;
+  width:10mm;
+}
+.cover .check_date_container li.meal {
+  -webkit-column-count: auto;
+  -webkit-column-gap: 0;
+  float:left;
+  width:82mm;
+}
+.cover .check_date_container li.meal >span:first-of-type {
+  height:150mm;
+}
+.cover .check_date_container li.meal >span:nth-of-type(2) {
+  height:150mm;
+  margin-left:3.1mm;
+}
+.cover .check_date_container li.meal >span {
+  background:#FFF;
+  height:28mm;
+}
+.cover .check_date_container li >span {
+  float:right;
+  text-align:center;
+  padding-top:2mm;
+  width:5mm;
+}
+.cover .check_date_container li >span >span{
+  display:block;
+  -margin:-5px 0 5px 8px;
+}
+.cover .check_date_container li >span >.kuohao{
+  margin:0 0.5mm 0 0;  
+  -webkit-transform: rotate(90deg);
+}
+.cover .left {
+  font: 9pt '方正小标宋简体','FZXBSJW--GB1-0';
+  padding-bottom:10mm;
+  position:absolute;
+  left:23mm;/*29mm*/
+  bottom:24mm;/*24mm*/
+  width:40mm;
+}
+.cover .left >.wx >div{
+  margin-top: 1mm;
+  height: 29mm;
+}
+.cover .left >.wx >div img {
+  margin:1.5mm 0 0 0;
+  height:105px;
+  width:104px;
+}
+.cover .left >.weibo{
+  margin-top:9.5mm;
+  line-height:5mm;
+}
+.cover .left >.weibo >p:last-of-type {
+  font-size:9pt;
+}
+.cover .left >.weibo >p:last-of-type >span {
+  font: 10pt "Arno Pro";
+}
+.cover .left >p{
+  line-height:5mm;
+  margin-top:7.8mm;
+  text-align:justify;
+  width:28mm;
+}
+.cover .left >p >span{
+  color:#000;
+}
+.cover .right{
+  position:absolute;
+  right:15mm;
+  bottom:23mm;
+  width:92mm;
+}
+.cover .right .h2div{
+  font: 14pt '方正小标宋简体','FZXBSJW--GB1-0';
+  line-height:15pt;
+  position:relative;
+  height:14.5mm;
+}
+.cover .right .h2div >p:last-of-type {
+  margin-top:2.5mm;
+}
+.cover .right .h2div >span{
+  display:block;
+  font: 9pt '方正兰亭细黑_GBK','FZLTXHK';
+  position:absolute;
+  right:0;
+  bottom:5px;/*-1.5px*/
+}
+.cover .right .h2div >span >span{
+  margin-left:5px;
+}
+.cover .right .hrdiv{
+  line-height:0;
+  margin-bottom:3mm;
+  height:2px;
+}
+.cover .right .hrdiv svg{
+  width:92mm;
+}
+.cover .right >.h1 {
+  color:black;
+  font: 30pt '方正大标宋简体','FZDBSJW--GB1-0','方正小标宋_GBK','FZXBSK--GBK1-0';
+  margin:1.5mm 0 7.8mm 0;/*6mm 0 13mm 0*/
+  width:10.4cm;
+}
+.cover .right >p{
+  font: 14pt '方正大标宋简体','FZDBSJW--GB1-0';
+  line-height: 7mm;
+  width:100mm;
+}
+.cover .right >p span{
+  color: black;
+  display:inline-block;
+  white-space:nowrap;
+  font-weight:lighter;
+}
+/*-------------*/
+.abc{
+  font-family:'方正大标宋简体','FZDBSJW--GB1-0';
+}
+.abc_b{
+  display:block;
+  font-size:30pt;
+  line-height:38pt;
+}
+.abc_span_tel{
+  color:#DEDEDE !important;
+  font-size:12px;
+  margin-right:5.5px;
+}
+.junquyixie_abc{
+  display:none;
+}
+/*-------------- */
+.uncomplete.abc{
+  display:none;
+}
+[status='未到场'] .uncomplete.abc,
+[status='检查中'] .uncomplete.abc,
+[status='已离场'] .uncomplete.abc{
+  display:block;
+  width:92mm !important;
+  text-align:justify;
+}
+[status='未到场'] .abc,
+[status='检查中'] .abc,
+[status='已离场'] .abc{
+  display:none;
+}
+/*---------总检结论与建议-new--------*/
+.summary .header >div.left {
+  font: 9pt '方正兰亭黑_GBK','FZLTHK--GBK1-0' ; 
+  position:absolute;
+  left:5mm;
+  top:29.2mm;
+  overflow:visible;
+  width:35mm;
+}
+.summary .header >div.left div {
+  margin-top: 8.8mm;
+}
+.summary .header >div.left div.hrdiv {
+  width:35mm;
+  overflow:hidden;
+}
+.summary .container >div {
+  float:right;
+  overflow:hidden;
+  width:100mm;
+}
+.summary .container >div.title >span{
+  float:left;
+}
+.summary .container >div.title >span:first-of-type {
+  width:32mm;
+}
+.summary .container >div.conclusion {
+  margin:1.5mm 0 2mm 0;
+  line-height:5.5mm;
+}
+.summary .container >div.conclusion p:first-of-type {
+  float:left;
+  padding-right:2mm;
+  width:30mm;
+}
+.summary .container >div.conclusion p:last-of-type {
+  float:right;
+  font-family: '方正兰亭细黑_GBK','FZLTXHK';
+  text-align:justify;
+  width:68mm;
+}
+.summary .container >div.conclusion p >span {
+  display:block;
+  font-family: 'Segoe UI'; 
+  line-height:5mm;
+}
+.summary .container >div.conclusion p >span.more {
+  display:inline-block;
+}
+.summary .container >div.all_normal{
+  margin-top:-3.5mm;
+}
+/*---------物理检查 new---------*/
+.clinic .container >div.groupdiv { 
+  float:left;
+  overflow:hidden;
+  width:61.5mm;
+}
+.clinic .container >div:first-of-type {
+  margin: 0 10mm 0 10mm;/* 0 10.5mm 0 10mm */
+}
+.clinic .container div.groupdiv div.title >span {
+  text-align:right;
+  width:23mm;
+}
+.clinic .container div.groupdiv div.title >span:first-of-type {
+  margin-left:16mm;
+  text-align:left;
+}
+.clinic .container div.groupdiv div:nth-of-type(2) {
+  margin:0 0 1.5mm 0 !important;
+}
+.clinic .container div.groupdiv div.hrdiv{
+  float:left;
+  margin:3mm 0 1.5mm 0;
+  clear:both;
+}
+.clinic .container div.groupdiv >h3 {
+  line-height:6mm;
+  width:15mm;
+}
+.clinic .container div.groupdiv div.items {
+  float:right;
+  line-height:6mm;
+  width:46mm; 
+}
+.clinic .container div.groupdiv div.items >span {
+  display:block;
+  width: auto;
+}
+.clinic .container div.groupdiv div.items >span:first-of-type {
+  float: left;
+  white-space:nowrap;
+} 
+.clinic .container div.groupdiv div.items >span:last-of-type {
+  font-family: '方正兰亭细黑_GBK','FZLTXHK';
+  float:none;
+  text-align: right;
+  overflow:hidden;
+  padding-left:1mm;  
+  white-space: normal;
+}
+.clinic .container div.groupdiv div.items[normal='false']>span {
+  color:#E50011 !important ;
+}
+.clinic .container div.groupdiv div.items >span:last-of-type >span:after {
+  content:"，";
+}
+.clinic .container div.groupdiv div.items >span:last-of-type >span:last-of-type:after {
+  content:"";
+}
+/*---------实验室检验 new---------*/
+.laboratory .container >div.title{
+  margin-top:5mm;
+  float:right;
+  width:115mm;
+}
+.laboratory .container >div.title >span{
+  float:left;  
+}
+.laboratory .container >div.title >span:first-of-type {
+  margin-left:25mm;
+  width: 38mm;
+}
+.laboratory .container >div.title >span:nth-of-type(2) {
+  margin-right: 6mm;
+  text-align: right;
+  width: 14mm;
+}
+.laboratory .container >div.title >span:nth-of-type(3) {
+  width:18mm;
+}
+.laboratory .container >div.title >span:last-of-type {
+  float:right;  
+  text-align:right;
+  width:14mm;
+}
+.laboratory .container >div.hrdiv {
+  float:right;
+  margin:3mm 0 1mm 0;
+  overflow:hidden;
+  width:115mm;
+}
+
+/* 大组合之间需要有更多地空间 */
+.laboratory .container >div.hrdiv.add_margin{
+  margin-top:15mm;
+}
+.laboratory .container .title:first-child + div.hrdiv.add_margin{
+  margin-top:0mm;
+}
+
+.laboratory .container >div:nth-of-type(2) {
+  margin-top:0;
+}
+.laboratory .container >div.group {
+  float:left;
+  margin-bottom: -4.5px;
+  width:53mm;
+}
+.laboratory .container >div.group >h2 {
+  margin-top:-1.5mm;
+  white-space:normal;
+  width:20.2mm;
+}
+.laboratory .container >div.group >h3 {
+  float:right;
+  line-height:5mm;
+  margin-top:3.5px;
+  margin-right:0.5px;
+  position: relative;
+  width:25mm;
+}
+.laboratory .container >div.group >h3 sup{
+  position:absolute;
+  top:-4px;
+}
+.laboratory .container >div.items {
+  float:right;
+  line-height:5mm;
+  margin-right:-1mm;
+  width:91mm;
+}
+.laboratory .container >div.items >span {
+  font-family:'方正兰亭细黑_GBK','FZLTXHK';
+  float:left;
+}
+.laboratory .container >div.items >span:first-of-type {
+  margin-top:1mm;
+  white-space:nowrap;
+  width:32mm;
+}
+.laboratory .container >div.items >span:nth-of-type(2) {
+  margin-top:1.1mm;
+  text-align:right;
+  width:20mm;
+}
+.laboratory .container >div.items >span:nth-of-type(3) {
+  margin-top:3.2px;
+  height:2mm;
+  width:6mm;
+}
+.laboratory .container >div.items >span:nth-of-type(4) {
+  margin-top:1.1mm;
+  white-space:nowrap;
+  width:18mm;
+} 
+.laboratory .container >div.items >span:last-of-type {
+  text-align:right;
+  height:5mm;
+  width:14.8mm;
+}
+.laboratory .container >div.items >span:last-of-type >span {
+  height:4.5mm;
+  display:block;
+  position:relative;
+}
+.laboratory .container >div.items >span:last-of-type >span >span {
+  position:absolute;
+  right:-0.1mm;
+  bottom:-5.5px;
+}
+.laboratory .container >div.items .up:after {
+  content:"↑";
+  color:#E50011;
+  font-size:11pt;/*7pt*/
+  font-family:'Segoe UI';/*Meiryo*/
+  padding-left:1px;
+}
+.laboratory .container >div.items .down:after {
+  content:"↓";
+  color:#E50011;
+  font-size:11pt;/*7pt*/
+  font-family:'Segoe UI';/*Meiryo*/
+  padding-left:1px;
+}
+.laboratory .container >div.items[normal='false'] >span:first-of-type,
+.laboratory .container >div.items[normal='false'] >span:nth-of-type(2) {
+  color:#E50011 !important ;
+}
+.laboratory .container >div.addMargin{
+  /*margin-bottom:15mm;*/
+}
+
+/*---------项目注解-----------*/
+.note-down{
+  position:absolute;
+  right:0;
+  bottom:0;
+  width:100%;
+ }
+.note-title{
+  margin:15mm 0 -5mm 0;
+  float:left;
+  width:143mm;
+  clear:both;
+}
+.note-div{
+  border-top:2px solid #000;	
+  float:right;
+  line-height:0;
+  margin-bottom:2mm;
+  overflow:hidden;
+  width:100%;
+}
+.container >.note-title:first-of-type {
+  margin-top:0;
+}
+.container >div >.note-div:first-of-type {
+  margin-top:5mm;
+}
+.note-explain{
+  color:#DEDEDE;
+  float:left;
+  font-family:'方正兰亭粗黑_GBK','FZLTCHK--GBK1-0';
+  margin:0;
+  line-height:5mm;
+}
+.note{
+  border-bottom:2px solid #000;
+  float:right;
+  font-family:'Segoe UI','方正兰亭黑_GBK','FZLTHK--GBK1-0';
+  line-height:5mm;
+  margin-bottom:2mm;
+  width:115mm;
+}
+
+.note >b{
+  float:left;
+  font-family:"Segoe UI";
+  margin-left:-4mm;
+  line-height:4mm;
+}
+.note >h3{
+  float:left;
+  line-height:5mm;
+}
+.note >p{
+  color:#221814;
+  float:right;
+  font-family:"FZSongKeBenXiuKaiS-R-GB";
+  line-height:5mm;
+  margin-top:1mm;
+  text-align:justify;
+}
+.note ul,
+.note ol{
+  color:#221814;	
+  float:right;
+  margin-top:1.5mm;
+}
+
+.note ul li,
+.note ol li{
+  font-family:"FZSongKeBenXiuKaiS-R-GB";	
+  margin-bottom:2mm;
+  text-align:justify;
+}
+.note ul li strong{
+  color:#000;
+  font-family:'方正兰亭黑_GBK','FZLTHK--GBK1-0';
+  font-weight:normal;  
+  margin-right:3mm;
+}
+.note ol li{
+  text-indent:4mm;
+  position:relative;
+}
+.note ol li:before {
+  font-family:"Segoe UI";
+  position:absolute;
+  left:-4mm;
+  top:-1px;
+}
+.note ol li:first-of-type:before {
+  content:"1.";
+}
+.note ol li:nth-of-type(2):before {
+  content:"2.";
+}
+.note ol li:nth-of-type(3):before {
+  content:"3.";
+}
+.note ol li:nth-of-type(4):before {
+  content:"4.";
+}
+.note ol li:nth-of-type(5):before {
+  content:"5.";
+}
+.note ol li:nth-of-type(6):before {
+  content:"6.";
+}
+.note ol li:nth-of-type(7):before {
+  content:"7.";
+}
+.note ol li:nth-of-type(8):before {
+  content:"8.";
+}
+.note ol li:nth-of-type(9):before {
+  content:"9.";
+}
+.note ol li:nth-of-type(10):before {
+  content:"10.";
+}
+.note ol li:nth-of-type(11):before {
+  content:"11.";
+}
+.note ol li:nth-of-type(12):before {
+  content:"12.";
+}
+.note table{
+  border-collapse:collapse;	
+  float:right;
+  line-height:6mm;
+  margin:1mm 0 -0.5mm 0 ;
+  overflow:hidden;
+  width:100%;
+}
+.note table tr th{
+  text-align:left;
+  width:auto;
+}
+.note table tr th:first-of-type {
+  color:#DEDEDE;
+  width:20mm;
+}
+.note table tr th:last-of-type {
+  text-align:right;
+}
+
+.note table tbody tr:first-of-type td,
+.note table tbody tr:last-of-type td{
+  font-size:0;
+  line-height:0;
+} 
+
+.note table tbody tr:last-of-type td{
+  line-height:2mm;
+}
+
+.note table tbody tr:first-of-type td svg,
+.note table tbody tr:last-of-type td svg {
+  width:120mm
+}
+
+.note table tbody tr:first-of-type td svg line,
+.note table tbody tr:last-of-type td svg line {
+  stroke:rgb(99,99,99);
+  stroke-width:0.4pt;
+}
+
+.note table tbody tr td{
+  text-align:left;
+} 
+.note table tbody tr td:last-of-type {
+  text-align:right;
+}
+
+
+/*---------历年健检结果对比---------*/
+.contrast .container div.content >h1{
+  right:0;
+}
+.contrast .container div.content {
+  position: absolute;
+  right:0;
+  bottom:0;
+  width: 55mm;
+}
+.contrast .content * {
+  text-align:right;  
+}
+.contrast .content .hrdiv {
+  font-size:0;
+  float:right;
+  line-height:0;
+  margin:3mm 0 3mm 0;
+  overflow:hidden;
+  width:40mm;
+}
+.contrast .content .h2div {
+  font:14pt  '方正小标宋简体','FZXBSJW--GB1-0';
+  margin:0 -1.5mm 1.2mm 15mm;
+}
+.contrast .content >p {
+  font-family: '方正小标宋简体','FZXBSJW--GB1-0';
+  line-height:5mm;
+  text-align:justify;
+}
+.contrast .content >p >.letter4 >span:nth-of-type(2),
+.contrast .content >p >span .userinfo >span:last-of-type,
+.contrast .content >p >span .userid >span:last-of-type,
+.contrast .content >p >span .usermobile >span:last-of-type {
+  color:#3E96A8 !important; 
+} 
+.contrast .content >div {
+  line-height:8mm;
+  font-family: '方正小标宋简体','FZXBSJW--GB1-0';
+  font-size: 14pt;
+  margin-top:18mm;
+}
+.contrast .content >div >span {
+  display:block;
+}
+/*---------超声影像---------*/
+.ultrasound_images .container >div{
+  float:right;
+  overflow:hidden;
+  width: 94mm;
+}
+.ultrasound_images .container >div.title{
+  margin:10mm 0 0 0;
+}
+.ultrasound_images .container >div.hrdiv{
+  margin-bottom: 2mm;
+}
+.ultrasound_images .container >div img{
+  margin-bottom:2mm;
+  width:94mm;
+}
+/*---------放射学检查---------*/
+.x_ray_report .container >ul { 
+  font-family: '方正兰亭细黑_GBK','FZLTXHK';
+  position: absolute;
+  left:0;
+  top:2.5mm;
+}
+.x_ray_report .container >ul >li:first-of-type {
+  margin:8.6mm 0 1mm 0;
+}
+.x_ray_report .container >div { 
+  float:right;
+  width:104mm;
+  overflow:hidden;
+}
+.x_ray_report .container >div.ps_div {
+  margin:2mm 0 3mm 0;
+  text-align:center;
+}
+.x_ray_report .container >div.ps_div >img {
+  /*width:104mm;*/
+  max-width:104mm;
+  max-height:15cm;
+}
+.x_ray_report .container >div.ps_div >p {
+  display:none;
+}
+.x_ray_report .container >div.ps_div:last-child >p {
+  display:block;
+  margin-top:15px;
+  text-align: left;
+}
+.x_ray_report .container >div.con_div{
+  line-height:15pt;
+  margin:2mm 0 5mm 0;
+}
+.x_ray_report .container >div.con_div >span{
+  display:block;
+  float:left;
+  width:55px;
+}
+.x_ray_report .container >div.con_div >p {
+  font-family: '方正兰亭细黑_GBK','FZLTXHK' !important;
+  float:right;
+  text-align:justify;
+  width:330px ;
+} 
+/*---------心电图---------*/
+.ecg_page .container >div {
+  float:right;
+  -overflow:hidden;
+  width:128mm;
+}
+.ecg_page .container >div.hrdiv {
+  margin:5mm 0 0.5mm 0;
+  overflow:hidden;
+}
+.ecg_page .container >div.ecg_images {
+  -overflow:hidden;
+  position:relative;
+  height:220mm;
+}
+.ecg_page .container >div.ecg_images img {
+  width:240px;
+  position:absolute;
+  top:3mm;
+}
+.ecg_page .container >div.ecg_images img:nth-of-type(2) {
+  right:0;
+}
+/*--------TCT-宫劲超薄细胞学检查---------*/
+.tct_page .container >div.left {
+  overflow:hidden;
+  position: absolute;
+  left:0;
+  top:10.1mm;
+  width:45mm;
+}
+.tct_page .container >div.left label { 
+  display:block;
+}
+.tct_page .container >div.left label:nth-of-type(2) {
+  margin-top:3mm;
+}
+.tct_page .container >div.left img {
+  margin:2mm 0 0 0;
+  width:45mm;
+}
+.tct_page .container >div.left ul.sample {
+  line-height:15pt;
+  margin:2mm 0 0 0;
+  width:45mm;
+}
+.tct_page .container >div.left ul.sample li >span:first-of-type {
+  float:left;
+  width:35mm;
+}
+.tct_page .container >div.left ul.sample li >span:last-of-type {
+  float:right;
+  text-align:right;
+  width:10mm;
+}
+.tct_page .container >div.left div.hrdiv {
+  clear:both
+}
+.tct_page .container >div.left ul.doctor {
+  margin-top:6mm; 
+}
+.tct_page .container >div.left ul.doctor >li:nth-child(even) {
+  margin-bottom:9px;
+  line-height:15pt;
+}
+/*------分析结果---------*/
+.tct_page .container >div,
+.tct_page .container >p.tct_zhushi {
+  float:right;
+  overflow:hidden;
+  width:88mm;
+}
+.tct_page .container >div.title span:first-of-type {
+  width:37.5mm;
+}
+.tct_page .container >div.hrdiv {
+  height:8px;
+  position:relative;  
+}
+.tct_page .container >div.hrdiv >span, 
+.tct_page .container >div.hrdiv_2 >span {
+  font-size: 6pt !important;
+  position: absolute;
+  left: 11.5mm;
+  top: 2.1mm;
+}
+.tct_page .container >div.hrdiv_2 {
+  height:5mm;
+  position:relative;
+}
+.tct_page .container >div.hrdiv_2 svg {
+  margin-top:4mm;
+} 
+.tct_page .container >div.ifon_a,
+.tct_page .container >div.ifon_b,
+.tct_page .container >div.ifon_c{
+  margin:2.5mm 0 1mm 0;
+  height:4mm;
+  width:85mm;
+}
+.tct_page .container >div.titleifon span,
+.tct_page .container >div.ifon_a span,
+.tct_page .container >div.ifon_b span,
+.tct_page .container >div.ifon_c span {
+  display:block;
+  float:left;
+}
+.tct_page .container >div.titleifon span, 
+.tct_page .container >div.ifon_a span:last-of-type,
+.tct_page .container >div.ifon_b span:last-of-type,
+.tct_page .container >div.ifon_c span:last-of-type {
+  float:right;
+  width:45mm;
+} 
+.tct_page .container >div.ifon_a span:first-of-type,
+.tct_page .container >div.ifon_b span:first-of-type,
+.tct_page .container >div.ifon_c span:first-of-type {
+  height:3mm;
+  width:3mm;
+}
+.tct_page .container >div.ifon_a span:nth-of-type(2),
+.tct_page .container >div.ifon_b span:nth-of-type(2),
+.tct_page .container >div.ifon_c span:nth-of-type(2) {
+  border-bottom:1px solid #DEDEDE /*#999*/;
+  height:1.7mm;
+}
+.tct_page .container >div.titleifon {
+  font-family:'方正兰亭粗黑_GBK','FZLTCHK--GBK1-0';
+  margin:4.5mm 0 1mm 0;
+}
+.tct_page .container >div:nth-of-type(4) {
+  margin-top:1mm;
+}
+.tct_page .container >div.ifon_a span:first-of-type {
+  margin-left:8.2mm;
+}
+.tct_page .container >div.ifon_a span:first-of-type:after {
+  content:"●";
+}
+.tct_page .container >div.ifon_a span:nth-of-type(2) {
+  border-color:#000;
+  width:28.5mm;
+}
+.tct_page .container >div.ifon_b span:first-of-type:after {
+  content:"○";
+  color: #DEDEDE;
+}
+.tct_page .container >div.ifon_b span:first-of-type {
+  margin-left:28mm;
+}
+.tct_page .container >div.ifon_b span:nth-of-type(2) {
+  width:9mm;
+}
+.tct_page .container >div.ifon_b span:last-of-type {
+  color: #DEDEDE;
+}
+.tct_page .container >div.ifon_c span:first-of-type {
+  margin-left:8.2mm;
+}
+.tct_page .container >div.ifon_c span:first-of-type:after {
+  content:"●";
+  color:#E50011;
+}
+.tct_page .container >div.ifon_c span:nth-of-type(2) {
+  border-color:#E50011;
+  width:28.5mm;
+}
+.tct_page .container >div.ifon_c span:last-of-type {
+  color: #E50011;
+}
+.tct_page .container >div.opinion_div{
+  line-height:18px;
+  margin-top:5mm;
+  height:100px;
+}
+.tct_page .container >div.opinion_div div {
+  border-bottom:3px solid;
+  font-family:'方正兰亭粗黑_GBK','FZLTCHK--GBK1-0';
+  margin:3mm 0 1.5mm 0;
+  width:88mm;
+  height:auto;
+}
+.tct_page .container >p.tct_zhushi{
+  line-height:12pt;
+  margin-top:1mm;
+  font-size:8pt;
+}
+/*---------暂未出检查结果的科室---------*/
+.waiting_page .container h1 {
+  margin-bottom:13mm;
+}
+.waiting_page .container >div{
+  margin:15mm 0 0 0;
+  overflow:hidden;
+  width: 95mm;
+}
+.waiting_page .container >div >h2 {
+  margin-top:5.3mm;
+}
+.waiting_page .container >div >ul {
+  float: right;
+  line-height: 15pt;
+}
+.waiting_page .container >div >ul li:first-of-type {
+  font-family: '方正兰亭细黑_GBK','FZLTXHK';
+  margin-bottom: -3px;
+}
+.waiting_page .container >div >ul >div.hrdiv {
+  height: 3mm;
+  width: 45mm;
+  overflow: hidden;
+}
+
+
+/* 隐藏骨密度与20的比例 */
+
+-div[department="超声骨密度"] + div + div + div{
+  display:none;
+}

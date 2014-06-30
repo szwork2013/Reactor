@@ -1,0 +1,462 @@
+﻿<!DOCTYPE html>
+<html style="overflow:hidden;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title id="pageTitle">瀚思维康健康管理机构</title>
+    <script src="plugin/heartcode-canvasloader-min-0.9.1.js"  type="text/javascript" charset="UTF-8"></script>
+    
+    <!--loading-->
+    <script src="js/loading.js"  type="text/javascript" charset="UTF-8"></script>   
+    <!--实现右侧菜单下坠样式表-->
+    <link rel="stylesheet" href="css/tipDiv.css" />
+    <link rel="stylesheet" href="css/animated-menu.css"/>
+    <link rel="stylesheet" href="css/menu_mobile.css"/>
+    <link rel="stylesheet" href="css/jquery.autocomplete.css"/>
+    <!--jquery ui 样式表-->
+    <link rel="stylesheet" href="css/jquery-ui.css">
+
+
+    <script src="plugin/jquery-1.7.1.min.js" charset="UTF-8"  type="text/javascript"></script>
+    <script src="plugin/jquery.scrollto.js" charset="UTF-8"  type="text/javascript"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=3f5572db9725ec7bc758e09cd4018c50" charset="UTF-8"></script>
+    <script src="plugin/jquery.autocomplete.min.js" charset="UTF-8"  type="text/javascript"></script>
+    <script src="plugin/jquery.mousewheel.js"></script>
+    <script src="plugin/moment.js" charset="UTF-8" type="text/javascript"></script>
+    <!--jquery ui 组件-->                                          
+    <script src="plugin/jquery-ui.js" charset="UTF-8" type="text/javascript"></script>
+    <script id="mapSrc" src="js/map.js" charset="UTF-8"  type="text/javascript"></script>
+    <script id="formSrc" src="js/form.js" charset="UTF-8"  type="text/javascript"></script>
+
+    <!--页面样式-->
+    <link id="addStyle" rel="stylesheet" href="">
+    <script  type="text/javascript">
+        if ($.browser.msie && $.browser.version == 8.0) {
+            $("#addStyle").attr("href", "css/myStyle-IE8.css");
+			document.write("<script id='modelsSrc' src='js/models.js' charset='UTF-8' type='text/javascript'><\/script>");
+			document.write("<script id='scrollSrc' src='js/scroll.js' charset='UTF-8'  type='text/javascript'><\/script>");
+			document.write("<script id='resizeSrc' src='js/resize.js' charset='UTF-8'  type='text/javascript'><\/script>");
+            document.write("<script id='serchReportSrc' src='js/serchReport.js' charset='UTF-8' type='text/javascript'><\/script>");
+            //document.write("    script#formSrc(src='js/form.js', charset='UTF-8', type='text/javascript')");
+            //document.write("    script#scrollSrc(src='js/scroll.js', charset='UTF-8', type='text/javascript')");
+            //document.write("    script#resizeSrc(src='js/resize.js', charset='UTF-8', type='text/javascript')");
+            //document.write("    script#serchReportSrc(src='js/serchReport.js', charset='UTF-8', type='text/javascript')");
+        } else {
+            $("#addStyle").attr("href", "css/myStyle.css");
+            document.write("<script id='modelsSrc' src='js/models.js' charset='UTF-8' type='text/javascript'><\/script>");
+            document.write("<script id='scrollSrc' src='js/scroll.js' charset='UTF-8'  type='text/javascript'><\/script>");
+            document.write("<script id='resizeSrc' src='js/resize.js' charset='UTF-8'  type='text/javascript'><\/script>");
+            document.write("<script id='serchReportSrc' src='js/serchReport.js' charset='UTF-8' type='text/javascript'><\/script>");
+			//document.write("<script id='modelsSrc' src='js/models.js' charset='UTF-8' type='text/javascript'><\/script>");
+			//document.write("<script id='scrollSrc' src='js/scroll.js' charset='UTF-8'  type='text/javascript'><\/script>");
+			///document.write("<script id='resizeSrc' src='js/resize.js' charset='UTF-8'  type='text/javascript'><\/script>");
+			//document.write("<script id='serchReportSrc' src='js/serchReport.js' charset='UTF-8' type='text/javascript'><\/script>");
+        }
+    </script>
+
+
+    <!--入口函数-->
+    <script src="js/main.js" charset="UTF-8"  type="text/javascript"></script>
+
+</head>
+<body >
+    <div id="loadingDiv" class="loadingDiv">
+		<div class="mask" id="mask" style="display:none">
+			<dl>
+			<dt>为了让您体验更美观、流畅和完整功能的网页，</dt>
+			<dt>我们建议您使用以下浏览器:</dt>
+			<dd>
+			<p><a href="http://windows.microsoft.com/zh-cn/internet-explorer/ie-8-worldwide-languages">IE8.0或以上版本</a></p><p><a href="http://www.google.cn/intl/zh-CN/chrome/browser/index.html">Chrome</a></p> <p><a href="http://firefox.com.cn/">Firefox</a></p> <p><a href="http://se.360.cn/">360安全浏览器</a></p></dd>
+			</dd>
+			<dt>如需继续浏览，将会降低您使用时的流畅性和舒适度。</dt>
+			<dt>给您带来的不便敬请谅解！</dt>
+			<dd>
+			<p></p>
+			</dd>
+			</dl>
+		</div>
+        <div id="canvasloader-container" class="wrapper">
+        </div>
+    </div>
+    
+	<div id="ieIstrue" >
+        <!--菜单及logo-->
+         <div id="menuTop" class="header"> 
+         </div>
+
+        <!--首页1-->
+        <div id="main1" class="main1">
+            <!--文字-->
+            <div id="word_index1" class="wordGroup1">
+                <div id="title1" class="index1_word1 ">科学管理您的健康</div>
+                <div id="title2" class="index1_word2 ">我们坚信</div>
+                <div id="title3" class="index1_word3 ">过程决定结果</div>
+            </div>
+            <!--左侧下一页按钮-->
+            <div id="toIndex2" class="top_fadein"><img src="" /><span>我们是谁</span></div>
+        </div>
+        <!--首页2-->
+        <div id="main2" class="main2">
+            <div id="word_index2" class="wordGroup2 right_fadein1">
+                <div id="title21" class="index2_word1 right_fadein1">新概念健康管理</div>
+                <div id="title22" class="index2_word2 bottom_fadein">我们以发现并解决大众的健康问题为目标，</div>
+                <div id="title23" class="index2_word3 bottom_fadein">为所有人提供优质健康体检服务、亚健康调理、</div>
+                <div id="title24" class="index2_word4 bottom_fadein">生活方式干预、个人健康教育及就医咨询服务。</div>
+                <div id="title25" class="index2_word5 bottom_fadein">并建立了新概念健康管理体系：</div>
+                <div id="title26" class="index2_word6 bottom_fadein">健康监控——健康干预——绿色就医，</div>
+                <div id="title27" class="index2_word7 bottom_fadein">全面实现个性化的闭环健康管理。</div>
+                <div id="title28" class="index2_word8 bottom_fadein">同时，我们还为少数人提供顶级的医疗服务。</div>
+            </div>
+            <!--左侧下一页按钮-->
+            <div id="toIndex3" class="top_fadein"><img src="" /><span>我们正在做什么</span></div>
+        </div>
+
+        <!--首页3-->
+        <div id="main3" class="main3">
+            <div id="word_index3" class="wordGroup3">
+                <div id="title31" class="index3_word1 right_fadein1">健康体检</div>
+                <div id="title32" class="index3_word2 bottom_fadein2">为您度身定制健康体检方案，给出专业的健检结论，</div>
+                <div id="title33" class="index3_word3 bottom_fadein3">并基于我们的海量健康数据，进行健康风险评估。</div>
+                <div id="title34" class="index3_word4 right_fadein2">健康监控</div>
+                <div id="title35" class="index3_word5 bottom_fadein4">运用领先的健康监控平台，为您的企业提供员工健康</div>
+                <div id="title36" class="index3_word6 bottom_fadein5">信息自动采集与动态监控的持续服务。</div>
+                <div id="title37" class="index3_word7 right_fadein3">特需医疗</div>
+                <div id="title38" class="index3_word8 bottom_fadein6">针对您的就医需求，邀请权威专家为您进行深入的私</div>
+                <div id="title39" class="index3_word9 bottom_fadein7">密化诊断。您在后续治疗中也将享受一流的服务。</div>
+            </div>
+    
+            <!--首页3图片组-->
+            <dl id="imgGroup" class="view_pic border_0">
+              <dt id="imgLine" class="border_1">
+                <div class="img_01">
+                  <div class="view view-tenth"> <img src="http://web-img.oss.aliyuncs.com/img-01.jpg">
+                    <div class="mask">
+                      <p class="p1">医生为受检者<br/>
+                        进行口腔检查</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="img_02">
+                  <div class="view view-tenth"> <img src="http://web-img.oss.aliyuncs.com/img-02.jpg">
+                    <div class="mask">
+                    <p class="p2">冲击波治疗室可对皮肤及<br/>
+                      肌骨病患者进行有效治疗</p>
+                    </div>  
+                  </div>
+                </div>
+                <div class="img_03">
+                  <div class="view view-tenth"> <img src="http://web-img.oss.aliyuncs.com/img-03.jpg">
+                    <div class="mask">
+                    <p class="p3">护士在认真地<br/>
+                      为受检者抽血</p>
+                      </div>
+                  </div>
+                </div>
+                <div class="img_04">
+                  <div class="view view-tenth"> <img src="http://web-img.oss.aliyuncs.com/img-04.jpg">
+                   <div class="mask">
+                    <p class="p3">医生为受检者<br/>
+                      做X光学检查</p>
+                     </div> 
+                  </div>
+                </div>
+              </dt>
+              <dd>
+                <div class="img_05">
+                  <div class="view view-tenth"> <img src="http://web-img.oss.aliyuncs.com/img-05.jpg">
+                    <div class="mask">
+                    <p class="p4">为守护您的健康<br/>
+                      我们时刻准备着</p>
+                      </div>
+                  </div>
+                </div>
+                <div class="img_06">
+                  <div class="view view-tenth"> <img src="http://web-img.oss.aliyuncs.com/img-06.jpg">
+                    <div class="mask">
+                    <p class="p5">在优美音乐的<br/>
+                      陪伴下完成您<br/>
+                      的健康检查</p>
+                      </div>
+                  </div>
+                </div>
+              </dd>
+            </dl>
+        
+    
+
+            <!--左侧下一页按钮-->
+            <div id="toPage1" class="top_fadein"><img src="" /><span>马上开始管理您的健康</span></div>
+        </div>
+
+
+        <!--套餐展示页面-->
+        <div id="main4" class="main4">
+        <dl class="wordGroup4">
+            <dt>了解以下体检套餐详情或预约体检，</dt>
+            <dd>请致电我们的健康顾问：010-82626102</dd>
+            <dt>以便为您度身定制体检方案。</dt>
+            <div class="line_56"></div>
+        </dl>
+        <div class="package">
+            <dl class="package_dl">
+            <dt class="pinyin"> wèn </dt>
+            <dt><img src="http://web-img.oss.aliyuncs.com/font-wen.png" /></dt>
+            <dd>适合身体素质较好的青年人，在健康筛查的基础上，对高血脂和肝病等慢性病进行筛查。细化了肿瘤标记物等检查项目。</dd>
+            </dl>
+            <dl class="package_dl">
+            <dt class="pinyin"> xiào </dt>
+            <dt><img src="http://web-img.oss.aliyuncs.com/font-xiao.png" /></dt>
+            <dd>适合中老年人，对心脑血管、肝、肾、高血脂、骨质疏松等慢性疾病及常见肿瘤进行健康筛查和早期预警。</dd>
+            </dl>
+            <dl class="package_dl">
+            <dt class="pinyin"> xiáng </dt>
+            <dt><img src="http://web-img.oss.aliyuncs.com/font-xiang.png" /></dt>
+            <dd>适合企业精英、成功人士，对常见肿瘤、心脑血管、肝、肾、某些传染性疾病及慢性疾病进行健康筛查和早期预警。</dd>
+            </dl>
+            <dl class="package_dl">
+            <dt class="pinyin"> yǒng </dt>
+            <dt><img src="http://web-img.oss.aliyuncs.com/font-yong.png" /></dt>
+            <dd>适合企业白领，对心脑血管、肝、肾、高血脂、骨质疏松等慢性疾病及常见肿瘤进行健康筛查和早期预警。</dd>
+            </dl>
+            <dl class="package_dl margin_0">
+            <dt class="pinyin"> dào </dt>
+            <dt><img src="http://web-img.oss.aliyuncs.com/font-dao.png" /></dt>
+            <dd>适合企业高管、中老年人，对身体机能减退，容易出现癌细胞增生免疫力下降的人群。</dd>
+            </dl>
+        </div>
+        <!--表单页面-->
+        <div class="wordGroup5" >
+          <div class="register">
+            <form action="" method="get" accept-charset="utf-8" >
+              <dl>
+                <label>
+                  <input type="text" name="name" id="name" placeholder="姓名" class="name ic">
+                </label>
+                <label id="boy" class="sex sex_hover">男 </label>
+                <label id="gril"class="sex">女 </label>
+                <label>
+                  <input type="text" name="age" id="age"  style="ime-mode:disabled;ime-mode:disabled" placeholder="岁" class="age ic"  >
+                </label>
+              </dl>
+              <dl>
+                <label>
+                  <input type="text" name="idcard" id="idPort" placeholder="身份证/#"  class="idcard ic">
+                </label>
+              </dl>
+              <dl>
+                <label>
+                  <input type="text" name="Mobile" id="mobile" placeholder="手机号/#" class="idcard ic">
+                </label>
+              </dl>
+              <dl>
+                <label>
+                  <input readonly="readonly" id="datepicker" placeholder="体检日期">
+                </label>
+                <!--<input type="text" name="year" id="year" value="" class="year">
+                 <label>年</label>
+                 <input type="text" name="month" id="month" value="" class="month">
+                 <label>月</label>
+                 <input type="text" name="sun" id="day" value="" class="sun">
+                 <label>日</label>
+                   -->
+              </dl>
+              <dl>
+                <label>
+                  <input type="text" name="idcard" id="department" placeholder="部门" class="idcard ic">
+                </label>
+              </dl>
+              <dl>
+                <label>
+                  <input type="text" id="input-worker-id" placeholder="员工唯一号" style="display:none;" >
+                </label>
+              </dl>
+              <div>如需对注册信息进行核对、修改，请您联系客服协助完成。电话：010-62659812</div>
+            </form>
+          </div>
+
+            <dl class="combo">
+              <dt>本员工适用的体检方案</dt>
+              <dd  id="showPlan">
+              </dd>
+          </dl>
+
+          <div class="forminfo"> 
+		     <p id="groupName">北京九强生物技术股份有限公司</p>
+             <P class="p_color">已选套餐：</P>
+             <div class="showdiv">
+                  <label id="showResultName"></label>
+                  <h1 id="groupFromResult"></h1>
+              </div>
+            <div id="formLoading" class="logding_icon">loading......</div>
+            <label>
+              <input type="submit" name="button" id="submitForm" value="确认预约" class="button">
+            </label>
+          </div>
+        </div>
+        </div>
+
+        <!--登录页面-->
+        <div id="main6" class="main6">
+          <div class="wordGroup_login">
+          <div id="errorTip" class="loginError"></div>
+           <div id="loginLoading" class="loginLoading">正在登陆...</div>
+           <div class="icon">
+                <div class="book">
+                  <div class="triangle_b"></div>
+                  <p>体检报告 <img src="http://web-img.oss.aliyuncs.com/login-icon.png" /></p>
+                </div>
+            </div>
+            <div class="logintab">
+                <dl class="login">
+                    <dt id="sucessTip"></dt>
+                    <p id="cNumber"></p>
+                    <input type="text" id="r_mobile" name="textfield" placeholder="输入注册时手机号" class/>
+                    <input name="btn" id="notebutton" type="button" class="loginbtn" value="发送">
+                    <dd id="notebth"><a><div id="sendMsgBtnPic" class="bth"><p id="P1"></p></div></a></dd>
+                </dl>
+                <dl id="userLogin" class="login">
+                    <input type="text" id="userName" name="textfield" placeholder="姓名" />
+                    <input type="text" id="passWord" name="textfield2" placeholder="验证码" />
+                    <input name="btn" id="mobileLoginBtn" type="button" class="loginbtn" value="进入">
+                    <dd id="loginBtn"><a><div id="loginBtnPic" class="bth"><p id="loginLoding"></p></div></a></dd>
+                </dl>
+                <ul id="tab">
+                    <li><a href="#">&gt;获取验证码</a></li>
+                    <li><a href="#"> &lt;返回登录</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="zhushi"> 注：因系统升级，此功能暂时限2013年10月1日之后体检用户使用，如给您带来不便深感歉意！</div>
+
+           <!--查看报告页面-->
+            <div class="wordGroup6">
+                <dl class="userinfo">
+                <dt id="getName"></dt>
+                <dd class="exit">退出</dd>
+                </dl>
+                <!--用于onmouseover事件记录选中pdf的下载地址-->
+                <div id="markPdfUrl" class="displayDiv"></div>
+                <dl class="report">
+                </dl>
+            </div>
+        </div>
+
+        <!--企业定制页面-->
+          <div id="main8" class="main8">
+            <dl class="wordGroup8">
+              <dt>我们结合健康医疗服务和信息技术，</dt>
+              <dt>让您的企业享受便捷、经济、有效的健康管理服务，</dt>
+              <dt>从而帮助企业提高核心竞争力。</dt>
+              <dd></dd>
+            </dl>
+            <div class="wordGroup9">
+              <dl>
+                <dt><img src="http://web-img.oss.aliyuncs.com/custom-img-02.png" /></dt>
+                <dd>
+                  <h2>企业健康监控</h2>
+                  <p>健康信息自动采集与动态监控，<br/>
+                    量化分析员工的健康状况，<br/>
+                    为改善员工健康状况提供科学依据。 </p>
+                </dd>
+              </dl>
+              <dl>
+                <dt><img src="http://web-img.oss.aliyuncs.com/custom-img-01.png"/></dt>
+                <dd>
+                  <h2>健康生产力提升</h2>
+                  <p>为您的企业度身定制健康管理方案，<br/>
+                    包括职业病和亚健康干预等服务项目，<br/>
+                    并提供一站式的管理与服务。 </p>
+                </dd>
+              </dl>
+              <dl>
+                <dt><img src="http://web-img.oss.aliyuncs.com/custom-img-03.png"/></dt>
+                <dd>
+                  <h2>健康文化建设</h2>
+                  <p>开展健康活动、举办健康沙龙、<br/>
+                    配备健康设施等专项服务。<br/>
+                    帮助员工养成健康生活的习惯。</p>
+                </dd>
+              </dl>
+              <dl>
+                <div class="line_104"></div>
+                <div class="text">企业定制健康体检方案，请致电健康顾问：</div>
+                <h1>010-82626102</h1>
+              </dl>
+            </div>
+          </div>
+    
+
+        <!--关于我们页面-->
+          <div id="main9" class="main9">
+              <div class="wordGroup10">
+                 <div id="mapOutDiv" class="mapdiv">
+                 </div>
+                     <div class="maptext">
+	                     <dl class="left">
+                            <dt>
+                                <div></div>
+                                <p>体检预约</p>
+                                <span>010-82626102</span>
+                                <p>检后咨询</p>
+                                <span>010-62659812</span>
+                            </dt>
+                            <dt class="dt_ri">
+                                <div></div>
+                                <p class="family_A">E-mail</p>
+                                <span>vip@wedocare.com</span>
+                                <p>体检地址</p>
+                                <span class="family_M">北京市海淀区中关村南三街6号中科资源大厦南楼5层</span>
+                            </dt>
+                         </dl>
+
+	                    <dl class="right">
+                            <dt>我们的微信</dt>
+                            <dt class="weibo_t"></dt>
+                            <dd><img src="http://web-img.oss.aliyuncs.com/code.png"/></dd>
+                            <dd class="weibo"><a href="http://weibo.com/wedocare" target="_blank"><img src="http://web-img.oss-cn-hangzhou.aliyuncs.com/Weibo_Logo.png" /></a>
+                                <a href="http://weibo.com/wedocare" target="_blank" style="color:#000"><p>新浪微博</p><p>@瀚思维康健康管理机构</p></a></dd>
+                        </dl>
+	                 </div>
+              </div>
+              <div id="pageButtom" class="footer">
+              <p>版权所有 <span>2013-2014</span> 瀚思维康健康管理集团<p>
+              <p><span>Copyright © 2013-2014</span>   www.wedocare.com All rights reserved.<p>
+             </div>
+
+              <div id="Div1" class="footer_m">
+              <p>版权所有 <span>2013-2014</span> 瀚思维康健康管理集团<p>
+              <p><span>Copyright © 2013-2014</span> <p>
+             </div>
+          </div>
+
+        <!--左侧锚记点-->
+        <div id="page1"></div>
+        <div id="page2"></div>
+        <div id="page3"></div>
+        <a id="page4" name="group"></a>
+        <div id="page6"></div>
+        <div id="page8"></div>
+        <div id="page9"></div>
+        <div id="page10"></div>
+        <!--团检锚点-->
+
+
+        <!--页面背景图-->
+        <div id="bg1" class="div_img div_bg_index1">
+            <img id="backImage1"/>
+        </div>
+        <div id="bg2" class="div_img div_bg_index2">
+            <img id="backImage2"/>
+        </div>
+        <div id="bg3" class="div_img div_bg_index3">
+            <img id="backImage3"/>
+        </div>
+        <div id="bg4" class="div_bg_blue"></div>
+        <div id="bg6" class="div_bg_yellow"></div>
+        <div id="bg8" class="div_bg_green"></div>
+        <div id="bg9" class="div_bg_gray"></div>
+	</div>
+	<script  type="text/javascript">
+			createLoading('canvasloader-container', '#2cd2de');
+  </script>
+</body>
+</html>

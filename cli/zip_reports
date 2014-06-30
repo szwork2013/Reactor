@@ -1,0 +1,1 @@
+sed -e 's/$/.pdf/' ../log/$1 | sed -e 's/^/\.\.\/public\/pdfs\/reports\//' | xargs zip -j ../public/pdfs/$1.zip | grep warning | sed  -e 's/zip warning: name not matched: public\/pdfs\/reports\//文件缺失：/' | sed -e 's/\s//' | sed -e 's/\.pdf//'

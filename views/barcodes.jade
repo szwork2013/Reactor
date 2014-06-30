@@ -1,0 +1,59 @@
+!!! 5
+html(lang='en')
+  head
+    title #{page}
+    meta(http-equiv="x-UA-Compatible")(content="IE=edge")
+    script(type='text/javascript',src='/vendor/jquery.js')
+    style.
+      #content{
+       margin:20px auto;
+       width:400px;
+      }
+            
+      textarea {
+        height:300px;
+        width:150px;
+        padding:10px;
+      }
+      
+      #save {
+       float:right;
+       width:100px;
+       height:28px;
+      }
+  body
+    div#content
+      //让光标位置在下一行
+      textArea#barcodes(autofocus) #{barcodes}
+
+      button#save 保  存
+
+script.
+  //文本域获取光标
+  element = document.getElementById('barcodes');
+  pos = element.innerHTML.length;
+  if(element.setSelectionRange){
+    element.setSelectionRange(pos,pos);
+  }else{
+    var range = element.createTextRange();
+        range.collapse(true);
+        range.moveEnd('character',pos);
+        range.moveStart('character',pos);
+        range.select();
+  };
+  $('#save').click(function(){
+    $.ajax({
+      type:'put',
+      url : location.href,
+      data:JSON.stringify({barcodes:element.value}),
+      contentType:'application/json',
+      success:function(){
+       alert('保存成功');
+     },
+     error:function(err){
+       console.log(err);
+    }
+      
+    });
+   
+  });

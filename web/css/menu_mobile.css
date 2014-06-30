@@ -1,0 +1,87 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+.header_mobile {
+	width: 90%;
+	height: 100px;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;	
+	background: url("http://web-img.oss.aliyuncs.com/bg-menu.png");
+}
+.menuDiv_mobile {
+	background:url(http://mobile-img.oss.aliyuncs.com/menu_br.png) repeat-x bottom;
+	cursor:pointer;
+	position: absolute;
+	bottom: 12px;
+    right:10px;
+	width:40px;
+	height:15px;
+
+
+}
+.menuDiv_mobile a{ display:block; width:40px; height:15px;}
+.logo_mobile {
+	position: absolute;
+	top: 0;
+	left: 0%;
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
+}
+.logo_mobile > img {
+	width: 78px;
+	height: 33px;
+	text-align: center;
+	margin: 55px 11px 0 11px;
+}
+.mobileUL{
+    display:none;
+	width: 100%;
+	height: 200px;	
+	position: absolute;
+	/*right:5%;*/
+	top:100px;
+	z-index: 1;    
+	box-shadow: 0px 3px 5px 0px rgba(75, 57, 34, 0.3) ; 
+}
+.mobileUL p {
+    background:url(http://mobile-img.oss.aliyuncs.com/bg-menu-W.png);
+    color:#000;
+	cursor:pointer;
+	height:50px;
+	line-height:50px;
+	text-align:right;
+    padding-right:10px;
+	
+	
+	 /*transition*/
+	-webkit-transition: all 0.8s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	-ms-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+	
+	
+	
+}
+.mobileUL_open {
+	display: block;	
+}
+
+
+.mobileUL p:hover{	
+	color:rgba(255, 255, 255, 0.9) !important;
+    background:rgba(0, 0, 0, 0.7);
+	
+	/*transition*/
+	-webkit-transition: all 0.5s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	-ms-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+	
+}

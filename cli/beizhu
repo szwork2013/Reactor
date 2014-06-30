@@ -1,0 +1,8 @@
+取消客人采样信息
+coffee remove_sampling.coffee 100074680
+
+清空采样信息
+coffee empty_samplings.coffee 10013676
+
+删除放射科诊断状态
+wait_diagnose.coffee 10025913

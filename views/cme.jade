@@ -1,0 +1,20 @@
+!!! 5
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    title CME
+  body
+    h1 #{result.year}年学分明细
+    each item in result.scores
+      h2 #{item.date}
+      ul
+        li #{item.project_name}
+        li #{item.level}
+        li #{item.subject}
+        li #{item.type}
+        li #{item.time}个学时
+        li #{item.score}个学分
+
+
+

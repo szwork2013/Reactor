@@ -1,0 +1,2 @@
+mongoexport -h 192.168.1.5 --port 27017  -d hswkzkfy -c products    --jsonArray -o ./export_json/products.json
+mongoexport -h 192.168.1.5 --port 27017  -d hswkzkfy -c batches     --jsonArray -o ./export_json/batches.json

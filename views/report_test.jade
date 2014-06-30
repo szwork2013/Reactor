@@ -1,0 +1,495 @@
+!!! 5
+html.-waijian.-junquyixie(lang='en')
+  head
+    title #{profile.name}-#{profile.sex}-#{profile.age}
+    link(href='/stylesheets/report.css')(rel='stylesheet')
+    //声明svg变量
+    - var verticalLine = "<svg version='1.1' id='图层_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='1.109px' height='113.39px' viewBox='0 0 1.109 113.39' enable-background='new 0 0 1.109 113.39' xml:space='preserve'><line fill='none' stroke='#000000' stroke-width='0.1' stroke-miterlimit='10' x1='0.609' y1='0' x2='0.609' y2='114.308'/></svg>"
+    - var dottedSolidLine = "<svg width='500' height='1pt' version='1.1' xmlns='http://www.w3.org/2000/svg'><line x1='0' y1='0' x2='500' y2='0' style='stroke:rgb(99,99,99);stroke-width:0.4pt;stroke-dasharray:3;fill:#fff;'/></svg>"
+    - var realSolidLine = "<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='1pt' width='500'><line style='stroke:rgb(99,99,99);stroke-width:0.4pt;fill:#fff;' y2='0' x2='500' y1='0' x1='0' /></svg>"
+    
+    //生成页头(doctorArr:被遍历的数据；type：1物理页头，2实验室页头)
+    mixin createHeader(doctorArr, type)
+      div.page_header.clone
+        span #{profile.name}
+        span #{profile.sex}
+        span #{profile.age}岁
+        div.vlinediv
+          !{verticalLine}
+      if doctorArr != ""
+        if type == 1 || type == 2
+          ul.package
+            li.thick 检查医生
+            each doctor in doctorArr
+              li.vlinediv 
+                !{verticalLine}
+              each department in doctor.departments
+                li.color_grey !{department}
+              each doctorName in doctor.names
+                li !{doctorName}
+            if type == 2
+              if typeof(biochemistry_auditor) != "undefined" || biochemistry_auditor != null
+                li.vlinediv
+                  !{verticalLine}
+                li.thick 审核医师
+                li #{biochemistry_auditor}
+  
+  body(status= status)
+    // 封页
+    div.cover
+      ul.check_date_container
+        li.meal
+          if order_names.length
+            span.color_grey 定制的健检服务
+            each name in order_names
+              span !{name}
+        li.date
+          span.color_grey 健检日期
+          span#appeared #{appeared}
+      div.left
+        div.wx
+          p 我们的微信
+          //div#qrcode.qrcode_svg
+          div#qrcodeOrig.qrcode_svg
+        div.weibo
+          p 新浪微博
+          p
+            span @
+            | 瀚思维康健康管理机构
+        p.color_grey
+          span 立即关注
+          | 我们的微博和微信，您将定期收到我们为您带来的意外惊喜。
+      div.right
+        div.h2div(type='#{profile.source}')
+          p #{profile.source}
+          p #{profile.division}
+          span
+            span #{notes}
+        div.hrdiv
+          !{realSolidLine}
+        div.h1
+          span #{profile.name}
+          span
+            if profile.sex == '男'
+              先生，
+            else
+              女士，
+          span 您好！
+        p.color_grey.uncomplete.abc  <span class="abc_b">健检报告暂未完成，</span>您可随时查看健检报告中已有的检查结果，以便您及时掌握自身的健康状况，如有任何疑问，立即通过<span>微博</span>、<span>微信</span>与我们取得联系，或致电客服：010<span class='abc_span_tel'>-</span>62659812。瀚思维康，守护您的健康！
+        p.color_grey.abc 您在<span>瀚思维康</span>的健检已完成。综合检查结果，总检医生对您的健康状况进行了分析。<span class="abc_b">这是您的健检报告。</span>请您仔细阅读！如有任何疑问，立即通过<span>微博</span>、<span>微信</span>与我们取得联系，或致电客服：010<span class='abc_span_tel'>-</span>62659812。瀚思维康，守护您的健康！
+        p.color_grey.junquyixie_abc.abc 您在<span>军区医协体检中心</span>的健检已完成，总检医生根据检查结果对您的健康状况做了分析。<span class='abc_b'>这是您的健检报告。</span>请您仔细阅读！如有任何疑问，立即通过<span>微博</span>、<span>微信</span>与我们取得联系，或致电客服：010<span class='abc_span_tel'>-</span>62659812。军区医协，守护您的健康！
+
+    // 总检结论与建议
+    div.summary
+      div.header
+        +createHeader()
+        h1.clone.change_level 总检结论与建议
+        div.left
+          div.color_grey.sum_doctor 总检医生
+          div.hrdiv
+            !{realSolidLine}
+      div.container
+        if suggestions.length
+          div.title.color_grey(level=0)
+            span 总检结论
+            span 建议
+          div.hrdiv.svg_line(level=1)
+            !{realSolidLine}
+          each suggestion, index in suggestions
+            div.conclusion.group(level=2)
+              p !{suggestion.conditions}
+              p !{suggestion.content}
+            div.hrdiv(level=3)
+              !{dottedSolidLine}
+        else
+          div.all_normal 您本次健检所有检查项目未见明显重大异常。
+      div.footer
+        div.clone.page_number a
+
+    // 物理检查
+    div.clinic
+      div.header
+        +createHeader(clinic_doctors, 1) 
+        h1.clone.change_level 物理检查
+      div.container
+        if clinic_items.length
+          div.groupdiv
+            div.title.color_grey(level=0)
+              span 项目名称
+              span 检查结果
+            each item, index in clinic_items
+              if item.department
+                div.hrdiv(level=1)
+                  !{realSolidLine}
+                h3(level=2) !{item.department}
+              div.items(level=3)(department='#{item.department}')(normal='#{item.normal}')
+                span !{item.item}
+                span.color_grey !{item.value} 
+      div.footer
+        div.clone.page_number b
+        if giveup_clinic_departments.length
+          p.zhushi 注：您本次健检自愿放弃的物理检查：
+            each department in giveup_clinic_departments
+              span #{department}
+
+    // 实验室检验
+    div.laboratory
+      div.header
+        +createHeader(laboratory_doctors, 2) 
+        h1.clone 实验室检验
+      div.container
+        if laboratory_items.length
+          div.title.color_grey(level=0)
+            span 项目
+            span 检查结果
+            span 参考范围
+            span 单位
+          each item, index in laboratory_items
+            if item.big_combo || item.small_combo
+              if item.big_combo
+                div.hrdiv.add_margin(level=1)
+                  !{realSolidLine}
+                div.group.big_combo(level=2)
+                  h2.color_grey !{item.big_combo}
+                  h3.change_level !{item.small_combo}
+              else 
+                div.hrdiv(level=1)
+                  !{realSolidLine}
+                div.group(level=2)
+                  h3.change_level !{item.small_combo} 
+            div.items(normal='#{item.normal}')(level=3)
+              span !{item.item}
+              span !{item.value}
+              span(class='#{item.arrow}')
+              span.color_grey !{item.range}
+              span.color_grey
+               span
+                span !{item.unit}
+      div.footer
+        div.clone.page_number c
+        if giveup_lab_departments.length
+          p.zhushi 注：您本次健检自愿放弃的实验室检查：
+            each department in giveup_lab_departments
+              span #{department}
+
+    // 历年健检结果对比
+    div.contrast
+      div.header
+        +createHeader()
+      div.container
+        div.content
+          h1 历年健检结果对比
+          div.hrdiv
+            !{realSolidLine}
+          div.h2div 即将为您呈现!
+          p 选择瀚思维康为您提供定期的健检服务。我们会对您历年的健检结果做出对比分析，以便您掌控自身的健康变化。
+            if profile.id == null || profile.tel == null
+              span.letter4 
+                span 立即致电我们的客服：
+                span 010-62659812
+                if profile.id == null && profile.tel == null
+                  span.userinfo
+                    span 完善您健康档案的
+                    span 身份证和手机信息。
+                else if profile.tel == null
+                  span.usermobile
+                    span 完善您健康档案的
+                    span 手机信息。
+                else if profile.id == null
+                  span.userid
+                    span 完善您健康档案的
+                    span 身份证信息。
+          div.next_check_time
+            span 建议下次健检的日期是
+            span #{next_time}
+      div.footer
+        div.page_number d
+
+
+    // 渲染超声影像 
+    if ultrasound_images.length
+      //循环遍历每页有几张超声图片
+      mixin createLi(next, num)
+        - for (var x = next; x < num; x++)
+          if(x < ultrasound_images.length)
+            img(src = '../../images/#{ultrasound_images[x]['_id']}.jpeg')
+
+      //循环遍历超声图片有几页
+      mixin createUltrasoundImages(num)
+        - var count = 0
+        - for (var x = 0; x < ultrasound_images.length; x++)
+          if(x % num == 0)
+            count = count+1
+            div.ultrasound_images
+              div.header
+                +createHeader()
+              div.container
+                if x == 0
+                  h1 超声影像
+                else
+                  h1 超声影像（续）
+                div.title.color_grey
+                  span 超声影像图
+                div.hrdiv 
+                  !{realSolidLine}
+                div
+                  +createLi(x, num*count)
+              div.footer
+                div.page_number
+
+      //遍历超声图片,参数代表一页放几张
+      +createUltrasoundImages(3)
+
+    // 渲染放射科检查
+    if x_ray_report.length
+      each item, count in x_ray_report
+        each image, index in item.images
+          div.x_ray_report
+            div.header
+              +createHeader()
+            div.container
+              if count == 0
+                h1 放射学检查
+              else
+                h1 放射学检查（续）
+              ul
+                li.color_grey 检查部位
+                li #{item.name}
+              div.title.color_grey
+                span 放射学影像图
+              div.hrdiv
+                !{realSolidLine}
+              div.ps_div
+                img(src = '../../images/#{image._id}.jpeg')
+                p 待续
+              if item.images.length-1 == index
+                div.hrdiv
+                    !{realSolidLine}
+                div.con_div
+                  span X线所见
+                  p #{item.description} 
+                div.hrdiv
+                  !{realSolidLine}
+                div.con_div
+                  span 诊断意见
+                  p #{item.diagnose}
+            div.footer
+              div.page_number
+
+    // 心电图
+    if ecg_images.length
+      //循环报告
+      mixin createItem(next, num)
+        - for (var x = next; x < num; x++)
+          if x < ecg_images.length
+            img(src = '../../images/#{ecg_images[x]['_id']}.jpeg')
+      
+      //循环页数 
+      mixin careteEcgImages(num)
+        -var count = 0
+        -for (var x = 0; x < ecg_images.length; x++)
+          if x % num == 0
+            count = count+1
+            div.ecg_page
+              div.header
+                +createHeader()
+              div.container
+                if x == 0
+                  h1 心电图
+                else
+                  h1 心电图（续）
+                div.hrdiv
+                  !{realSolidLine}
+                div.ecg_images
+                  +createItem(x, num*count)
+              div.footer
+                div.page_number
+      //遍历心电图图片,参数代表一页放几张
+      +careteEcgImages(2)
+
+    // TCT（宫劲超薄细胞学检查）
+    if tct_report
+      div.tct_page
+        div.header
+          +createHeader()
+        div.container
+          h1 宫劲超薄细胞学检查
+          div.left
+            label.color_grey  镜下所见     
+            div.hrdiv
+              !{realSolidLine}
+            img(src = '../../images/#{tct_report._id}.jpeg')
+            label.color_grey  样本质量评估
+            div.hrdiv
+              !{realSolidLine}
+            ul.sample
+              li 
+                span 满意度
+                span #{tct_report.satisfaction}
+              li
+                span 细胞量
+                span #{tct_report.cellvolume}
+              li
+                span 颈管细胞
+                span #{tct_report.neckcell}
+              li
+                span 化生细胞
+                span #{tct_report.metaplastic_cell}
+              li
+                span 鳞状细胞
+                span #{tct_report.squamous_cell}
+            div.hrdiv
+              !{realSolidLine}
+            ul.doctor
+              li.color_grey 采样日期
+              li #{tct_report.sample_date}
+              li.color_grey 采样医生
+              li #{tct_report.sample_doctor}
+              li.color_grey 诊断医生
+              li #{tct_report.diagnose_doctor}
+          div.title.color_grey
+            span 分析结果
+            span TBS分析
+          div.hrdiv
+            !{realSolidLine}
+            span.color_grey ∣
+          // 分析数据 开始
+          div.titleifon
+            span 鳞状上皮内细胞
+          div(class="#{tct_report.result1}")
+            span
+            span
+            span 未见病变
+          div(class="#{tct_report.result2}")
+            span
+            span
+            span 低度病变
+          div(class="#{tct_report.result3}")
+            span
+            span
+            span 高度病变
+          div.titleifon
+            span 微生物
+          div(class="#{tct_report.result4}")
+            span
+            span
+            span 阴道滴虫
+          div(class="#{tct_report.result5}")
+            span
+            span
+            span 真菌，形态符合念珠菌属
+          div(class="#{tct_report.result6}")
+            span
+            span
+            span 菌群变化（提示细菌性阴道病）
+          div(class="#{tct_report.result7}")
+            span
+            span
+            span HPV病毒感染
+          div(class="#{tct_report.result8}")
+            span
+            span
+            span 细菌，形态符合放线菌属
+          div(class="#{tct_report.result9}")
+            span
+            span
+            span 细胞变化符合单纯疱疹病毒感染
+          div.titleifon
+            span 反应性细胞改变
+          div(class="#{tct_report.result10}")
+            span
+            span
+            span 炎性（包括典型修复）
+          div(class="#{tct_report.result11}")
+            span
+            span
+            span 萎缩
+          div(class="#{tct_report.result12}")
+            span
+            span
+            span 宫内节育器
+          div(class="#{tct_report.result13}")
+            span
+            span
+            span 放疗
+          div.titleifon
+            span 非典型鳞状细胞
+          div(class="#{tct_report.result14}")
+            span
+            span
+            span 不能明确意义
+          div(class="#{tct_report.result15}")
+            span
+            span
+            span 倾向于上皮内高度病变
+          div.titleifon
+            span 癌细胞及恶性细胞
+          div(class="#{tct_report.result16}")
+            span
+            span
+            span 鳞状细胞癌
+          div(class="#{tct_report.result17}")
+            span
+            span
+            span 腺癌
+          div(class="#{tct_report.result17}")
+            span
+            span
+            span 其他恶性肿瘤
+          // 分析数据 结束
+          div.hrdiv_2
+            !{realSolidLine}
+            span.color_grey ∣
+          div.opinion_div
+            div 诊断意见
+            each condition in tct_report.conditions
+              p= condition
+          div.hrdiv
+            !{realSolidLine} 
+          p.tct_zhushi.color_grey
+            注：本结果仅对来样负责，如对诊断结果有疑问，请于收到报告一周内与病理诊断医生联系，感谢您的合作！
+        div.footer
+          div.page_number
+
+
+    // 未出检查结果的科室
+    if unfinished_clinic_departments.length || unfinished_laboratory_departments.length
+      div.waiting_page
+        div.header
+          +createHeader()
+        div.container
+          h1 未出检查结果的科室
+          if unfinished_clinic_departments.length
+            div
+              h2.color_grey 物理检查
+              ul
+                li.color_grey 科室名称
+                div.hrdiv
+                  !{realSolidLine}
+                each clinic in unfinished_clinic_departments
+                  li= clinic
+          if unfinished_laboratory_departments.length
+            div
+              h2.color_grey 实验室检验
+              ul
+                li.color_grey 科室名称
+                div.hrdiv
+                  !{realSolidLine}
+                each laboratory in unfinished_laboratory_departments
+                  li= laboratory
+        div.footer
+          div.page_number
+    
+    //检验结果备注信息 
+    if combo_notes != ''
+      !{combo_notes}
+      
+
+  script.
+    console.log(new Date().getTime(), '222')
+  script(src='/vendor/jquery-min.js')
+  script(src='/vendor/qropt.js')
+  script(src='/vendor/qrorig.js')
+  script(src='/pages/report.js')
+  script.
+    var qrOrig = new QRCodeOrig($("#qrcodeOrig")[0], {text: "http://weixin.qq.com/r/IHXGyQLEsjzNhxOqnyAE?#{barcode}",width: 256,height: 256,colorDark: "#000000",colorLight: "#ffffff",correctLevel: QRCodeOrig.CorrectLevel.H, draw: "drawBlackOnly"});
